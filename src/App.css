@@ -10,14 +10,14 @@ body {
   background:
     radial-gradient(
       1000px 700px at 95% 20%,
-      rgba(171, 107, 255, 0.55),
+      rgba(192, 158, 234, 0.55),
       rgba(171, 107, 255, 0.15) 40%,
       transparent 70%
     ),
     radial-gradient(
       900px 600px at 10% 85%,
-      rgba(171, 107, 255, 0.20),
-      transparent 60%
+   rgba(192, 158, 234, 0.55),
+      transparent 70%
     ),
     linear-gradient(
       90deg,
@@ -57,6 +57,7 @@ body {
   display: flex;
   justify-content: center;
   pointer-events: none; /* ensures outer wrapper doesn't block clicks */
+  /* margin-bottom: 20px; */
 }
 
 .navbar-inner {
@@ -79,7 +80,6 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 border: 1px solid #ffffff;
-
 
 
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
@@ -142,22 +142,21 @@ border: 1px solid #ffffff;
 /* ================= HERO ARC SYSTEM ================= */
 
 .hero-content {
-  position: relative;     /* REQUIRED when arcs are inside */
+  position: relative;    
   z-index: 2;
   max-width: 700px;
   margin: 0 auto;
   text-align: center;
 }
-/* Arc container relative to hero-content */
+
 .hero-arcs {
   position: absolute;
-  bottom: -90%;                /* slightly adjusted for smaller size */
+  bottom: -90%;               
   left: 50%;
   transform: translateX(-50%);
   
-  width: 1500px;               /* updated */
-  height: 750px;               /* half of largest arc */
-  
+  width: 1500px;               
+  height: 750px;              
   overflow: hidden;
   pointer-events: none;
   z-index: -1;
@@ -172,8 +171,8 @@ border: 1px solid #ffffff;
 
 /* OUTER ARC (smaller now) */
 .arc-1 {
-  width: 1500px;               /* was 2000 */
-  height: 1500px;              /* was 2000 */
+  width: 1500px;               
+  height: 1500px;              
   top: 0;
   left: 0;
   border: 2px solid rgba(255, 255, 255, 0.10);
@@ -181,19 +180,19 @@ border: 1px solid #ffffff;
 
 /* MIDDLE ARC */
 .arc-2 {
-  width: 1200px;               /* was 1600 */
+  width: 1200px;              
   height: 1200px;
-  top: 150px;                  /* 200px → 150px (proportional reduction) */
-  left: 150px;                 /* 200px → 150px */
+  top: 150px;                  
+  left: 150px;                 
   border: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 /* INNER PURPLE ARC */
 .arc-3 {
-  width: 900px;                /* was 1200 */
+  width: 900px;                
   height: 900px;
-  top: 300px;                  /* 400px → 300px */
-  left: 300px;                 /* 400px → 300px */
+  top: 300px;                  
+  left: 300px;                 
 
   border: 3px solid rgba(171, 107, 255, 0.35);
   box-shadow: 0 -30px 60px rgba(171, 107, 255, 0.25) inset;
@@ -250,48 +249,69 @@ border: 1px solid #ffffff;
 .hero-btn:hover {
   background: #e8e8e8;
 }
-
-/* BOTTOM FEATURE GLASS BOX */
+/* GLASS FEATURE BAR */
 .feature-bar {
   width: 70%;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 80px auto 40px;
-  padding: 35px 40px;
+  padding: 20px 25px;
 
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
+  gap: 10px;
 
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  border: 1px solid #ffffff;
 
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
 }
 
+/* Each feature */
 .feature-item {
   flex: 1;
   text-align: center;
-  color: white;
+  padding: 0 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* Icon styling */
+.icon-style {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 10px;
+  filter: brightness(0) invert(1); /* White icons */
+  opacity: 0.95;
+}
+
+/* Typography */
 .feature-item h3 {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 6px;
+  color: white;
 }
 
 .feature-item p {
-  font-size: 13px;
+  font-size: 14px;
+  line-height: 1.4;
   opacity: 0.75;
+  color: #eaeaea;
 }
 
+/* Divider */
 .divider {
   width: 1px;
-  height: 50px;
-  background: rgba(255,255,255,0.15);
+  height: 80px;               /* Taller and cleaner UI */
+  background: rgba(255, 255, 255, 0.18);
+  align-self: center;
+  border-radius: 20px;
 }
+
 
 /* ================= SERVICES SECTION ================= */
 
@@ -336,6 +356,8 @@ border: 1px solid #ffffff;
   filter: drop-shadow(0 0 8px rgba(255,255,255,0.5));
 }
 
+
+
 /* Main container for staggered layout */
 .services-grid {
   width: 90%;
@@ -346,18 +368,6 @@ border: 1px solid #ffffff;
   padding-bottom: 100px;  /* extra space at bottom */
 }
 
-/* Base card styling */
-/* .service-card {
-  width: 260px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.12);
-  backdrop-filter: blur(10px);
-  text-align: center;
-  padding-bottom: 20px;
-  transition: 0.3s ease;
-  position: absolute;
-} */
 
 .service-card img {
   width: 100%;
@@ -376,11 +386,6 @@ border: 1px solid #ffffff;
   opacity: 0.75;
   padding: 0 12px;
 }
-/* 
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 40px rgba(171, 107, 255, 0.35);
-} */
 
 .service-card {
   width: 260px;
@@ -392,45 +397,38 @@ border: 1px solid #ffffff;
   padding-bottom: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: absolute;
+    transform-origin: center center; 
   z-index: 1; /* default */
 }
 
-/* HOVER — grow & glow but DO NOT MOVE position */
+/* Hover — grow & glow without shifting */
 .service-card:hover {
-  transform: scale(1.18); /* grow */
-  z-index: 10;            /* lift above others */
-  box-shadow: 0 0 35px rgba(171, 107, 255, 0.55); /* purple glow */
+  transform: scale(1.1);
+  z-index: 10;
+  box-shadow: 0 0 35px rgba(171, 107, 255, 0.55);
   border-color: rgba(171, 107, 255, 0.6);
 }
 
-
 /* ================= CARD POSITIONS (WITH SPACING) ================= */
-
-/* Top center card */
-/* .small-card:nth-child(1) {
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-} */
 
 /* Middle row – left */
 .middle-left {
-  top: 200px;                   /* increased spacing */
+  top: 220px;                   
   left: 50%;
-  transform: translateX(-180%);
+  transform: translateX(-210%);  /* moved more left */
 }
 
 /* Middle row – right */
 .middle-right {
-  top: 200px;                   /* increased spacing */
+  top: 220px;                   
   left: 50%;
-  transform: translateX(80%);
+  transform: translateX(110%);   /* moved more right */
 }
 
 /* Center large card */
 .large-card {
   width: 380px;
-  top: 160px;                 /* adjusted for spacing */
+  top: 130px;                 /* moved upward slightly */
   left: 50%;
   transform: translateX(-50%);
   padding-bottom: 30px;
@@ -438,26 +436,26 @@ border: 1px solid #ffffff;
   box-shadow: 0 0 20px rgba(171,107,255,0.3);
 }
 
-.large-card img {
-  height: 330px;
-}
-.bottom-left {
-  top: 500px;
-  left: 50%;
-  transform: translateX(-140%);
-}
-
-.bottom-right {
-  top: 500px;
-  left: 50%;
-  transform: translateX(40%);
-}
-
 .seo-center {
-  top: 380px;
+  top: 420px;                     /* increased vertical spacing */
   left: 50%;
   transform: translateX(-50%);
 }
+
+/* Bottom left */
+.bottom-left {
+  top: 560px;                     /* moved further down */
+  left: 50%;
+  transform: translateX(-150%);   /* moved more left */
+}
+
+/* Bottom right */
+.bottom-right {
+  top: 560px;                     /* moved further down */
+  left: 50%;
+  transform: translateX(50%);     /* moved more right */
+}
+
 /* Grid background */
 .services-section::before {
   content: "";
@@ -468,4 +466,66 @@ border: 1px solid #ffffff;
     linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
   background-size: 50px 50px;
   z-index: -1;
+}
+
+/* Container */
+.floating-text-container {
+  margin-top: 80px;
+  width: 100%;
+  overflow: hidden;
+  padding: 25px 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 18px; /* space between the two rows */
+}
+
+/* Base style for both rows */
+.floating-text {
+  white-space: nowrap;
+  font-size: 54px;
+  font-weight: 700;
+
+  background: linear-gradient(180deg, #AB6BFF, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Optional glow */
+  /* text-shadow: 0 0 10px rgba(255,255,255,0.35); */
+}
+/* LEFT → RIGHT animation */
+.left-to-right {
+  animation: moveLeftToRight 16s linear infinite;
+}
+
+/* RIGHT → LEFT animation */
+.right-to-left {
+  animation: moveRightToLeft 16s linear infinite;
+}
+
+/* Animations */
+@keyframes moveLeftToRight {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes moveRightToLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+/*our work*/
+
+/* Hide horizontal scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

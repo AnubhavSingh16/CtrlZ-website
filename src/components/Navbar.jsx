@@ -2,6 +2,7 @@ import React from "react";
 
 export default function Navbar() {
   return (
+    <div className="mb-20">
     <nav className="navbar-container">
       <div className="navbar-inner">
         {/* Logo */}
@@ -22,5 +23,6 @@ export default function Navbar() {
         <button className="contact-btn">Contact</button>
       </div>
     </nav>
+    </div>
   );
 }

@@ -75,12 +75,16 @@ export default function Hero() {
 
         <h1 className="hero-logo">Ctrl<span className="hero-accent">Zs</span></h1>
         <p className="hero-subtitle">Undo ordinary</p>
-        <p className="hero-description">
+        <div className="mt-20">
+           <p className="hero-description">
           Where creativity meets performance we design, build, and grow brands that
           deliver results
         </p>
 
         <button className="hero-btn">Get a Free Brand Audit</button>
+
+        </div>
+       
       </div>
 
       <FeatureBar />

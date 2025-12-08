@@ -1,23 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Navbar from './components/Navbar'
-import Home from './pages/HomePage'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Home from "./pages/HomePage";
+import Footer from "./components/Footer";
 
 function App() {
-  
-
   return (
     <>
-    
-<Navbar />
-<div className="home-bg">
-  <Home />
-</div>
+      <Navbar />
+
+      <Home />
+
+      <Footer/>
     </>
-  )
+  );
 }
 
-export default App
-
+export default App;
