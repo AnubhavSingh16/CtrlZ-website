@@ -199,8 +199,6 @@ export default function Uipage() {
                 2025 alone
               </p>
 
-              {/* Divider */}
-              <div className="w-16 h-[2px] bg-white mt-6"></div>
             </div>
 
             {/* Card 2 */}
@@ -217,8 +215,7 @@ export default function Uipage() {
                 quality output
               </p>
 
-              {/* Divider */}
-              <div className="w-16 h-[2px] bg-white mt-6"></div>
+              
             </div>
 
             {/* Card 3 */}
@@ -235,8 +232,7 @@ export default function Uipage() {
                 readiness
               </p>
 
-              {/* Divider */}
-              <div className="w-16 h-[2px] bg-white mt-6"></div>
+             
             </div>
 
             {/* Card 4 */}
@@ -252,8 +248,7 @@ export default function Uipage() {
                 We stay connected, from strategy to launch and beyond
               </p>
 
-              {/* Divider */}
-              <div className="w-16 h-[2px] bg-white mt-6"></div>
+              
             </div>
           </div>
         </div>
