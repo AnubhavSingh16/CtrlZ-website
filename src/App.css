@@ -99,14 +99,69 @@ border: 1px solid #ffffff;
   font-size: 1rem;
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 255);
-  transition: 0.25s ease;
+/* DROPDOWN BASE */
+.dropdown-menu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  margin-top: 8px;
+  width: 180px;
+
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+
+  background: rgba(255, 255, 255, 0.07); /* transparent like navbar */
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 12px;
+
+  padding: 10px 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 50;
 }
 
-.nav-links a:hover {
+/* WHEN OPEN */
+.dropdown-menu.show {
+  opacity: 1;
+  transform: translateY(0px);
+  pointer-events: auto;
+}
+
+/* Dropdown links */
+.dropdown-item {
+  display: block;
+  padding: 10px 16px;
+  font-size: 14px;
   color: white;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+
+/* Navbar links */
+.nav-links-ui a {
+  color: black !important;
+}
+
+/* Dropdown items text */
+.nav-links-ui .dropdown-item {
+  color: black !important;
+}
+
+/* Dropdown hover (light for white UI page) */
+.nav-links-ui .dropdown-item:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* Dropdown glass background for UI page */
+.nav-links-ui .dropdown-menu {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 /* Contact button */
@@ -123,6 +178,15 @@ border: 1px solid #ffffff;
 
 .contact-btn:hover {
   background: #e6e6e6;
+}
+
+.contact-btn-ui {
+  background: #AB6BFF;
+  color: white;
+}
+
+.contact-btn-ui:hover {
+  background: #9a55ff;
 }
 
 
@@ -495,12 +559,12 @@ border: 1px solid #ffffff;
 }
 /* LEFT → RIGHT animation */
 .left-to-right {
-  animation: moveLeftToRight 16s linear infinite;
+  animation: moveLeftToRight 20s linear infinite;
 }
 
 /* RIGHT → LEFT animation */
 .right-to-left {
-  animation: moveRightToLeft 16s linear infinite;
+  animation: moveRightToLeft 20s linear infinite;
 }
 
 /* Animations */
@@ -529,3 +593,6 @@ border: 1px solid #ffffff;
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+
+

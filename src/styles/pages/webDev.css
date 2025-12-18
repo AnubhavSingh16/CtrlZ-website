@@ -1,0 +1,262 @@
+/* ============================
+   WEB DEVELOPMENT PAGE
+===============================*/
+
+
+/* ================= DIAGONAL BACKGROUND ================= */
+.webdev-diagonal-bg {
+  position: absolute;
+  top: 40%;
+  right: -30%;
+  width: 200%;
+  height: 60%;
+
+  background: linear-gradient(
+    135deg,
+    #AB6BFF00 0%,
+    #3a1d62 60%,
+    #3a1f5c 100%
+  );
+
+  transform: rotate(-25deg);
+  z-index: -10;
+}
+/* GLOBAL WRAPPER */
+.webdev-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  /* padding-top: clamp(100px, 12vw, 150px); */
+  color: white;
+  overflow: hidden;
+  position: relative;
+}
+
+/* HERO SECTION */
+.webdev-hero {
+  width: 100%;
+  padding: clamp(30px, 4vw, 60px) 0;
+  /* padding-bottom: clamp(180px, 12vw, 260px); */
+  /* background: linear-gradient(160deg, #7b2cff 0%, #2a0a3d 100%); */
+  text-align: center;
+  position: relative;
+}
+
+/* TITLE */
+.webdev-title {
+  font-size: clamp(36px, 6vw, 70px);
+  font-weight: 600;
+  margin-bottom: clamp(5px, 1.2vw, 5px);
+}
+
+.highlight {
+  color: #b966ff;
+}
+
+/* SUB TITLE */
+.webdev-subtitle {
+     text-transform: uppercase;
+  font-size: clamp(14px, 1.4vw, 20px);
+  opacity: 0.85;
+  margin-bottom: clamp(20px, 3vw, 40px);
+}
+
+/* ============================
+   SWIPER SHOWCASE
+===============================*/
+
+.webdev-swiper-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: clamp(10px, 2vw, 30px);
+  margin-bottom: 10px;
+}
+
+.webdev-swiper {
+  width: clamp(320px, 55vw, 720px);
+  padding-bottom: clamp(120px, 14vw, 180px); /* MORE SPACE */
+  overflow: visible !important;
+}
+/* Base Card */
+.swiper-card {
+width: clamp(200px, 26vw, 360px) !important;
+  height: clamp(160px, 18vw, 260px);
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 2px solid #E9E9E9;
+  backdrop-filter: blur(12px);
+
+  overflow: hidden;
+  position: relative;
+
+  transition: 
+    transform 0.5s ease,
+    opacity 0.5s ease,
+    box-shadow 0.5s ease,
+    top 0.5s ease;
+}
+
+/* CENTER CARD — Bigger + Slightly Lower */
+.swiper-slide-active {
+  transform: scale(1.5) translateY(clamp(50px, 1.6vw, 22px)) !important;
+  z-index: 10 !important;
+
+  opacity: 1 !important;
+  /* box-shadow: 0 0 45px rgba(171, 107, 255, 0.55); */
+  border-color: 2px solid #E9E9E9;;
+}
+
+/* SIDE CARDS — Smaller + Closer + Slightly Higher */
+.swiper-slide-prev {
+  transform: 
+    scale(1)
+    translateX(35%)              /* 👉 move toward center */
+    translateY(clamp(-8px, -1vw, -12px)) !important;
+
+  opacity: 0.78 !important;
+  z-index: 3;
+}
+
+.swiper-slide-next {
+  transform: 
+    scale(1)
+    translateX(-35%)             /* 👉 move toward center */
+    translateY(clamp(-8px, -1vw, -12px)) !important;
+
+  opacity: 0.78 !important;
+  z-index: 3;
+}
+/* IMAGE FIT */
+.swiper-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
+/* ============================
+   CTA BUTTON
+===============================*/
+
+.webdev-btn {
+  margin-top: clamp(140px, 4vw, 60px);
+
+  padding: clamp(10px, 1.2vw, 16px) clamp(22px, 3vw, 36px);
+  background: white;
+  color: #310071;
+
+  font-size: clamp(14px, 1.4vw, 20px);
+  font-weight: 700;
+
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.webdev-btn:hover {
+  background: #e6e6e6;
+}
+
+/* ============================
+   FEATURES ROW
+===============================*/
+
+.webdev-features {
+  margin-top: clamp(40px, 7vw, 80px);
+  text-align: center;
+  opacity: 0.9;
+  font-size: clamp(18px, 2vw, 26px);
+  font-weight: 600;
+}
+
+/* ============================
+   TRUSTED BY
+===============================*/
+
+.trusted-by {
+  margin-top: clamp(20px, 3vw, 40px);
+  /* margin-bottom: clamp(40px, 5vw, 80px); */
+  margin-bottom: 10px;
+  text-align: center;
+
+  opacity: 0.85;
+  font-size: clamp(58px, 1.5vw, 22px);
+  font-weight: 700;
+}
+
+/* ============================
+   RESPONSIVE IMPROVEMENTS
+===============================*/
+
+/* Smaller screens (tablets) */
+@media (max-width: 900px) {
+  .swiper-slide-active {
+    transform: scale(1.18) translateY(10px) !important;
+  }
+
+  .swiper-slide-prev,
+  .swiper-slide-next {
+    transform: scale(0.82) translateY(-6px) !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .webdev-swiper {
+    width: 92%;
+  }
+
+  .swiper-slide-active {
+    transform: scale(1.05) translateY(6px) !important;
+  }
+
+  .swiper-slide-prev,
+  .swiper-slide-next {
+    transform: scale(0.75) translateY(-4px) !important;
+  }
+}
+
+
+/* FLOATING TEXT SECTION */
+.floating-text-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 25px 0;
+  position: relative;
+}
+
+/* Text style */
+.floating-text {
+  white-space: nowrap;
+  font-size: 48px;
+  font-weight: 700;
+
+  background: linear-gradient(180deg, #AB6BFF, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  display: inline-block;
+  padding-right: 40px; /* avoids visual cutoff */
+}
+
+/* Infinite animation */
+.left-to-right {
+  animation: infiniteMarquee 12s linear infinite;
+}
+
+/* Smooth infinite loop */
+@keyframes infiniteMarquee {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+

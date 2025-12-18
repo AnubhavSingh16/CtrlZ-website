@@ -1,0 +1,137 @@
+/* ===== MARQUEE CONTAINER ===== */
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ===== MOVING TRACK ===== */
+.marquee-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  animation: marqueeMove 30s linear infinite;
+  will-change: transform;
+}
+
+/* ===== CARD ===== */
+.marquee-card {
+  margin: 5px;
+  width: 340px;
+  height: 220px;
+  background: #2b005a;
+  border: 1px solid white;
+  border-radius: 12px;
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  flex-shrink: 0;
+}
+
+/* ===== TEXT ===== */
+.marquee-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes marqueeMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+
+
+/* ================= OUR PROCESS ================= */
+
+
+/* ================= PULSE RING ================= */
+@keyframes pulseRing {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+ 
+
+/* ================= OUR PROCESS ================= */
+.process-icon {
+  position: relative;
+  animation: float 6s ease-in-out infinite;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+  box-shadow:
+    inset 0 0 10px rgba(255, 255, 255, 0.25),
+    0 0 22px rgba(169, 112, 255, 0.7);
+}
+
+/* ================= PULSE RING ELEMENT ================= */
+.process-icon::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 9999px;
+  border: 2px solid rgba(169, 112, 255, 0.45);
+  animation: pulseRing 2.8s ease-out infinite;
+}
+
+/* ================= HOVER STATE ================= */
+.group:hover .process-icon {
+  transform: translate(-50%, -10px) scale(1.15) rotate(2deg);
+  box-shadow:
+    inset 0 0 14px rgba(255, 255, 255, 0.35),
+    0 0 50px rgba(169, 112, 255, 1);
+}
+
+/* ==============*
+
+/* ================= ARROW CLIP ================= */
+
+/* ================= RESPONSIVE ARROW ================= */
+
+.clip-arrow {
+  clip-path: polygon(
+    0 0,
+    92% 0,
+    100% 50%,
+    92% 100%,
+    0 100%,
+    6% 50%
+  );
+}
+
+/* Remove left notch for first item in each row */
+.clip-arrow:first-child {
+  clip-path: polygon(
+    0 0,
+    92% 0,
+    100% 50%,
+    92% 100%,
+    0 100%
+  );
+}
+
+/* MOBILE TWEAKS */
+@media (max-width: 640px) {
+  .clip-arrow {
+    padding: 12px 20px 12px 26px;
+    font-size: 11px;
+  }
+}
