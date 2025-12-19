@@ -69,6 +69,48 @@ export default function WebDevelopmentPage() {
     },
   ];
 
+  const faqsLeft = [
+    {
+      q: "How long does it take to develop a website?",
+      a: "A standard 5-page business website takes 2–3 weeks. E-commerce or custom-coded projects may take 6–12 weeks, depending on complexity and integrations.",
+    },
+    {
+      q: "Do you provide hosting and website maintenance?",
+      a: "Yes. We offer secure hosting with SSL, daily backups, and uptime monitoring, plus maintenance plans for content updates, bug fixes, and technical support.",
+    },
+    {
+      q: "Will my website be mobile-friendly?",
+      a: "Absolutely. We use mobile-first design principles to ensure your website looks and performs perfectly on phones, tablets, and desktops.",
+    },
+    {
+      q: "Do you offer SEO and marketing services?",
+      a: "Yes. Every site we build includes technical SEO, schema markup, and performance optimization. We also offer full digital marketing services — including SEO, CRO, and AI-driven growth strategies.",
+    },
+    {
+      q: "What platforms do you use for web development?",
+      a: "We work with React, Next.js, Webflow, and WordPress, selecting the best technology for your business goals and scalability needs.",
+    },
+  ];
+
+  const faqsRight = [
+    {
+      q: "Who owns the website after it’s built?",
+      a: "You do — 100%. We provide all design files, source code, and documentation, with no lock-ins.",
+    },
+    {
+      q: "Can you integrate third-party tools?",
+      a: "Yes. We specialize in API integrations with CRMs (HubSpot, Salesforce), payment systems (Stripe, Razorpay, PayPal), and marketing tools.",
+    },
+    {
+      q: "What makes Ctrl Zs different?",
+      a: "We bridge design, code, and marketing strategy. Our team builds business-driven websites that rank higher, convert faster, and scale globally — backed by transparent pricing and 24/7 support.",
+    },
+    {
+      q: "Why Collaboration That Builds Trust?",
+      a: "We believe in clear communication, milestone-based delivery, and long-term partnerships — ensuring transparency, accountability, and measurable business impact.",
+    },
+  ];
+
   return (
     <>
       <div className="webdev-wrapper">
@@ -207,22 +249,73 @@ export default function WebDevelopmentPage() {
         </div>
       </div>
 
-       <TrustedBy />
+      <TrustedBy />
 
       <WhatWeOffer slides={webSlides} slidesPerView={3} delay={2200} />
 
-      <OurProcess/>
+      <OurProcess />
 
-      <WhyCtrlZ/>
+      <WhyCtrlZ />
 
-      <Pricing/>
-      
-      <GetStarted/>
+      <Pricing
+        plans={[
+          {
+            title: "Starter",
+            price: "₹49,999",
+            popular: false,
+            features: [
+              "5-page responsive website",
+              "Mobile-first design",
+              "Basic SEO optimization",
+              "Contact form integration",
+              "1 month post-launch support",
+              "Google Analytics setup",
+              "Social media integration",
+              "SSL certificate included",
+            ],
+          },
+          {
+            title: "Professional",
+            price: "₹99,999",
+            popular: true,
+            features: [
+              "10-page responsive website",
+              "Custom UI/UX design",
+              "Advanced SEO optimization",
+              "CMS integration (WordPress/Webflow)",
+              "1 month post-launch support",
+              "3 months premium support",
+              "Performance optimization",
+              "Email marketing integration",
+              "Blog setup",
+              "Lead generation forms",
+              "Chat widget integration",
+            ],
+          },
+          {
+            title: "Enterprise",
+            price: "₹2,49,999",
+            popular: false,
+            features: [
+              "Unlimited pages",
+              "Custom React/Next.js development",
+              "Full e-commerce functionality",
+              "Advanced animations & interactions",
+              "12 months premium support",
+              "Multi-language support",
+              "Custom admin dashboard",
+              "Priority support & SLA",
+              "Dedicated project manager",
+              "White-glove onboarding",
+              "Training sessions included",
+            ],
+          },
+        ]}
+      />
 
-      <FaqServices/>
+      <GetStarted />
 
-      
-      
+      <FaqServices faqsLeft={faqsLeft} faqsRight={faqsRight} />
     </>
   );
 }

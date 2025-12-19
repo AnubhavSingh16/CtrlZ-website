@@ -84,6 +84,54 @@ const webSlides = [
   },
 ];
 
+const faqsLeft = [
+  {
+    q: "What’s your typical project timeline?",
+    a: `Most projects take 6–8 weeks, depending on complexity.
+
+Week 1–2: Research & UX strategy  
+Week 3–5: Wireframes, UI design, prototyping  
+Week 6: Testing, feedback, and final delivery  
+
+Need it faster? Ask about our express design sprints for startups.`,
+  },
+  {
+    q: "How much does a UI/UX project cost?",
+    a: "Costs vary by project size and complexity. Simple websites start at $700–$1,000, while product interfaces may range higher. You’ll always receive a transparent, custom quote.",
+  },
+  {
+    q: "What’s included in your process?",
+    a: "We cover everything — from UX strategy and wireframing to UI prototyping, usability testing, and developer-ready handoff.",
+  },
+  {
+    q: "What tools do you use?",
+    a: "We primarily design in Figma, use Miro for ideation and workshops, and provide developer-ready handoff with design tokens and detailed specs.",
+  },
+  {
+    q: "How do you measure success?",
+    a: "We track conversion rates, engagement time, and usability metrics using tools like Hotjar, FullStory, and Google Analytics.",
+  },
+];
+
+const faqsRight = [
+  {
+    q: "Can you redesign my website or app?",
+    a: "Absolutely. We begin with a UX audit to identify gaps, then redesign the experience to improve usability, performance, and conversions.",
+  },
+  {
+    q: "Can you handle development too?",
+    a: "Yes. Our UI/UX and web development teams collaborate closely to deliver pixel-perfect builds using React, Webflow, or WordPress.",
+  },
+  {
+    q: "Do you also design mobile apps?",
+    a: "Yes. We specialize in responsive web and mobile app UI/UX to ensure seamless experiences across all devices.",
+  },
+  {
+    q: "Do you work internationally?",
+    a: "Yes — 100%. We work with clients across the US, UK, Europe, and Asia, offering remote collaboration, virtual reviews, and real-time updates.",
+  },
+];
+
 const iconConnect = [wp, ig, youtube, linkedIn];
 
 export default function Uipage() {
@@ -198,7 +246,6 @@ export default function Uipage() {
                 From brand websites to full-scale digital ecosystems built in
                 2025 alone
               </p>
-
             </div>
 
             {/* Card 2 */}
@@ -214,8 +261,6 @@ export default function Uipage() {
                 Clients appreciate our transparent process, timely delivery, and
                 quality output
               </p>
-
-              
             </div>
 
             {/* Card 3 */}
@@ -231,8 +276,6 @@ export default function Uipage() {
                 Every CtrlZ’s website is optimized for performance and SEO
                 readiness
               </p>
-
-             
             </div>
 
             {/* Card 4 */}
@@ -247,8 +290,6 @@ export default function Uipage() {
               <p className="text-sm mt-3 text-white max-w-xs">
                 We stay connected, from strategy to launch and beyond
               </p>
-
-              
             </div>
           </div>
         </div>
@@ -264,11 +305,70 @@ export default function Uipage() {
 
       <WhyCtrlZ />
 
-      <Pricing />
+      <Pricing
+        plans={[
+          {
+            title: "Starter",
+            price: "₹29,999",
+            popular: false,
+            features: [
+              "Individuals & small businesses",
+              "Basic user interviews + personas",
+              "Low-fidelity wireframes",
+              "Basic UI screens (desktop only)",
+              "Short remote testing sessions",
+              "Basic component guide",
+              "Figma files + specs",
+              "1 revision cycle",
+              "1–2 weeks",
+              "Up to 5 pages",
+              "Figma, Miro",
+            ],
+          },
+
+          {
+            title: "Enterprise",
+            price: "₹99,999",
+            popular: true,
+            features: [
+              "Established brands & product teams",
+              "In-depth research + competitor analysis",
+              "High-fidelity, interactive prototypes",
+              "Pixel-perfect UI with animations (up to 20 pages)",
+              "Full moderated & unmoderated testing",
+              "Fully documented comprehensive design system",
+              "Full dev handoff + style tokens & Storybook support",
+              "Multiple iterations + ongoing support",
+              "6–8 weeks",
+              "Up to 40 pages",
+              "Figma, Miro, Lookback, Hotjar, UsabilityHub",
+            ],
+          },
+
+          {
+            title: "Professional",
+            price: "₹49,999",
+            popular: false,
+            features: [
+              "Startups & SMEs",
+              "Detailed interviews + journey mapping",
+              "Interactive mid-fidelity prototypes",
+              "Responsive UI for web & mobile (up to 10 pages)",
+              "Standard usability testing",
+              "Reusable components & style guide",
+              "Complete handoff with developer-ready docs",
+              "2 revision cycles + post-launch support",
+              "3–5 weeks",
+              "Up to 10 pages",
+              "Figma, Miro, Lookback, Hotjar",
+            ],
+          },
+        ]}
+      />
 
       <GetStarted />
 
-      <FaqServices />
+      <FaqServices faqsLeft={faqsLeft} faqsRight={faqsRight} />
     </>
   );
 }

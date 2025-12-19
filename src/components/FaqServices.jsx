@@ -1,45 +1,45 @@
 import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 
-const faqsLeft = [
-  "How long does it take to develop a website?",
-  "Do you provide hosting and website maintenance?",
-  "Will my website be mobile-friendly?",
-  "Do you offer SEO and marketing services?",
-  "What platforms do you use for web development?",
-];
-
-const faqsRight = [
-  "Who owns the website after it’s built?",
-  "Can you integrate third-party tools?",
-  "What makes Ctrl Zs different?",
-  "Why Collaboration That Builds Trust?",
-];
-
-export default function FaqServices() {
+export default function FaqServices({ faqsLeft = [], faqsRight = [] }) {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const renderFAQ = (question, index) => {
+  const renderFAQ = (item, index) => {
     const isOpen = openIndex === index;
 
     return (
-      <button
+      <div
         key={index}
-        onClick={() => setOpenIndex(isOpen ? null : index)}
-        className="w-full flex items-center justify-between border border-white rounded-xl px-6 py-4 text-left text-white hover:border-purple-400 transition-all"
+        className="border border-white rounded-xl overflow-hidden"
       >
-        <span className="text-sm md:text-base">{question}</span>
-        <FaChevronDown
-          className={`transition-transform duration-300 ${
-            isOpen ? "rotate-180" : ""
-          }`}
-        />
-      </button>
+        {/* Question */}
+        <button
+          onClick={() => setOpenIndex(isOpen ? null : index)}
+          className="w-full flex items-center justify-between px-6 py-4 text-left text-white hover:border-purple-400 transition-all"
+        >
+          <span className="text-sm md:text-base">{item.q}</span>
+          <FaChevronDown
+            className={`transition-transform duration-300 ${
+              isOpen ? "rotate-180" : ""
+            }`}
+          />
+        </button>
+
+        {/* Answer */}
+        {isOpen && (
+          <div className="px-6 pb-5 text-left">
+            <div className="w-full h-px bg-white mb-4" />
+            <p className="text-sm text-white leading-relaxed">
+              {item.a}
+            </p>
+          </div>
+        )}
+      </div>
     );
   };
 
   return (
-    <section className="w-full bg-gradient-to-br  from-black to-[#2b1247]  py-20 px-6">
+    <section className="w-full bg-gradient-to-br from-black to-[#2b1247] py-20 px-6">
       <div className="max-w-7xl mx-auto text-center">
         {/* Pill */}
         <div className="inline-flex items-center justify-center mb-6">
@@ -56,10 +56,12 @@ export default function FaqServices() {
         {/* FAQ Grid */}
         <div className="grid md:grid-cols-2 gap-6 mb-16">
           <div className="space-y-4">
-            {faqsLeft.map((q, i) => renderFAQ(q, i))}
+            {faqsLeft.map((item, i) => renderFAQ(item, i))}
           </div>
           <div className="space-y-4">
-            {faqsRight.map((q, i) => renderFAQ(q, i + faqsLeft.length))}
+            {faqsRight.map((item, i) =>
+              renderFAQ(item, i + faqsLeft.length)
+            )}
           </div>
         </div>
 

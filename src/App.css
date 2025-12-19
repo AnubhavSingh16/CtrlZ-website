@@ -6,6 +6,7 @@
 
 /* GLOBAL PAGE BACKGROUND */
 body {
+   background-attachment: fixed;
   margin: 0;
   background:
     radial-gradient(
@@ -36,6 +37,35 @@ body {
   background-size: cover;
   color: white;
 }
+
+/* ===== MOBILE MENU ===== */
+.mobile-menu {
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(12px);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mobile-menu a {
+  color: white;
+  font-size: 1.1rem;
+}
+
+.mobile-dropdown-btn {
+  text-align: left;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.mobile-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 12px;
+}
+
 
 
 
@@ -596,3 +626,14 @@ border: 1px solid #ffffff;
 
 
 
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
