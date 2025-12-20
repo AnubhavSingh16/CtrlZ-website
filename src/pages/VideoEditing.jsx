@@ -6,7 +6,7 @@
 
 import React from "react";
 import "../styles/pages/uiPage.css";
-import VideoEditingHero from "../assets/videoEditingHero.mp4";
+import VideoEditing2 from "../assets/videoEditing2.mp4";
 import { FaUsers, FaStar, FaClock } from "react-icons/fa";
 import { BiStopwatch } from "react-icons/bi";
 import { useLocation } from "react-router-dom";
@@ -132,7 +132,7 @@ export default function VideoEditing() {
       <div className="relative w-full h-screen overflow-hidden">
         <video
           className="absolute inset-0 w-full h-full object-cover -z-10"
-          src={VideoEditingHero}
+          src={VideoEditing2}
           muted
           playsInline
         />
