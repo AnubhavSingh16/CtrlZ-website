@@ -26,6 +26,7 @@ import GetStarted from "../components/BrandAuditServices";
 import FaqServices from "../components/FaqServices";
 import OurProcess from "../components/OurProcess";
 import WhyCtrlZ from "../components/WhyCtrlz";
+import FloatingText from "../components/FloatingText";
 
 export default function WebDevelopmentPage() {
   const cards = [sample1, sample2, sample3, sample1, sample2, sample3];
@@ -165,13 +166,7 @@ export default function WebDevelopmentPage() {
           {/* CTA BUTTON */}
           <button className="webdev-btn">Start Your Project</button>
 
-          <div className="floating-text-container w-full">
-            {/* LINE 1 — Left → Right */}
-            <div className="floating-text left-to-right w-full">
-              Video Editing • UI/UX Design • SEO • Web Development • Paid Ads •
-              Graphic Design •
-            </div>
-          </div>
+          <FloatingText lines={1}/>
           <div className="trusted-by">Trusted By Industry Leaders</div>
 
           <div>

@@ -59,19 +59,6 @@ export default function Services() {
         </div>
       </section>
 
-      <div className="floating-text-container my-4">
-        {/* LINE 1 — Left → Right */}
-        <div className="floating-text left-to-right ">
-          Video Editing • UI/UX Design • SEO • Web Development • Paid Ads •
-          Graphic Design •
-        </div>
-
-        {/* LINE 2 — Right → Left */}
-        <div className="floating-text right-to-left">
-          Video Editing • UI/UX Design • SEO • Web Development • Paid Ads •
-          Graphic Design •
-        </div>
-      </div>
     </>
   );
 }

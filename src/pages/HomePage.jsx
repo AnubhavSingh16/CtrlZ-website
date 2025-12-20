@@ -7,6 +7,7 @@ import Testimonials from "../components/Testimonials";
 import WhyCtrlZs from "../components/WhyUs";
 import FAQ from "../components/Faq";
 import BrandAudit from "../components/brandAudit";
+import FloatingText from "../components/FloatingText";
 
 
 export default function Home() {
@@ -16,6 +17,8 @@ export default function Home() {
       <Hero />
       
       <Services />
+
+      <FloatingText lines={2} />
 
       <OurWork/>
 
