@@ -9,16 +9,16 @@ export default function WhyCtrlZsDiff() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
-        <h2 className="text-center text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#5b1db3] mb-10 sm:mb-14">
+        <h2 className="text-center text-2xl sm:text-3xl lg:text-6xl font-extrabold text-[#5b1db3] mb-10 sm:mb-14">
           WHY CTRL ZS?
         </h2>
 
         {/* Main Card */}
-        <div className="border-2 border-[#7b3fe4] rounded-xl overflow-hidden shadow-lg">
+        <div className="border-8 border-[#3E008E] rounded-xl overflow-hidden shadow-lg">
           <div className="grid grid-cols-1 md:grid-cols-2">
             {/* LEFT — Problem */}
-            <div className="bg-[#fde7e7] p-6 sm:p-8 lg:p-10">
-              <h3 className="text-lg sm:text-xl font-bold text-black mb-5">
+            <div className="bg-[#FFDDDD] p-6 sm:p-8 lg:p-10">
+              <h3 className="text-3xl text-center font-bold text-black mb-5">
                 THE PROBLEM
               </h3>
 
@@ -26,47 +26,43 @@ export default function WhyCtrlZsDiff() {
                 <li className="flex gap-3 items-start">
                   <FaTimesCircle className="text-red-500 mt-1 flex-shrink-0" />
                   <span>
-                    Users leave within seconds because your site is confusing,
-                    cluttered, or doesn’t immediately show value.
+                    Users leave within seconds because your site is confusing, cluttered, or doesn’t immediately show value.
                   </span>
                 </li>
 
                 <li className="flex gap-3 items-start">
                   <FaTimesCircle className="text-red-500 mt-1 flex-shrink-0" />
                   <span>
-                    Visitors browse your site but rarely take action—sign up,
-                    purchase, or contact you.
+                    Visitors browse your site but rarely take action—sign up, purchase, or contact you.
                   </span>
                 </li>
 
                 <li className="flex gap-3 items-start">
                   <FaTimesCircle className="text-red-500 mt-1 flex-shrink-0" />
                   <span>
-                    Your mobile users struggle with tiny buttons, unreadable
-                    text, and broken layouts.
+                    Your mobile users struggle with tiny buttons, unreadable text, and broken layouts on their devices.
                   </span>
                 </li>
 
                 <li className="flex gap-3 items-start">
                   <FaTimesCircle className="text-red-500 mt-1 flex-shrink-0" />
                   <span>
-                    Inconsistent design across platforms confuses users and
-                    weakens brand identity.
+                    Your product looks different across platforms, confusing users and diluting your brand identity.
                   </span>
                 </li>
 
                 <li className="flex gap-3 items-start">
                   <FaTimesCircle className="text-red-500 mt-1 flex-shrink-0" />
                   <span>
-                    Lack of accessibility excludes users and limits your reach.
+                    Your product excludes users with disabilities, limiting your reach and potentially violating regulations.
                   </span>
                 </li>
               </ul>
             </div>
 
             {/* RIGHT — Solution */}
-            <div className="bg-[#f1eaff] p-6 sm:p-8 lg:p-10">
-              <h3 className="text-lg sm:text-xl font-bold text-black mb-5">
+            <div className="bg-[#EDDFFF] p-6 sm:p-8 lg:p-10">
+              <h3 className="text-3xl text-center font-bold text-black mb-5">
                 OUR SOLUTION
               </h3>
 
@@ -74,36 +70,35 @@ export default function WhyCtrlZsDiff() {
                 <li className="flex gap-3 items-start">
                   <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
                   <span>
-                    Clear, intuitive interfaces that instantly communicate
-                    value and retain users.
+                    Users leave within seconds because your site is confusing, cluttered, or doesn’t immediately show value.
                   </span>
                 </li>
 
                 <li className="flex gap-3 items-start">
                   <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
                   <span>
-                    Conversion-focused UX flows that guide users toward action.
+                    Users leave within seconds because your site is confusing, cluttered, or doesn’t immediately show value.
                   </span>
                 </li>
 
                 <li className="flex gap-3 items-start">
                   <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
                   <span>
-                    Fully responsive layouts optimized for all screen sizes.
+                    Users leave within seconds because your site is confusing, cluttered, or doesn’t immediately show value.
                   </span>
                 </li>
 
                 <li className="flex gap-3 items-start">
                   <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
                   <span>
-                    Consistent visual language across web, mobile, and platforms.
+                    Users leave within seconds because your site is confusing, cluttered, or doesn’t immediately show value.
                   </span>
                 </li>
 
                 <li className="flex gap-3 items-start">
                   <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
                   <span>
-                    Accessibility-first design aligned with global standards.
+                   Users leave within seconds because your site is confusing, cluttered, or doesn’t immediately show value.
                   </span>
                 </li>
               </ul>

@@ -4,6 +4,13 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+.home-bg {
+  min-height: 100vh;
+  width: 100%;
+  
+}
+
+
 /* GLOBAL PAGE BACKGROUND */
 body {
    background-attachment: fixed;
@@ -37,57 +44,68 @@ body {
   background-size: cover;
   color: white;
 }
-
-/* ===== MOBILE MENU ===== */
+/* ================= MOBILE MENU ================= */
 .mobile-menu {
-  background: rgba(0, 0, 0, 0.9);
-  backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(14px);
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  position: fixed;
+  top: 95px;                 /* below navbar */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 94%;
+  max-width: 420px;
+
+  border-radius: 16px;
+  z-index: 90;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
 }
 
 .mobile-menu a {
   color: white;
   font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.mobile-menu {
+  pointer-events: auto;
 }
 
 .mobile-dropdown-btn {
   text-align: left;
   font-size: 1.1rem;
   color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .mobile-dropdown {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding-left: 12px;
+  padding-left: 14px;
+  border-left: 2px solid rgba(255, 255, 255, 0.15);
 }
 
-
-
-
-.home-bg {
-   min-height: 100vh;
-  width: 100%;
-  
-}
-
-/* ========== FLOATING NAVBAR ========== */
+/* ================= FLOATING NAVBAR ================= */
 
 .navbar-container {
   position: absolute;
   top: 25px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 50; /* ensure above everything */
+  z-index: 100;
   width: 100%;
   display: flex;
   justify-content: center;
-  pointer-events: none; /* ensures outer wrapper doesn't block clicks */
-  /* margin-bottom: 20px; */
+  pointer-events: none;
+  padding: 0 16px;
 }
 
 .navbar-inner {
@@ -102,34 +120,37 @@ body {
   padding: 0 2rem;
   border-radius: 14px;
 
-  /* enabling interaction for inner box */
   pointer-events: auto;
 
-  /* Glass look */
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-border: 1px solid #ffffff;
 
-
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* Logo */
+/* ================= LOGO ================= */
 .nav-logo {
   font-size: 1.7rem;
   font-weight: 700;
   color: white;
 }
 
-/* Links */
+/* ================= LINKS ================= */
 .nav-links {
   display: flex;
   gap: 2.2rem;
   font-size: 1rem;
 }
 
-/* DROPDOWN BASE */
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* ================= DROPDOWN ================= */
 .dropdown-menu {
   position: absolute;
   left: 0;
@@ -141,7 +162,7 @@ border: 1px solid #ffffff;
   transform: translateY(10px);
   pointer-events: none;
 
-  background: rgba(255, 255, 255, 0.07); /* transparent like navbar */
+  background: rgba(255, 255, 255, 0.07);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 12px;
@@ -151,50 +172,43 @@ border: 1px solid #ffffff;
   z-index: 50;
 }
 
-/* WHEN OPEN */
 .dropdown-menu.show {
   opacity: 1;
-  transform: translateY(0px);
+  transform: translateY(0);
   pointer-events: auto;
 }
 
-/* Dropdown links */
 .dropdown-item {
   display: block;
   padding: 10px 16px;
   font-size: 14px;
   color: white;
   text-decoration: none;
-  transition: 0.2s ease;
 }
 
 .dropdown-item:hover {
   background: rgba(255, 255, 255, 0.12);
 }
 
-
-/* Navbar links */
+/* ================= UI PAGE OVERRIDES ================= */
 .nav-links-ui a {
   color: black !important;
 }
 
-/* Dropdown items text */
 .nav-links-ui .dropdown-item {
   color: black !important;
 }
 
-/* Dropdown hover (light for white UI page) */
 .nav-links-ui .dropdown-item:hover {
   background: rgba(0, 0, 0, 0.08);
 }
 
-/* Dropdown glass background for UI page */
 .nav-links-ui .dropdown-menu {
   background: rgba(255, 255, 255, 0.9);
   border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-/* Contact button */
+/* ================= CONTACT BUTTON ================= */
 .contact-btn {
   background: white;
   color: #68419B;
@@ -203,7 +217,7 @@ border: 1px solid #ffffff;
   border: none;
   padding: 6px 30px;
   cursor: pointer;
-  transition: 0.25s;
+  transition: 0.25s ease;
 }
 
 .contact-btn:hover {
@@ -219,107 +233,224 @@ border: 1px solid #ffffff;
   background: #9a55ff;
 }
 
+/* ================= RESPONSIVE ================= */
+
+/* ---------- Tablets ---------- */
+@media (max-width: 1024px) {
+  .navbar-inner {
+    width: 92%;
+    padding: 0 1.5rem;
+  }
+
+  .nav-links {
+    gap: 1.6rem;
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+  .navbar-container {
+    position: fixed;
+    top: 16px;
+  }
+
+  .navbar-inner {
+    width: 94%;
+    height: 64px;
+    padding: 0 1.2rem;
+  }
+
+  .nav-logo {
+    font-size: 1.4rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .contact-btn {
+    display: none;
+  }
+}
 
 /* ================== HERO SECTION ================== */
 
-.hero-wrapper {
+.home-hero-wrapper {
   position: relative;
   width: 100%;
   padding-top: 160px;
-  padding-bottom: 0px;
+  padding-bottom: 0;
   text-align: center;
   color: white;
   overflow: hidden;
+  isolation: isolate;
 }
 
-/* HERO ARCS */
-/* ================= HERO ARC SYSTEM ================= */
+/* ================= HERO CONTENT ================= */
 
-.hero-content {
-  position: relative;    
+.home-hero-content {
+  position: relative;
   z-index: 2;
   max-width: 700px;
   margin: 0 auto;
   text-align: center;
 }
 
-.hero-arcs {
+/* ================= HERO ARCS ================= */
+
+.home-hero-arcs {
   position: absolute;
-  bottom: -90%;               
+  bottom: -90%;
   left: 50%;
   transform: translateX(-50%);
-  
-  width: 1500px;               
-  height: 750px;              
+  width: 1500px;
+  height: 750px;              /* half circle */
   overflow: hidden;
   pointer-events: none;
   z-index: -1;
 }
 
-/* Base arc shape */
-.arc {
+
+.home-hero-arc-stats {
+  position: absolute;
+  top: 18%; /* aligns with top arc */
+  padding: 8px 11px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+
+  background: white;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+
+  color: #4E2F76;
+  text-align: center;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.35),
+    0 0 40px rgba(171, 107, 255, 0.25);
+
+  pointer-events: none; /* decorative */
+}
+
+@media (max-width: 768px) {
+  .home-hero-arc-stats {
+    top: 10%;
+    padding: 12px 18px;
+  }
+
+  .home-hero-stat-left {
+    left: 6%;
+  }
+
+  .home-hero-stat-right {
+    right: 6%;
+  }
+
+  .home-hero-stat-value {
+    font-size: 16px;
+  }
+
+  .home-hero-stat-label {
+    font-size: 16px;
+  }
+}
+
+/* Very small screens – optional hide */
+@media (max-width: 480px) {
+  .home-hero-arc-stats {
+    display: none;
+  }
+}
+
+/* LEFT STAT */
+.home-hero-stat-left {
+  left: 18%;
+}
+
+/* RIGHT STAT */
+.home-hero-stat-right {
+  right: 18%;
+}
+
+/* Text styles */
+.home-hero-stat-value {
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.home-hero-stat-label {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+
+
+/* Base arc */
+.home-hero-arc {
   position: absolute;
   border-radius: 50%;
   border-style: solid;
 }
 
-/* OUTER ARC (smaller now) */
-.arc-1 {
-  width: 1500px;               
-  height: 1500px;              
+/* OUTER ARC */
+.home-hero-arc-1 {
+  margin-top: 30px;
+  width: 1500px;
+  height: 1500px;
   top: 0;
   left: 0;
   border: 2px solid rgba(255, 255, 255, 0.10);
 }
 
 /* MIDDLE ARC */
-.arc-2 {
-  width: 1200px;              
+.home-hero-arc-2 {
+  width: 1200px;
   height: 1200px;
-  top: 150px;                  
-  left: 150px;                 
+  top: 150px;
+  left: 150px;
   border: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 /* INNER PURPLE ARC */
-.arc-3 {
-  width: 900px;                
+.home-hero-arc-3 {
+  width: 900px;
   height: 900px;
-  top: 300px;                  
-  left: 300px;                 
-
+  top: 300px;
+  left: 300px;
   border: 3px solid rgba(171, 107, 255, 0.35);
   box-shadow: 0 -30px 60px rgba(171, 107, 255, 0.25) inset;
 }
 
-/* HERO CONTENT */
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 700px;
-  margin: 0 auto;
-}
+/* ================= TEXT ================= */
 
-/* Logo text */
-.hero-logo {
+.home-hero-logo {
   font-size: 80px;
   font-weight: 800;
-  /* margin-bottom: 5px; */
 }
 
-.hero-accent {
+.home-hero-accent {
   color: #ab6bff;
 }
 
-/* Undo ordinary text */
-.hero-subtitle {
+.home-hero-subtitle {
   font-size: 32px;
   opacity: 0.85;
   margin-bottom: 50px;
 }
 
-/* Description paragraph */
-.hero-description {
+.home-hero-copy {
+  margin-top: 20px;
+}
+
+.home-hero-description {
   max-width: 540px;
   margin: 0 auto 40px;
   font-size: 18px;
@@ -327,8 +458,9 @@ border: 1px solid #ffffff;
   line-height: 1.5;
 }
 
-/* Button */
-.hero-btn {
+/* ================= BUTTON ================= */
+
+.home-hero-btn {
   padding: 14px 32px;
   background: white;
   color: #7a39ff;
@@ -340,15 +472,16 @@ border: 1px solid #ffffff;
   transition: 0.25s ease;
 }
 
-.hero-btn:hover {
+.home-hero-btn:hover {
   background: #e8e8e8;
 }
-/* GLASS FEATURE BAR */
-.feature-bar {
+
+/* ================= GLASS FEATURE BAR ================= */
+.home-hero-featurebar {
   width: 70%;
   max-width: 1200px;
-  margin: 80px auto 0px;
-  padding: 20px 25px;
+  margin: 80px auto 0;
+  padding: 22px 26px;
 
   display: flex;
   justify-content: space-between;
@@ -357,55 +490,118 @@ border: 1px solid #ffffff;
 
   background: rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(14px);
-  border: 1px solid #ffffff;
+  -webkit-backdrop-filter: blur(14px);
 
+  border: 1px solid #ffffff;
   border-radius: 20px;
+
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
 }
 
-/* Each feature */
-.feature-item {
+/* ================= FEATURE ITEM ================= */
+.home-hero-featurebar-item {
   flex: 1;
   text-align: center;
-  padding: 0 5px;
+  padding: 0 6px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Icon styling */
-.icon-style {
+/* ================= ICON ================= */
+.home-hero-featurebar-icon {
   width: 42px;
   height: 42px;
   margin-bottom: 10px;
-  filter: brightness(0) invert(1); /* White icons */
+  filter: brightness(0) invert(1);
   opacity: 0.95;
 }
 
-/* Typography */
-.feature-item h3 {
+/* ================= TEXT ================= */
+.home-hero-featurebar-item h3 {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 6px;
   color: white;
 }
 
-.feature-item p {
+.home-hero-featurebar-item p {
   font-size: 14px;
   line-height: 1.4;
   opacity: 0.75;
   color: #eaeaea;
 }
 
-/* Divider */
-.divider {
+/* ================= DIVIDER ================= */
+.home-hero-featurebar-divider {
   width: 1px;
-  height: 80px;               /* Taller and cleaner UI */
+  height: 80px;
   background: rgba(255, 255, 255, 0.18);
   align-self: center;
   border-radius: 20px;
 }
 
+
+/* ---------- Large Tablets ---------- */
+@media (max-width: 992px) {
+  .home-hero-featurebar {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .home-hero-featurebar-item h3 {
+    font-size: 16px;
+  }
+
+  .home-hero-featurebar-item p {
+    font-size: 13px;
+  }
+}
+
+/* ---------- Tablets / Small Screens ---------- */
+@media (max-width: 768px) {
+  .home-hero-featurebar {
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 24px;
+  }
+
+  .home-hero-featurebar-item {
+    flex: 0 0 48%;
+  }
+
+  .home-hero-featurebar-divider {
+    display: none;
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 576px) {
+  .home-hero-featurebar {
+    flex-direction: column;
+    width: 92%;
+    padding: 24px 20px;
+    gap: 22px;
+  }
+
+  .home-hero-featurebar-item {
+    flex: 1;
+  }
+
+  .home-hero-featurebar-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .home-hero-featurebar-item h3 {
+    font-size: 16px;
+  }
+
+  .home-hero-featurebar-item p {
+    font-size: 13px;
+  }
+}
 
 
 /* ================= SECTION ================= */
@@ -445,11 +641,10 @@ border: 1px solid #ffffff;
 }
 
 
-/* ================= STAGE (BIGGER) ================= */
 .home-services-stage {
   position: relative;
-  width: 900px;     /* ⬆ more horizontal room */
-  height: 720px;    /* ⬆ more vertical room */
+  width: 900px;     
+  height: 720px;    
   margin: auto;
 }
 
@@ -485,6 +680,15 @@ border: 1px solid #ffffff;
     0 0 55px rgba(171, 107, 255, 0.6),
     0 0 50px rgba(171, 107, 255, 0.35);
 }
+
+.home-services-card.active:hover {
+  transform: translate(-50%, -50%) scale(1.27); 
+
+  box-shadow:
+    0 0 70px rgba(171, 107, 255, 0.6),
+    0 0 70px rgba(171, 107, 255, 0.35);
+}
+
 
 /* Taller images */
 .home-services-card img {

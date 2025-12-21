@@ -44,7 +44,7 @@ export default function TrustedBy() {
   return (
     <section className="py-24 overflow-hidden">
       <h2 className="text-center text-6xl font-bold text-white mb-14">
-        Trusted By Industry Leaders
+        What our clients say
       </h2>
 
       {/* MARQUEE */}

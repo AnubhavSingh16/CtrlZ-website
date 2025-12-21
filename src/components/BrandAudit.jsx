@@ -17,7 +17,7 @@ export default function BrandAudit() {
               <span className="block text-white">Brand Audit</span>
             </h3>
 
-            <p className="mt-4 text-sm text-gray-200 max-w-xl mx-auto lg:mx-0">
+            <p className="mt-4 text-md text-white max-w-xl mx-auto lg:mx-0">
               Submit your website or idea.
               <br />
               We'll review your brand presence and share
@@ -35,7 +35,7 @@ export default function BrandAudit() {
               ].map((t, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <FaCheckCircle className="text-[#bfa2ff] mt-1 shrink-0" />
-                  <span className="text-gray-200 text-sm">{t}</span>
+                  <span className="text-white text-sm">{t}</span>
                 </li>
               ))}
             </ul>
@@ -51,7 +51,7 @@ export default function BrandAudit() {
                 </div>
               </div>
 
-              <div className="hidden sm:block h-10 w-px bg-gray-600/40" />
+              <div className="hidden sm:block h-10 w-px bg-white" />
 
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-extrabold text-white">
@@ -66,7 +66,7 @@ export default function BrandAudit() {
 
           {/* RIGHT – FORM */}
           <div className="flex justify-center lg:justify-start">
-            <form className="w-full max-w-md bg-white border border-white/10 rounded-2xl p-6 shadow-xl">
+            <form className="w-full max-w-lg bg-white border border-white/10 rounded-2xl p-6 shadow-xl px-15">
 
               <h4 className="text-center text-[#4E2F76] font-bold text-xl md:text-2xl mb-1">
                 Get Started Today
