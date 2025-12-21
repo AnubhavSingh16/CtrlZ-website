@@ -226,7 +226,7 @@ border: 1px solid #ffffff;
   position: relative;
   width: 100%;
   padding-top: 160px;
-  padding-bottom: 10px;
+  padding-bottom: 0px;
   text-align: center;
   color: white;
   overflow: hidden;
@@ -347,7 +347,7 @@ border: 1px solid #ffffff;
 .feature-bar {
   width: 70%;
   max-width: 1200px;
-  margin: 80px auto 40px;
+  margin: 80px auto 0px;
   padding: 20px 25px;
 
   display: flex;
@@ -407,160 +407,319 @@ border: 1px solid #ffffff;
 }
 
 
-/* ================= SERVICES SECTION ================= */
 
-.services-section {
+/* ================= SECTION ================= */
+.home-services-section {
   width: 100%;
-  padding: 50px 0;
+  padding: 140px 0;
   text-align: center;
   color: white;
+  overflow: hidden;
   position: relative;
+  isolation: isolate; /* 🔥 this fixes the bleed */
 }
 
-/* Title */
-.services-title {
-  font-size: 48px;
-  font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 10px;
-  position: relative;
-  display: inline-block;
-}
-
-.services-title::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -14px;
-  transform: translateX(-50%);
-  
-  width: 100%;       /* underline width */
-  height: 4px;        /* underline thickness */
-  
-  background: linear-gradient(
-    90deg,
-    rgba(255,255,255,0) 0%,       /* transparent left */
-    rgba(255,255,255,0.35) 25%,   /* light */
-    rgba(255,255,255,1) 50%,      /* strong center */
-    rgba(255,255,255,0.35) 75%,   /* light */
-    rgba(255,255,255,0) 100%      /* transparent right */
-  );
-
-  border-radius: 12px;
-  filter: drop-shadow(0 0 8px rgba(255,255,255,0.5));
-}
-
-
-
-/* Main container for staggered layout */
-.services-grid {
-  width: 90%;
-  max-width: 1300px;
-  margin: 0 auto;
-  position: relative;
-  height: 850px;          /* increased height so all cards show */
-  padding-bottom: 100px;  /* extra space at bottom */
-}
-
-
-.service-card img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-}
-
-.service-card h3 {
-  margin-top: 12px;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.service-card p {
-  font-size: 14px;
-  opacity: 0.75;
-  padding: 0 12px;
-}
-
-.service-card {
-  width: 260px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.12);
-  backdrop-filter: blur(10px);
+/* ================= TITLE ================= */
+.home-services-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;        /* Bold */
+  font-size: 64px;
+  line-height: 100%;       /* same as design */
+  letter-spacing: 0;
   text-align: center;
-  padding-bottom: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-style: normal;
+  color: #ffffff;
+ margin-bottom: 60px;
+}
+
+@media (max-width: 768px) {
+  .home-services-title {
+    font-size: 44px;
+  }
+}
+
+@media (max-width: 576px) {
+  .home-services-title {
+    font-size: 32px;
+  }
+}
+
+
+/* ================= STAGE (BIGGER) ================= */
+.home-services-stage {
+  position: relative;
+  width: 900px;     /* ⬆ more horizontal room */
+  height: 720px;    /* ⬆ more vertical room */
+  margin: auto;
+}
+
+/* ================= CARD BASE (TALLER) ================= */
+.home-services-card {
   position: absolute;
-    transform-origin: center center; 
-  z-index: 1; /* default */
+  width: 240px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 32px; /* ⬆️ more height */
+  text-align: center;
+
+  transition:
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    top 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    left 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.6s ease,
+    box-shadow 0.6s ease,
+    border-color 0.6s ease;
+
+  opacity: 0.80;
+  transform: scale(0.85);
 }
 
-/* Hover — grow & glow without shifting */
-.service-card:hover {
-  transform: scale(1.1);
-  z-index: 10;
-  box-shadow: 0 0 35px rgba(171, 107, 255, 0.55);
-  border-color: rgba(171, 107, 255, 0.6);
+.home-services-card:hover {
+  
+
+  border-color: rgba(171, 107, 255, 0.9);
+
+  box-shadow:
+    0 0 55px rgba(171, 107, 255, 0.6),
+    0 0 50px rgba(171, 107, 255, 0.35);
 }
 
-/* ================= CARD POSITIONS (WITH SPACING) ================= */
+/* Taller images */
+.home-services-card img {
+  width: 100%;
+  height: 250px; /* ⬆️ BIG difference */
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
 
-/* Middle row – left */
-.middle-left {
-  top: 220px;                   
+.home-services-card h3 {
+  margin-top: 16px;
+  font-size: 19px;
+  font-weight: 600;
+  opacity: 1;
+}
+
+.home-services-card p {
+  font-size: 14px;
+  opacity: 1;
+  padding: 0 16px;
+  line-height: 1.5;
+}
+
+/* ================= CENTER (ACTIVE – MUCH BIGGER) ================= */
+.home-services-card.active {
+  width: 280px;
+  top: 35%; /* lifted upward */
   left: 50%;
-  transform: translateX(-210%);  /* moved more left */
+  transform: translate(-50%, -50%) scale(1.22);
+  opacity: 1;
+  z-index: 30;
+
+  padding-bottom: 40px;
+
+  box-shadow:
+    0 0 80px rgba(171, 107, 255, 0.7),
+    0 30px 90px rgba(0, 0, 0, 0.45);
+
+  border-color: rgba(171, 107, 255, 0.7);
 }
 
-/* Middle row – right */
-.middle-right {
-  top: 220px;                   
-  left: 50%;
-  transform: translateX(110%);   /* moved more right */
+/* Taller hero image */
+.home-services-card.active img {
+  height: 230px;
 }
 
-/* Center large card */
-.large-card {
-  width: 380px;
-  top: 130px;                 /* moved upward slightly */
+/* Taller image only for active */
+.home-services-card.active img {
+  height: 240px;
+}
+/* ================= ORBIT POSITIONS (6 CARDS) ================= */
+
+/* Top */
+.home-services-pos-1 {
+  top: -60px;
   left: 50%;
   transform: translateX(-50%);
-  padding-bottom: 30px;
-  border-color: rgba(171,107,255,0.4);
-  box-shadow: 0 0 20px rgba(171,107,255,0.3);
 }
 
-.seo-center {
-  top: 420px;                     /* increased vertical spacing */
+/* Right Top */
+.home-services-pos-2 {
+  top: 18%;
+  right: -30px;
+  transform: translateY(0);
+  z-index: 100;
+}
+
+/* Right Bottom */
+.home-services-pos-3 {
+  bottom: 2%;
+  right: -120px;
+  transform: translateY(0);
+}
+
+/* Bottom */
+.home-services-pos-4 {
+  bottom: -50px;
   left: 50%;
   transform: translateX(-50%);
 }
 
-/* Bottom left */
-.bottom-left {
-  top: 560px;                     /* moved further down */
-  left: 50%;
-  transform: translateX(-150%);   /* moved more left */
+/* Left Bottom */
+.home-services-pos-5 {
+  bottom: 2%;
+  left: -120px;
+  transform: translateY(0);
 }
 
-/* Bottom right */
-.bottom-right {
-  top: 560px;                     /* moved further down */
-  left: 50%;
-  transform: translateX(50%);     /* moved more right */
+/* Left Top */
+.home-services-pos-6 {
+  top: 18%;
+  left: -30px;
+  transform: translateY(0);
+    z-index: 100;
+
 }
 
-/* Grid background */
-.services-section::before {
+/* ================= CENTER GLOW ================= */
+.home-services-glow {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(171, 107, 255, 0.35),
+    transparent 70%
+  );
+  filter: blur(60px);
+  z-index: -1;
+}
+
+/* ================= LARGE LAPTOPS (≤1200px) ================= */
+@media (max-width: 1200px) {
+  .home-services-stage {
+    width: 700px;
+    height: 600px;
+  }
+
+  .home-services-card.active {
+    width: 340px;
+  }
+}
+
+/* ================= TABLETS (≤992px) ================= */
+@media (max-width: 992px) {
+  .home-services-title {
+    font-size: 40px;
+  }
+
+  .home-services-stage {
+    width: 600px;
+    height: 560px;
+  }
+
+  .home-services-card {
+    width: 220px;
+  }
+
+  .home-services-card.active {
+    width: 300px;
+    transform: translate(-50%, -50%) scale(1.12);
+  }
+}
+
+/* ================= SMALL TABLETS (≤768px) ================= */
+@media (max-width: 768px) {
+  .home-services-section {
+    padding: 110px 0;
+  }
+
+  .home-services-title {
+    font-size: 36px;
+    margin-bottom: 80px;
+  }
+
+  .home-services-stage {
+    max-width: 480px;
+    height: 520px;
+  }
+
+  .home-services-card {
+    width: 200px;
+  }
+
+  .home-services-card img {
+    height: 150px;
+  }
+
+  .home-services-card.active {
+    width: 280px;
+  }
+}
+
+/* ================= MOBILE (≤576px) ================= */
+@media (max-width: 576px) {
+  .home-services-title {
+    font-size: 30px;
+  }
+
+  .home-services-stage {
+    height: 460px;
+  }
+
+  /* Hide orbit cards */
+  .home-services-card {
+    opacity: 0;
+    transform: scale(0.75);
+    pointer-events: none;
+  }
+
+  /* Show only active card */
+  .home-services-card.active {
+    width: 94%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    pointer-events: auto;
+  }
+
+  .home-services-card img {
+    height: 180px;
+  }
+
+  .home-services-card p {
+    font-size: 15px;
+  }
+}
+
+/* ================= GRID BACKGROUND (SAFE) ================= */
+.home-services-section::before {
   content: "";
   position: absolute;
   inset: 0;
+  pointer-events: none;
+
   background-image:
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 50px 50px;
-  z-index: -1;
+    linear-gradient(
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 1px
+    );
+
+  background-size: 48px 48px;
+  z-index: 0; /* NOT -1 */
 }
+
+
+
+
 
 /* Container */
 .floating-text-container {

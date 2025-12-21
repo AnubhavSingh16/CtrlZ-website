@@ -37,13 +37,16 @@ export default function OurWork() {
     <section className="w-full py-[50px] text-white relative ">
 
       {/* TITLE */}
-      <div className="max-w-full mx-auto text-center">
-        <h2 className="services-title text-center">Our Work</h2>
-      </div>
+            {/* HEADING */}
+        <h2 className="text-center text-6xl font-bold text-white mb-6">
+          Our Work
+        </h2>
+
+        <div className="mx-auto mb-14 h-[3px] w-[20%] bg-gradient-to-r from-transparent via-white to-transparent"></div>
 
       {/* INFINITE SCROLL */}
       <div className="w-full flex justify-center">
-      <div className="ourwork-marquee mt-10">
+      <div className="ourwork-marquee mt-10 py-10">
         <div className="ourwork-track">
 
           {[...projects, ...projects].map((p, i) => (

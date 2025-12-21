@@ -6,7 +6,7 @@
 
 import React from "react";
 import "../styles/pages/uiPage.css";
-import VideoEditing2 from "../assets/videoEditing2.mp4";
+import editedVideo from "../assets/editedVideo.mp4";
 import { FaUsers, FaStar, FaClock } from "react-icons/fa";
 import { BiStopwatch } from "react-icons/bi";
 import { useLocation } from "react-router-dom";
@@ -131,14 +131,16 @@ export default function VideoEditing() {
     <>
       <div className="relative w-full h-screen overflow-hidden">
         <video
-          className="absolute inset-0 w-full h-full object-cover -z-10"
-          src={VideoEditing2}
-          muted
-          playsInline
-        />
-
+  className="absolute inset-0 w-full h-full object-cover -z-10"
+  src={editedVideo}
+  autoPlay
+  loop
+  muted
+  playsInline
+  preload="auto"
+/>
         {/* Dark overlay (for contrast like reference image) */}
-        <div className="absolute inset-0 opacity-50 bg-black -z-0"></div>
+        <div className="absolute inset-0 opacity-30 bg-black -z-0"></div>
 
         {/* Foreground Content */}
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">

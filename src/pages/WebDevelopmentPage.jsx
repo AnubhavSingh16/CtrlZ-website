@@ -115,9 +115,8 @@ export default function WebDevelopmentPage() {
   return (
     <>
       <div className="webdev-wrapper">
-        {/* HERO SECTION */}
         <section className="webdev-hero bg-black -z-20">
-          {/* 🔥 DIAGONAL BACKGROUND */}
+
           <div className="webdev-diagonal-bg"></div>
 
           <div className="webdev-text mt-20">
@@ -132,7 +131,6 @@ export default function WebDevelopmentPage() {
             </p>
           </div>
 
-          {/* SWIPER SHOWCASE */}
           <div className="webdev-swiper-container">
             <Swiper
               effect={"coverflow"}
@@ -160,11 +158,13 @@ export default function WebDevelopmentPage() {
                 </SwiperSlide>
               ))}
             </Swiper>
+            
           </div>
+                    {/* CTA BUTTON */}
+          <button className="webdev-btn">Start Your Project</button>
+
 
           <div className="bg-black "></div>
-          {/* CTA BUTTON */}
-          <button className="webdev-btn">Start Your Project</button>
 
           <FloatingText lines={1}/>
           <div className="trusted-by">Trusted By Industry Leaders</div>

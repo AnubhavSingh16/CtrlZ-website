@@ -1,64 +1,84 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import seo from "../assets/seo.jpg";
 import ui from "../assets/ui.png";
 import paidads from "../assets/paidads.png";
-import videograpic from "../assets/videograpic.png";
 import web from "../assets/web.png";
 
+const services = [
+  {
+    title: "Web Development",
+    desc: "Modern, scalable & high-converting websites",
+    img: web,
+  },
+  {
+    title: "Paid Ads",
+    desc: "Performance marketing & growth strategy",
+    img: paidads,
+  },
+  {
+    title: "SEO",
+    desc: "Organic traffic & long-term visibility",
+    img: seo,
+  },
+  {
+    title: "UI / UX Design",
+    desc: "Pixel-perfect interfaces & brand identity",
+    img: ui,
+  },
+  {
+    title: "Paid Ads",
+    desc: "Performance marketing & growth strategy",
+    img: paidads,
+  },
+  {
+    title: "SEO",
+    desc: "Organic traffic & long-term visibility",
+    img: seo,
+  },
+];
+
 export default function Services() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+  const interval = setInterval(() => {
+    setActiveIndex((prev) => (prev + 1) % services.length);
+  }, 5000); // ⬅️ slower, smoother
+  return () => clearInterval(interval);
+}, []);
+
+
   return (
-    <>
-      <section className="services-section">
-        <h2 className="services-title">Our Services</h2>
+    <section className="home-services-section">
+             {/* HEADING */}
+        <h2 className="text-center text-6xl font-bold text-white mb-6">
+          Services
+        </h2>
 
-        <div className="services-grid">
-          {/* Large top card */}
-          <div className="service-card large-card">
-            <img src={web} alt="Web Development" />
-            <h3>Web Development</h3>
-            <p>
-              UI/UX design, Web Development, Content writing, Graphic design and
-              Video Editing
-            </p>
-          </div>
+        <div className="mx-auto mb-14 h-[3px] w-[15%] bg-gradient-to-r from-transparent via-white to-transparent"></div>
 
-          {/* Middle row */}
-          <div className="service-card small-card middle-left">
-            <img src={paidads} alt="Paid Ads" />
-            <h3>Paid Ads</h3>
-            <p>Marketing, Design & Growth strategy for brands</p>
-          </div>
+      <div className="home-services-stage">
+        <div className="home-services-glow" />
 
-          <div className="service-card small-card middle-right">
-            <img src={ui} alt="UI/UX Design" />
-            <h3>UI/UX Design</h3>
-            <p>Brand identity, Interface design & Product visuals</p>
-          </div>
+        {services.map((service, index) => {
+          const total = services.length;
 
-          {/* SEO centered row */}
-          <div className="service-card small-card seo-center">
-            <img src={seo} alt="SEO" />
-            <h3>SEO</h3>
-            <p>
-              UI/UX design, Web Development, Graphic design and Video Editing
-            </p>
-          </div>
+          const position =
+            index === activeIndex
+              ? "active"
+              : `home-services-pos-${
+                  ((index - activeIndex + total) % total) + 1
+                }`;
 
-          {/* Bottom row */}
-          <div className="service-card small-card bottom-left">
-            <img src={videograpic} alt="Graphic Design" />
-            <h3>Graphic Design</h3>
-            <p>Creative brand visuals & Motion graphics</p>
-          </div>
-
-          <div className="service-card small-card bottom-right">
-            <img src={videograpic} alt="Video Editing" />
-            <h3>Video Editing</h3>
-            <p>Professional video editing & storytelling</p>
-          </div>
-        </div>
-      </section>
-
-    </>
+          return (
+            <div key={index} className={`home-services-card ${position}`}>
+              <img src={service.img} alt={service.title} />
+              <h3>{service.title}</h3>
+              <p>{service.desc}</p>
+            </div>
+          );
+        })}
+      </div>
+    </section>
   );
 }
