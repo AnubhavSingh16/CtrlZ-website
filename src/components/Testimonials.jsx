@@ -1,6 +1,7 @@
 import React from "react";
 import { FaStar, FaQuoteRight, FaQuoteLeft } from "react-icons/fa";
 import avatar from "../assets/testimonial.jpg";
+import testimonialBackg from "../assets/testimonialBackg.svg";
 
 const testimonials = [
   {
@@ -48,7 +49,17 @@ const testimonials = [
 
 export default function TrustedBy() {
   return (
-    <section className="min-h-screen w-full flex items-center justify-center relative">
+<section
+  className="min-h-screen w-full relative overflow-hidden"
+  style={{
+    backgroundImage: `url(${testimonialBackg})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}
+>
+
+   {/* WHITE OPACITY LAYER (between bg & cards) */}
       
       <div className="w-full mx-auto py-16">
 
@@ -76,17 +87,17 @@ export default function TrustedBy() {
             to { transform: translateX(0); }
           }
           .marquee-card {
-            min-width: 360px;
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(14px);
-            border: 1px solid white;
-            border-radius: 18px;
-            padding: 60px 20px 20px;
-            color: white;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-            transition: all 0.3s ease;
-          }
+  min-width: 360px;
+  background: rgba(0, 0, 0, 0.50); 
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 18px;
+  padding: 60px 20px 20px;
+  color: white;
+  position: relative;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+  transition: all 0.3s ease;
+}
           .marquee-card:hover {
             box-shadow: 0 0 25px rgba(155,77,255,0.45);
             transform: translateY(-4px);

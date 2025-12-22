@@ -85,11 +85,13 @@ export default function Hero() {
 </div>
 
 
-
-    <h1 className="home-hero-logo">
+    <div className="home-hero-logo-sec">
+       <h1 className="home-hero-logo">
       Ctrl<span className="home-hero-accent">Zs</span>
     </h1>
     <p className="home-hero-subtitle">Undo ordinary</p>
+    </div>
+   
 
     <div className="home-hero-copy">
       <p className="home-hero-description">

@@ -402,10 +402,10 @@ body {
 
 /* OUTER ARC */
 .home-hero-arc-1 {
-  margin-top: 30px;
+  margin-top: 0;
   width: 1500px;
   height: 1500px;
-  top: 0;
+  top: -10px;
   left: 0;
   border: 2px solid rgba(255, 255, 255, 0.10);
 }
@@ -711,6 +711,24 @@ body {
   padding: 0 16px;
   line-height: 1.5;
 }
+
+/* Soft page-like blur behind logo */
+.home-hero-logo-sec {
+  position: relative;
+  display: inline-block;
+
+  padding: 0px 100px;
+  border-radius: 22px;
+
+  /* IMPORTANT: light transparent background */
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  z-index: 3;
+}
+
+
 
 /* ================= CENTER (ACTIVE – MUCH BIGGER) ================= */
 .home-services-card.active {
