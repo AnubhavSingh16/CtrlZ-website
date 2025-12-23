@@ -111,7 +111,7 @@ export default function FAQ() {
               {/* HEADER */}
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full flex justify-between items-center px-6 py-4 text-left font-semibold text-base md:text-lg text-white"
+                className="w-full flex justify-between items-center px-6 py-4 text-left font-semibold text-base md:text-base text-white"
               >
                 <span>{item.title}</span>
 
@@ -120,7 +120,7 @@ export default function FAQ() {
 
               {/* CONTENT */}
               {openIndex === index && item.text && (
-                <div className="px-6 pb-4 text-sm md:text-base text-white leading-relaxed">
+                <div className="px-6 pb-4 text-sm md:text-sm text-white leading-relaxed">
                   {item.text}
                 </div>
               )}

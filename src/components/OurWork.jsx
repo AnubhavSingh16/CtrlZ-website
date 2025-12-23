@@ -6,29 +6,44 @@ import web from "../assets/web.png";
 
 const projects = [
   {
-    title: "Flicklist",
+    title: "Now Do It",
     img: seo,
-    desc: "UI/UX design, Web Development, Content writing, Graphic design and Video Editing",
+    desc: " UI/UX Design, App Redesign, User Flow Optimization",
   },
   {
-    title: "Mall n Mall Cable",
+    title: "Money Bridge",
     img: seo,
-    desc: "UI/UX design, Web Development, Content writing, Graphic design and Video Editing",
+    desc: "Website Redesign, Social Media Strategy, LinkedIn Marketing",
   },
   {
     title: "Akashic Shades",
     img: ui,
-    desc: "UI/UX design, Web Development, Content writing, Graphic design and Video Editing",
+    desc: "UI/UX Design, Website Development, Brand Alignment",
   },
   {
-    title: "Flicklist",
+    title: "BudgetAccountants.co.uk",
     img: paidads,
-    desc: "UI/UX design, Web Development, Content writing, Graphic design and Video Editing",
+    desc: "Website Development, Mobile Optimization, Content Structuring",
   },
   {
-    title: "Akashic Shades",
+    title: "Fincana Solutions",
     img: web,
-    desc: "UI/UX design, Web Development, Content writing, Graphic design and Video Editing",
+    desc: "Paid Ads Setup, Campaign Structuring, Tracking Implementation",
+  },
+  {
+    title: "Gautam Kamboj",
+    img: web,
+    desc: "YouTube Strategy, Video Editing, Thumbnail Design",
+  },
+  {
+    title: "Showreel + Teasers",
+    img: web,
+    desc: "Video Editing, Motion Graphics, Brand Storytelling",
+  },
+  {
+    title: "M2Hub.pro",
+    img: web,
+    desc: "UI/UX Design, Website Revamp, Structure Optimization",
   },
 ];
 
@@ -46,8 +61,8 @@ export default function OurWork() {
 
       {/* INFINITE SCROLL */}
       <div className="w-full flex justify-center">
-      <div className="ourwork-marquee mt-10 py-10">
-        <div className="ourwork-track">
+      <div className="ourwork-marquee  py-10">
+        <div className="ourwork-track ">
 
           {[...projects, ...projects].map((p, i) => (
             <div
@@ -57,7 +72,7 @@ export default function OurWork() {
                 bg-white/10 backdrop-blur-lg rounded-2xl p-4 
                 shadow-xl hover:shadow-[0_0_20px_4px_rgba(155,77,255,0.6)]
                 transition-shadow duration-300
-                text-left border border-white
+                text-left border border-white pb-5
               "
             >
               <h3 className="text-white text-lg font-semibold mt-4">
@@ -74,11 +89,11 @@ export default function OurWork() {
                 {p.desc}
               </p>
 
-              <button
+              {/* <button
                 className="mt-4 w-[60%] bg-[#E3CDFF] text-[#4E2F76] font-semibold py-2 rounded-md hover:bg-white transition px-3"
               >
                 Explore →
-              </button>
+              </button> */}
             </div>
           ))}
 
