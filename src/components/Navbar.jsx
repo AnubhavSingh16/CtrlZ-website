@@ -62,6 +62,9 @@ export default function Navbar() {
               <Link to="/video-editing" className="dropdown-item">
                 Video Editing
               </Link>
+              <Link to="/ai-marketing" className="dropdown-item">
+                AI Marketing
+              </Link>
               <Link to="/logo-design" className="dropdown-item">
                 Logo Design
               </Link>
@@ -111,6 +114,7 @@ export default function Navbar() {
               <Link to="/web-development">Web Development</Link>
               <Link to="/ui-development">UI Development</Link>
               <Link to="/video-editing">Video Editing</Link>
+              <Link to="/ai-marketing">AI Marketing</Link>
               <Link to="/logo-design">Logo Design</Link>
             </div>
           )}

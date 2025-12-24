@@ -9,6 +9,8 @@ import VideoEditing from "./pages/VideoEditing";
 import LogoDesign from "./pages/LogoDesign";
 import WebDevelopmentPage from "./pages/WebDevelopmentPage";
 import Uipage from "./pages/Uipage";
+import AiMarketing from "./pages/AiMarketing";
+
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
         <Route path="/ui-development" element={<Uipage />} />
         <Route path="/video-editing" element={<VideoEditing />} />
         <Route path="/logo-design" element={<LogoDesign />} />
+        <Route path="/ai-marketing" element={<AiMarketing />} />
+
 
         {/* Add more pages later */}
       </Routes>
