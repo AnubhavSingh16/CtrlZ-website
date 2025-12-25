@@ -22,13 +22,30 @@ function ProcessSteps() {
 
   return (
     <div className="w-full mt-12 mb-20 px-4">
-      <div className="flex flex-wrap justify-center gap-y-4 gap-x-0 max-w-7xl mx-auto">
+      <div
+  className="
+    flex flex-wrap sm:flex-nowrap
+    items-stretch
+    justify-center
+    gap-3 sm:gap-0
+    max-w-7xl mx-auto
+  "
+>
+
         {steps.map((step, index) => (
           <div
             key={index}
             className={`
-              relative flex items-center px-6 py-4 pr-10
-              text-xs sm:text-sm font-semibold uppercase tracking-wide
+              relative flex items-center
+              px-4 py-3 pr-10
+              text-[11px] sm:text-sm
+              font-semibold uppercase tracking-wide
+              min-w-[140px] sm:min-w-[160px]
+              max-w-[180px] sm:max-w-[220px]
+              text-center
+              leading-tight
+              whitespace-normal
+              break-words
               ${
                 index % 2 === 0
                   ? "bg-[#a970ff] text-white"
@@ -40,7 +57,10 @@ function ProcessSteps() {
             {/* STEP NUMBER */}
             <span
               className={`
-                mr-3 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold
+                mr-2 w-6 h-6 shrink-0
+                rounded-full
+                flex items-center justify-center
+                text-xs font-bold
                 ${
                   index % 2 === 0
                     ? "bg-white text-[#7b3fe4]"
@@ -51,13 +71,16 @@ function ProcessSteps() {
               {index + 1}
             </span>
 
-            {step}
+            <span className="block">
+              {step}
+            </span>
           </div>
         ))}
       </div>
     </div>
   );
 }
+
 
 export default function Process() {
   return (
@@ -90,7 +113,7 @@ export default function Process() {
         <Card
           icon={<FaLightbulb />}
           title="DISCOVER & STRATEGY"
-          text="Kickoff workshops, stakeholder interviews, analytics review, and goal alignment. Output: Research brief + success metrics."
+          text=" We understand your goals, target audience, and competitive landscape to craft a conversion-driven web strategy."
         />
 
         <Card
@@ -130,7 +153,6 @@ export default function Process() {
   );
 }
 
-
 function Card({ icon, title, text, active }) {
   return (
     <div className="relative bg-white/10 backdrop-blur-xl border border-[#BF8EFF] rounded-2xl px-5 pt-20 pb-8 text-center shadow-2xl group">
@@ -138,7 +160,7 @@ function Card({ icon, title, text, active }) {
       {/* ICON */}
       <div
         className={`
-          absolute -top-12 left-1/2
+          absolute -top-12 left-1/2 -translate-x-1/2
           w-28 h-28 rounded-full
           flex items-center justify-center
           text-4xl 
@@ -152,7 +174,6 @@ function Card({ icon, title, text, active }) {
 
           animate-[float_6s_ease-in-out_infinite]
         `}
-        style={{ transform: "translateX(-50%)" }}
       >
         {icon}
       </div>
@@ -168,3 +189,4 @@ function Card({ icon, title, text, active }) {
     </div>
   );
 }
+

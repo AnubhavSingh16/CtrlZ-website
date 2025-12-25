@@ -59,7 +59,6 @@ export default function TrustedBy() {
   }}
 >
 
-   {/* WHITE OPACITY LAYER (between bg & cards) */}
       
       <div className="w-full mx-auto py-16">
 

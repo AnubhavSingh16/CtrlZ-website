@@ -27,6 +27,12 @@ import FaqServices from "../components/FaqServices";
 import OurProcess from "../components/OurProcess";
 import WhyCtrlZ from "../components/WhyCtrlz";
 import FloatingText from "../components/FloatingText";
+import WhatWeOfferComman from "../components/WhatWeOfferComman";
+
+import m1 from "../assets/m1.png";
+import m2 from "../assets/m2.png";
+import m3 from "../assets/m3.png";
+import m4 from "../assets/m4.png";
 
 export default function WebDevelopmentPage() {
   const cards = [sample1, sample2, sample3, sample1, sample2, sample3];
@@ -116,7 +122,6 @@ export default function WebDevelopmentPage() {
     <>
       <div className="webdev-wrapper">
         <section className="webdev-hero bg-black -z-20">
-
           <div className="webdev-diagonal-bg"></div>
 
           <div className="webdev-text mt-20">
@@ -158,15 +163,13 @@ export default function WebDevelopmentPage() {
                 </SwiperSlide>
               ))}
             </Swiper>
-            
           </div>
-                    {/* CTA BUTTON */}
+          {/* CTA BUTTON */}
           <button className="webdev-btn">Start Your Project</button>
-
 
           <div className="bg-black "></div>
 
-          <FloatingText lines={1}/>
+          <FloatingText lines={1} />
           <div className="trusted-by">Trusted By Industry Leaders</div>
 
           <div>
@@ -179,65 +182,128 @@ export default function WebDevelopmentPage() {
         </section>
       </div>
 
-      <div className="w-full bg-white border-t border-b border-gray-200 py-10 mb-10">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-10 px-6">
+      <div className="w-full bg-white border-t border-b border-gray-200 py-8">
+        <div
+          className="max-w-7xl mx-auto px-6
+    grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
+    gap-y-14 gap-x-16"
+        >
           {/* 1 — Happy Clients */}
-          <div className="text-center flex-1">
-            <IoPeople className="text-purple-800 mx-auto" size={92} />
-            {/* <img src={clients}></img> */}
-            <h3 className="text-4xl font-bold mt-2 text-purple-900">24+</h3>
-            <p className="text-2xl font-semibold mt-4 text-purple-900">
+          <div className="relative text-center flex flex-col items-center">
+            <img
+              src={m1}
+              alt="Happy Clients"
+              className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 object-contain"
+            />
+
+            <h3 className="mt-5 text-3xl sm:text-4xl font-bold text-purple-900">
+              24+
+            </h3>
+
+            <p className="mt-2 text-lg sm:text-xl font-semibold text-purple-900">
               Happy Clients
             </p>
-            <p className="text-sm mt-4 text-purple-900">
+
+            <p className="mt-4 text-sm sm:text-base text-purple-900 max-w-xs">
               From brand websites to full-scale digital ecosystems built in 2025
               alone
             </p>
+
+            {/* Divider */}
+            <span
+              className="hidden lg:block absolute top-1/2 -right-8
+        h-38 w-[2px] bg-[#310071]/60 -translate-y-1/2"
+            ></span>
+
+            <span
+              className="block sm:hidden mt-14
+        h-[2px] w-28 bg-[#310071]/40"
+            ></span>
           </div>
 
-          {/* Divider */}
-          <div className="w-[2px] h-48 bg-[#310071]"></div>
-
           {/* 2 — Client Satisfaction */}
-          <div className="text-center flex-1">
-            <FaStar className="text-purple-800 mx-auto" size={92} />
-            <h3 className="text-4xl font-bold mt-2 text-purple-900">98%</h3>
-            <p className="text-2xl font-semibold mt-4 text-purple-900">
+          <div className="relative text-center flex flex-col items-center">
+            <img
+              src={m2}
+              alt="Client Satisfaction"
+              className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 object-contain"
+            />
+
+            <h3 className="mt-5 text-3xl sm:text-4xl font-bold text-purple-900">
+              98%
+            </h3>
+
+            <p className="mt-2 text-lg sm:text-xl font-semibold text-purple-900">
               Client Satisfaction
             </p>
-            <p className="text-sm mt-4 text-purple-900">
+
+            <p className="mt-4 text-sm sm:text-base text-purple-900 max-w-xs">
               Clients appreciate our transparent process, timely delivery, and
               quality output
             </p>
+
+            {/* Divider */}
+            <span
+              className="hidden lg:block absolute top-1/2 -right-8
+        h-38 w-[2px] bg-[#310071]/60 -translate-y-1/2"
+            ></span>
+
+            <span
+              className="block sm:hidden mt-14
+        h-[2px] w-28 bg-[#310071]/40"
+            ></span>
           </div>
 
-          {/* Divider */}
-          <div className="w-[2px] h-48 bg-[#310071]"></div>
-
           {/* 3 — Load Time */}
-          <div className="text-center flex-1">
-            <BiStopwatch className="text-purple-800 mx-auto" size={100} />
-            <h3 className="text-4xl font-bold mt-2 text-purple-900">&lt;3s</h3>
-            <p className="text-2xl font-semibold mt-4 text-purple-900">
+          <div className="relative text-center flex flex-col items-center">
+            <img
+              src={m3}
+              alt="Performance"
+              className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 object-contain"
+            />
+
+            <h3 className="mt-5 text-3xl sm:text-4xl font-bold text-purple-900">
+              &lt;3s
+            </h3>
+
+            <p className="mt-2 text-lg sm:text-xl font-semibold text-purple-900">
               Average Load Time
             </p>
-            <p className="text-sm mt-4 text-purple-900">
+
+            <p className="mt-4 text-sm sm:text-base text-purple-900 max-w-xs">
               Every CtrlZ’s website is optimized for performance and SEO
               readiness
             </p>
+
+            {/* Divider */}
+            <span
+              className="hidden lg:block absolute top-1/2 -right-8
+        h-38 w-[2px] bg-[#310071]/60 -translate-y-1/2"
+            ></span>
+
+            <span
+              className="block sm:hidden mt-14
+        h-[2px] w-28 bg-[#310071]/40"
+            ></span>
           </div>
 
-          {/* Divider */}
-          <div className="w-[2px] h-48 bg-[#310071]"></div>
-
           {/* 4 — Support */}
-          <div className="text-center flex-1">
-            <TbClock24 className="text-purple-800 mx-auto" size={92} />
-            <h3 className="text-4xl font-bold mt-2 text-purple-900">24/7</h3>
-            <p className="text-2xl font-semibold mt-4 text-purple-900">
+          <div className="text-center flex flex-col items-center">
+            <img
+              src={m4}
+              alt="24/7 Support"
+              className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 object-contain"
+            />
+
+            <h3 className="mt-5 text-3xl sm:text-4xl font-bold text-purple-900">
+              24/7
+            </h3>
+
+            <p className="mt-2 text-lg sm:text-xl font-semibold text-purple-900">
               Support Available
             </p>
-            <p className="text-sm mt-4 text-purple-900">
+
+            <p className="mt-4 text-sm sm:text-base text-purple-900 max-w-xs">
               We stay connected, from strategy to launch and beyond
             </p>
           </div>
@@ -247,6 +313,8 @@ export default function WebDevelopmentPage() {
       <TrustedBy />
 
       <WhatWeOffer slides={webSlides} slidesPerView={3} delay={2200} />
+
+      {/* <WhatWeOfferComman/> */}
 
       <OurProcess />
 

@@ -289,8 +289,8 @@ export default function BrandAudit() {
             transition-transform duration-200
           "
               >
-                Got it ✨
-              </button>
+                Got it             
+                </button>
             </div>
           </div>
         </div>

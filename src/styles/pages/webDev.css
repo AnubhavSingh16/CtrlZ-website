@@ -57,7 +57,7 @@
      text-transform: uppercase;
   font-size: clamp(14px, 1.4vw, 20px);
   opacity: 0.85;
-  margin-bottom: clamp(60px, 3vw, 40px);
+  margin-bottom: clamp(10px, 3vw, 40px);
 }
 
 /* ============================
@@ -289,4 +289,52 @@ width: clamp(400px, 26vw, 360px) !important;
     font-size: 16px;
     padding: 14px 28px;
   }
+}
+
+
+
+
+
+.web-dev-offer-section {
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Swiper container */
+.web-dev-offer-swiper {
+  width: 320px;
+  height: 420px;
+}
+
+/* Individual slide */
+.web-dev-offer-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CARD */
+.web-dev-offer-card {
+  width: 100%;
+  height: 100%;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #111;
+
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.75),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+
+  transition: transform 0.4s ease;
+}
+
+/* Image */
+.web-dev-offer-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
