@@ -84,7 +84,6 @@ export default function Navbar({ onContactClick }) {
           {isHomePage ? "Contact" : "Let’s Connect"}
         </button>
 
-        {/* ===== HAMBURGER (MOBILE) ===== */}
         <button
           className="md:hidden text-2xl"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -99,7 +98,6 @@ export default function Navbar({ onContactClick }) {
           <Link to="/" onClick={() => setMobileMenuOpen(false)}>
             Home
           </Link>
-          
 
           {/* SERVICES (MOBILE CLICK) */}
           <button

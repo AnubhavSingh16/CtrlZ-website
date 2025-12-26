@@ -69,7 +69,7 @@ export default function Hero() {
   <div className="home-hero-content">
 <div className="home-hero-arcs">
   <div className="home-hero-arc home-hero-arc-1"></div>
-  <div className="home-hero-arc home-hero-arc-2"></div>
+  {/* <div className="home-hero-arc home-hero-arc-2"></div> */}
   <div className="home-hero-arc home-hero-arc-3"></div>
 
   {/* === ARC STATS === */}
@@ -85,7 +85,7 @@ export default function Hero() {
 </div>
 
 
-    <div className="home-hero-logo-sec">
+    <div className="">
        <h1 className="home-hero-logo">
       Ctrl<span className="home-hero-accent">Zs</span>
     </h1>
@@ -95,7 +95,7 @@ export default function Hero() {
 
     <div className="home-hero-copy">
       <p className="home-hero-description">
-        Where creativity meets performance we design, build, and grow brands that
+        Where creativity meets performance we <br />design, build, and grow brands that
         deliver results
       </p>
       <button className="home-hero-btn">Get a Free Brand Audit</button>
