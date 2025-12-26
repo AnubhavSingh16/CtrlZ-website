@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-export default function Navbar() {
+export default function Navbar({ onContactClick }) {
   const [openDropdown, setOpenDropdown] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const timeoutRef = useRef(null);
@@ -24,9 +24,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`navbar-container ${
-        isUiPage ? "text-black" : "text-white"
-      }`}
+      className={`navbar-container ${isUiPage ? "text-black" : "text-white"}`}
     >
       <div className="navbar-inner">
         {/* LOGO */}
@@ -78,6 +76,7 @@ export default function Navbar() {
 
         {/* CONTACT BUTTON (DESKTOP) */}
         <button
+          onClick={onContactClick}
           className={`contact-btn hidden md:block ${
             isUiPage ? "contact-btn-ui" : ""
           }`}
@@ -100,6 +99,7 @@ export default function Navbar() {
           <Link to="/" onClick={() => setMobileMenuOpen(false)}>
             Home
           </Link>
+          
 
           {/* SERVICES (MOBILE CLICK) */}
           <button
@@ -124,6 +124,10 @@ export default function Navbar() {
           <Link to="/blogs">Blogs</Link>
 
           <button
+            onClick={() => {
+              onContactClick();
+              setMobileMenuOpen(false);
+            }}
             className={`contact-btn w-full mt-4 ${
               isUiPage ? "contact-btn-ui" : ""
             }`}
