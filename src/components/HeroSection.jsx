@@ -1,6 +1,7 @@
 // put this in Hero.jsx (React component file)
 import React, { useEffect } from "react";
 import FeatureBar from "./FeatureBar";
+import logo from "../assets/logoHome.png";
 
 export default function Hero() {
   // useEffect(() => {
@@ -66,44 +67,52 @@ export default function Hero() {
 
   return (
     <section className="home-hero-wrapper">
-  <div className="home-hero-content">
-<div className="home-hero-arcs">
-  <div className="home-hero-arc home-hero-arc-1"></div>
-  {/* <div className="home-hero-arc home-hero-arc-2"></div> */}
-  <div className="home-hero-arc home-hero-arc-3"></div>
+      <div className="home-hero-content">
+        <div className="home-hero-arcs">
+          <div className="home-hero-arc home-hero-arc-1"></div>
+          {/* <div className="home-hero-arc home-hero-arc-2"></div> */}
+          <div className="home-hero-arc home-hero-arc-3"></div>
+          {/* <div className="home-hero-arc home-hero-arc-4"></div> */}
 
-  {/* === ARC STATS === */}
-  <div className="home-hero-arc-stats home-hero-stat-left">
-    <span className="home-hero-stat-value">+120%</span>
-    <span className="home-hero-stat-label">Conversions</span>
-  </div>
+          {/* === ARC STATS === */}
+          <div className="home-hero-arc-stats home-hero-stat-left">
+            <span className="home-hero-stat-value">+120%</span>
+            <span className="home-hero-stat-label">Conversions</span>
+          </div>
 
-  <div className="home-hero-arc-stats home-hero-stat-right">
-    <span className="home-hero-stat-value">35+</span>
-    <span className="home-hero-stat-label">Global Clients</span>
-  </div>
-</div>
+          <div className="home-hero-arc-stats home-hero-stat-right">
+            <span className="home-hero-stat-value">35+</span>
+            <span className="home-hero-stat-label">Global Clients</span>
+          </div>
 
+          <div className="home-hero-arc-stats-bottom home-hero-stat-bottom-left">
+            <span className="home-hero-stat-value">4.8x</span>
+            <span className="home-hero-stat-label">ROI</span>
+          </div>
 
-    <div className="">
-       <h1 className="home-hero-logo">
-      Ctrl<span className="home-hero-accent">Zs</span>
-    </h1>
-    <p className="home-hero-subtitle">Undo ordinary</p>
-    </div>
-   
+          <div className="home-hero-arc-stats-bottom home-hero-stat-bottom-right">
+            <span className="home-hero-stat-value">98%</span>
+            <span className="home-hero-stat-label">Client Satisfaction</span>
+          </div>
+        </div>
 
-    <div className="home-hero-copy">
-      <p className="home-hero-description">
-        Where creativity meets performance we <br />design, build, and grow brands that
-        deliver results
-      </p>
-      <button className="home-hero-btn">Get a Free Brand Audit</button>
-    </div>
-  </div>
+        <div className="">
+          <h1 className="home-hero-logo">
+            Ctrl<span className="home-hero-accent">Zs</span>
+          </h1>
+          <p className="home-hero-subtitle">Undo ordinary</p>
+        </div>
 
-  <FeatureBar />
-</section>
+        <div className="home-hero-copy m-10">
+          <p className="home-hero-description">
+            Where creativity meets performance we <br />
+            design, build, and grow brands that deliver results
+          </p>
+          <button className="home-hero-btn">Get a Free Brand Audit</button>
+        </div>
+      </div>
 
+      <FeatureBar />
+    </section>
   );
 }

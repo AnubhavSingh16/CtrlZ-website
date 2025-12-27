@@ -316,7 +316,7 @@ body {
 .home-hero-wrapper {
   position: relative;
   width: 100%;
-  padding-top: 200px;
+  padding-top: 220px;
   padding-bottom: 0;
   text-align: center;
   color: white;
@@ -338,7 +338,7 @@ body {
 
 .home-hero-arcs {
   position: absolute;
-  bottom: -90%;
+  bottom: -75%;
   left: 50%;
   transform: translateX(-50%);
   width: 1500px;
@@ -348,6 +348,33 @@ body {
   z-index: -1;
 }
 
+.home-hero-arc-stats-bottom {
+  position: absolute;
+  bottom: 50%; /* aligns with top arc */
+  padding: 8px 11px;
+  margin-left: 60px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+
+  background: white;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+
+  color: #4E2F76;
+  text-align: center;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.35),
+    0 0 40px rgba(171, 107, 255, 0.25);
+
+  pointer-events: none; /* decorative */
+}
 
 .home-hero-arc-stats {
   position: absolute;
@@ -376,11 +403,26 @@ body {
   pointer-events: none; /* decorative */
 }
 
+
+.home-hero-stat-bottom-left {
+  left: 2%;
+}
+
+.home-hero-stat-bottom-right {
+  right: 4%;
+}
+
+
 @media (max-width: 768px) {
   .home-hero-arc-stats {
     top: 10%;
     padding: 12px 18px;
-  }
+  };
+
+   .home-hero-arc-stats-bottom {
+    bottom: 10%;
+    padding: 12px 18px;
+  };
 
   .home-hero-stat-left {
     left: 6%;
@@ -389,6 +431,8 @@ body {
   .home-hero-stat-right {
     right: 6%;
   }
+
+ 
 
   .home-hero-stat-value {
     font-size: 16px;
@@ -404,7 +448,12 @@ body {
   .home-hero-arc-stats {
     display: none;
   }
+   .home-hero-arc-stats-bottom {
+    display: none;
+  }
 }
+
+
 
 /* LEFT STAT */
 .home-hero-stat-left {
@@ -440,10 +489,9 @@ body {
 
 /* OUTER ARC */
 .home-hero-arc-1 {
-  margin-top: 0px;
   width: 1500px;
   height: 1500px;
-  top: 10px;
+  top: 40px;            /* ⬅️ was 80px */
   left: 0;
   border: 2px solid rgba(255, 255, 255, 0.10);
 }
@@ -461,12 +509,20 @@ body {
 .home-hero-arc-3 {
   width: 900px;
   height: 900px;
-  top: 250px;
+  top: 320px;           /* ⬅️ was 320px */
   left: 300px;
   border: 3px solid rgba(171, 107, 255, 0.35);
-  box-shadow: 0 -30px 60px rgba(171, 107, 255, 0.25) inset;
+  box-shadow: 0 -0px 250px rgba(171, 107, 255, 0.25) inset;
 }
 
+.home-hero-arc-4 {
+  width: 850px;
+  height: 900px;
+  top: 340px;           /* ⬅️ was 320px */
+  left: 325px;
+  border: 1px solid white;
+  box-shadow: 0 -30px 250px rgba(171, 107, 255, 0.25) inset;
+}
 /* ================= TEXT ================= */
 
 .home-hero-logo {
@@ -485,7 +541,7 @@ body {
 }
 
 .home-hero-copy {
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .home-hero-description {
@@ -499,10 +555,10 @@ body {
 /* ================= BUTTON ================= */
 
 .home-hero-btn {
-  padding: 14px 32px;
+  padding: 14px 44px;
   background: white;
-  color: #7a39ff;
-  font-weight: 600;
+  color: #3A2359;
+  font-weight: 700;
   font-size: 16px;
   border-radius: 10px;
   border: none;
@@ -515,26 +571,22 @@ body {
 }
 
 /* ================= GLASS FEATURE BAR ================= */
-.home-hero-featurebar {
-  width: 70%;
+.home-hero-featurebar { 
+  width: 70%; 
   max-width: 1200px;
-  margin: 20px auto 0;
-  padding: 22px 26px;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 10px;
-
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-
-  border: 1px solid #ffffff;
-  border-radius: 20px;
-
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
-}
+   margin: 20px auto 0px;
+    padding: 22px 26px;
+     display: flex;
+      justify-content: space-between; 
+      align-items: stretch;
+       gap: 10px;
+        background: rgba(77, 74, 74, 0.06);
+         backdrop-filter: blur(14px);
+          -webkit-backdrop-filter: blur(14px) ;
+           border: 1px solid #ffffff;
+            border-radius: 20px;
+             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+             }
 
 /* ================= FEATURE ITEM ================= */
 .home-hero-featurebar-item {
@@ -545,6 +597,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 /* ================= ICON ================= */
@@ -575,7 +628,7 @@ body {
 .home-hero-featurebar-divider {
   width: 1px;
   height: 80px;
-  background: rgba(255, 255, 255, 0.18);
+  background: white;
   align-self: center;
   border-radius: 20px;
 }
@@ -645,7 +698,7 @@ body {
 /* ================= SECTION ================= */
 .home-services-section {
   width: 100%;
-  padding: 140px 0;
+  padding: 70px 0;
   text-align: center;
   color: white;
   overflow: hidden;
