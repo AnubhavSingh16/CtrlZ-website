@@ -303,7 +303,7 @@ export default function Uipage() {
 
       <WhyCtrlZsDiff />
 
-      <WhyCtrlZ />
+      {/* <WhyCtrlZ /> */}
 
       <Pricing
         plans={[

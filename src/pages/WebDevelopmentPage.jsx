@@ -42,37 +42,37 @@ export default function WebDevelopmentPage() {
       image: sample1,
       title: "Custom Coded Website Design & Development",
       description:
-        "Build a website that’s as unique as your brand. We create custom-coded, scalable websites using Webflow, React, Next.js, and WordPress — engineered for performance, flexibility, and growth. Every line of code is optimized for SEO, speed, and long-term stability.",
+        "Build a website that’s as unique as your brand. We create custom-coded, scalable websites using Webflow, React, Next.js, and WordPress - engineered for performance, flexibility, and growth. Every line of code is optimized for SEO, speed, and long-term stability.",
     },
     {
       image: sample2,
-      title: "Custom Coded Website Design & Development",
+      title: "CMS Website Development",
       description:
-        "Build a website that’s as unique as your brand. We create custom-coded, scalable websites using Webflow, React, Next.js, and WordPress — engineered for performance, flexibility, and growth. Every line of code is optimized for SEO, speed, and long-term stability.",
+      "Manage content effortlessly with a powerful CMS. Whether it’s Webflow CMS or WordPress, we develop intuitive backends that allow your team to publish, edit, and update content without touching code - built for both editors and search engines.",
     },
     {
       image: sample3,
-      title: "Custom Coded Website Design & Development",
+      title: "E-Commerce Development",
       description:
-        "Build a website that’s as unique as your brand. We create custom-coded, scalable websites using Webflow, React, Next.js, and WordPress — engineered for performance, flexibility, and growth. Every line of code is optimized for SEO, speed, and long-term stability.",
+      "Turn browsers into buyers. We build conversion-driven online stores using Shopify, WooCommerce, or Webflow E-Commerce, complete with secure payment gateways, inventory management, and real-time analytics.",
     },
     {
       image: sample1,
-      title: "Custom Coded Website Design & Development",
+      title: "Website Performance Optimization",
       description:
-        "Build a website that’s as unique as your brand. We create custom-coded, scalable websites using Webflow, React, Next.js, and WordPress — engineered for performance, flexibility, and growth. Every line of code is optimized for SEO, speed, and long-term stability.",
+      "Speed, Core Web Vitals, and mobile responsiveness define your rankings. We optimize load times, server response, and site architecture - ensuring your website performs flawlessly on Google’s PageSpeed, Lighthouse, and mobile-first indexing.",
     },
     {
       image: sample1,
-      title: "Custom Coded Website Design & Development",
+      title: "Website Maintenance & Support",
       description:
-        "Build a website that’s as unique as your brand. We create custom-coded, scalable websites using Webflow, React, Next.js, and WordPress — engineered for performance, flexibility, and growth. Every line of code is optimized for SEO, speed, and long-term stability.",
+      "Stay online, secure, and stress-free. Our maintenance plans include backups, uptime monitoring, security updates, and content management - so your website runs smoothly while you focus on your business.",
     },
     {
       image: sample1,
-      title: "Custom Coded Website Design & Development",
+      title: "Multi-Platform & API Integration",
       description:
-        "Build a website that’s as unique as your brand. We create custom-coded, scalable websites using Webflow, React, Next.js, and WordPress — engineered for performance, flexibility, and growth. Every line of code is optimized for SEO, speed, and long-term stability.",
+      "Connect everything. From CRM (HubSpot, Salesforce) to chatbots, analytics, and booking systems, we integrate third-party tools that automate workflows and create a seamless digital ecosystem.",
     },
   ];
 
@@ -182,7 +182,7 @@ export default function WebDevelopmentPage() {
         </section>
       </div>
 
-      <div className="w-full bg-white border-t border-b border-gray-200 py-8">
+      <div className="w-full bg-white py-8">
         <div
           className="max-w-7xl mx-auto px-6
     grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4

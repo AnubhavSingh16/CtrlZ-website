@@ -86,7 +86,7 @@ const faqsLeft = [
  Rush delivery available.
 `,
   },
-  
+
   {
     q: "What formats do you accept?",
     a: "MP4, MOV, AVI, RAW footage, all camera formats. Deliverables include MP4 (H.264), 4K/8K exports.",
@@ -95,11 +95,10 @@ const faqsLeft = [
     q: "Do you provide music?",
     a: "Yes — royalty-free + optional custom compositions.",
   },
-   {
+  {
     q: "Do you help with script/storyboarding?",
     a: "Yes. Included in Enterprise; available as add-ons.",
   },
-  
 ];
 
 const faqsRight = [
@@ -115,7 +114,7 @@ const faqsRight = [
     q: "Refund policy?",
     a: "Full refund if you’re unsatisfied after the first draft and revisions don’t fix it.",
   },
- 
+
   // {
   //   q: "Do you work internationally?",
   //   a: "Yes — 100%. We work with clients across the US, UK, Europe, and Asia, offering remote collaboration, virtual reviews, and real-time updates.",
@@ -131,14 +130,14 @@ export default function VideoEditing() {
     <>
       <div className="relative w-full h-screen overflow-hidden">
         <video
-  className="absolute inset-0 w-full h-full object-cover -z-10"
-  src={editedVideo}
-  autoPlay
-  loop
-  muted
-  playsInline
-  preload="auto"
-/>
+          className="absolute inset-0 w-full h-full object-cover -z-10"
+          src={editedVideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+        />
         {/* Dark overlay (for contrast like reference image) */}
         <div className="absolute inset-0 opacity-30 bg-black -z-0"></div>
 
@@ -181,7 +180,19 @@ export default function VideoEditing() {
         </div>
       </div>
 
+      <div className="w-full flex flex-col items-center justify-center text-center px-4 pt-16">
+  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 tracking-wide px-14">
+    Proven Performance, Measurable Results
+  </h2>
+
+  <p className="max-w-2xl text-sm sm:text-base lg:text-2xl text-white ">
+    Key numbers that reflect how we build, deliver, and support our clients.
+  </p>
+</div>
+
+
       <div className="w-full py-12 mt-10">
+
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {/* Card 1 */}
@@ -245,6 +256,7 @@ export default function VideoEditing() {
           </div>
         </div>
       </div>
+
 
       <TrustedBy />
 

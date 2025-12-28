@@ -42,7 +42,7 @@ export default function GetStarted() {
           </ul>
 
           {/* STATS */}
-          <div className="mt-10 flex items-center gap-8">
+          {/* <div className="mt-10 flex items-center gap-8">
             <div>
               <p className="text-5xl font-extrabold text-black">98%</p>
               <p className="text-md text-black ">Satisfaction Rate</p>
@@ -54,7 +54,7 @@ export default function GetStarted() {
               <p className="text-5xl font-extrabold text-black">15min</p>
               <p className="text-md text-black">Quick Analysis</p>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* RIGHT FORM */}

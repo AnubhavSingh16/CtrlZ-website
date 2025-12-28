@@ -2,6 +2,45 @@ import React from "react";
 import { FaTimesCircle, FaCheckCircle } from "react-icons/fa";
 
 export default function WhyCtrlZsDiff() {
+  const differences = [
+    {
+      problem:
+        "Users leave within seconds because your site is confusing, cluttered, or doesn’t immediately show value.",
+      solution:
+        "We create intuitive navigation and user flows that guide visitors exactly where they need to go, reducing bounce rates by up to 60%."
+    },
+    {
+      problem:
+        "Visitors browse your site but rarely take action—sign up, purchase, or contact you.",
+      solution:
+        "Strategic placement of CTAs, simplified checkout flows, and persuasive visual hierarchy that turns browsers into customers."
+    },
+    {
+      problem:
+        "Your mobile users struggle with tiny buttons, unreadable text, and broken layouts on their devices.",
+      solution:
+        "Responsive designs that work flawlessly across all devices, ensuring every user has a premium experience regardless of screen size."
+    },
+    {
+      problem:
+        "Complex user journeys force users to click through endless screens to complete simple tasks.",
+      solution:
+        "We eliminate unnecessary steps and optimize task flows, reducing completion time and user frustration dramatically."
+    },
+    {
+      problem:
+        "Your product looks different across platforms, confusing users and diluting your brand identity.",
+      solution:
+        "We create comprehensive design systems ensuring consistent, recognizable experiences across every touchpoint."
+    },
+    {
+      problem:
+        "Your product excludes users with disabilities, limiting your reach and potentially violating regulations.",
+      solution:
+        "WCAG-compliant designs that welcome all users, expanding your market reach while meeting global accessibility standards."
+    }
+  ];
+
   return (
     <section className="w-full py-16 sm:py-20 lg:py-24 bg-[#fafafa] relative overflow-hidden">
       {/* Dotted background */}
@@ -13,96 +52,42 @@ export default function WhyCtrlZsDiff() {
           WHY CTRL ZS?
         </h2>
 
-        {/* Main Card */}
+        {/* Main Comparison Card */}
         <div className="border-8 border-[#3E008E] rounded-xl overflow-hidden shadow-lg">
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            {/* LEFT — Problem */}
-            <div className="bg-[#FFDDDD] p-6 sm:p-8 lg:p-10">
-              <h3 className="text-3xl text-center font-bold text-black mb-5">
-                THE PROBLEM
-              </h3>
-
-              <ul className="space-y-4 sm:space-y-5 text-sm sm:text-[15px] text-black">
-                <li className="flex gap-3 items-start">
-                  <FaTimesCircle className="text-red-500 mt-1 flex-shrink-0" />
-                  <span>
-                    Users leave within seconds because your site is confusing, cluttered, or doesn’t immediately show value.
-                  </span>
-                </li>
-
-                <li className="flex gap-3 items-start">
-                  <FaTimesCircle className="text-red-500 mt-1 flex-shrink-0" />
-                  <span>
-                    Visitors browse your site but rarely take action—sign up, purchase, or contact you.
-                  </span>
-                </li>
-
-                <li className="flex gap-3 items-start">
-                  <FaTimesCircle className="text-red-500 mt-1 flex-shrink-0" />
-                  <span>
-                    Your mobile users struggle with tiny buttons, unreadable text, and broken layouts on their devices.
-                  </span>
-                </li>
-
-                <li className="flex gap-3 items-start">
-                  <FaTimesCircle className="text-red-500 mt-1 flex-shrink-0" />
-                  <span>
-                    Your product looks different across platforms, confusing users and diluting your brand identity.
-                  </span>
-                </li>
-
-                <li className="flex gap-3 items-start">
-                  <FaTimesCircle className="text-red-500 mt-1 flex-shrink-0" />
-                  <span>
-                    Your product excludes users with disabilities, limiting your reach and potentially violating regulations.
-                  </span>
-                </li>
-              </ul>
+          
+          {/* Header Row */}
+          <div className="grid grid-cols-1 md:grid-cols-2 text-center font-bold text-xl">
+            <div className="bg-[#FFDDDD] py-4 text-black">
+              ❌ THE PROBLEM
             </div>
-
-            {/* RIGHT — Solution */}
-            <div className="bg-[#EDDFFF] p-6 sm:p-8 lg:p-10">
-              <h3 className="text-3xl text-center font-bold text-black mb-5">
-                OUR SOLUTION
-              </h3>
-
-              <ul className="space-y-4 sm:space-y-5 text-sm sm:text-[15px] text-black">
-                <li className="flex gap-3 items-start">
-                  <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
-                  <span>
-                    Users leave within seconds because your site is confusing, cluttered, or doesn’t immediately show value.
-                  </span>
-                </li>
-
-                <li className="flex gap-3 items-start">
-                  <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
-                  <span>
-                    Users leave within seconds because your site is confusing, cluttered, or doesn’t immediately show value.
-                  </span>
-                </li>
-
-                <li className="flex gap-3 items-start">
-                  <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
-                  <span>
-                    Users leave within seconds because your site is confusing, cluttered, or doesn’t immediately show value.
-                  </span>
-                </li>
-
-                <li className="flex gap-3 items-start">
-                  <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
-                  <span>
-                    Users leave within seconds because your site is confusing, cluttered, or doesn’t immediately show value.
-                  </span>
-                </li>
-
-                <li className="flex gap-3 items-start">
-                  <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
-                  <span>
-                   Users leave within seconds because your site is confusing, cluttered, or doesn’t immediately show value.
-                  </span>
-                </li>
-              </ul>
+            <div className="bg-[#EDDFFF] py-4 text-black">
+              ✅ OUR SOLUTION
             </div>
+          </div>
+
+          {/* Difference Rows */}
+          <div className="">
+            {differences.map((item, index) => (
+              <div key={index} className="grid grid-cols-1 md:grid-cols-2">
+                
+                {/* Problem */}
+                <div className="bg-[#FFDDDD] p-1 sm:p-8 flex gap-3">
+                  <FaTimesCircle className="text-red-500 mt-1 flex-shrink-0" />
+                  <p className="text-sm sm:text-[15px] text-black leading-relaxed">
+                    {item.problem}
+                  </p>
+                </div>
+
+                {/* Solution */}
+                <div className="bg-[#EDDFFF] p-6 sm:p-8 flex gap-3">
+                  <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
+                  <p className="text-sm sm:text-[15px] text-black leading-relaxed">
+                    {item.solution}
+                  </p>
+                </div>
+
+              </div>
+            ))}
           </div>
         </div>
       </div>

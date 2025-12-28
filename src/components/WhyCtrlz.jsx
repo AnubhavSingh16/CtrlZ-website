@@ -14,26 +14,42 @@ export default function WhyCtrlZ() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
         {/* BIG CARD (2x height) */}
-        <OverlayCard title="Result Driven Approach" img={sample1} large />
+        <OverlayCard
+         title="Results-Focused Thinking"  
+        description="We don’t build websites just to look good. We design with intent - aligning structure, visuals, and messaging to support real business goals like clarity, trust, and conversions."
+         img={sample1} 
+         large 
+         />
 
         {/* SMALL CARDS */}
-        <OverlayCard title="Industry Expertise" img={sample1} />
-        <OverlayCard title="Future Proof Technology" img={sample1} />
-        <OverlayCard title="Transparent Pricing" img={sample1} />
-        <OverlayCard title="24/7 Premium Support" img={sample1} />
+        <OverlayCard title="Hands-On Experience Across Projects"
+        description="Our team has worked with startups, founders, and growing businesses across different industries, giving us practical insight into what actually works - and what doesn’t." 
+        img={sample1} />
+
+        <OverlayCard title="Fast, Thoughtful Delivery" 
+        description="We move quickly, but never carelessly. Our process is designed to ship efficiently while leaving room for feedback, iteration, and refinement."
+        img={sample1} />
+
+        <OverlayCard title="Modern, Scalable Tech" 
+        description= "Every project is built using clean, modern frameworks that are easy to scale and maintain. No lock-ins, no shortcuts - just code you can grow with."
+        img={sample1} />
+
+        <OverlayCard title="Clear & Transparent Pricing"
+        description= "You’ll always know what you’re paying for. We define scope upfront, communicate clearly, and avoid surprises - so decisions stay simple and stress-free." 
+        img={sample1} />
       </div>
     </section>
   );
 }
 
 /* OVERLAY CARD */
-function OverlayCard({ title, img, large }) {
+function OverlayCard({ title, img, large, description }) {
   return (
     <div
       className={`
         relative group overflow-hidden rounded-xl
         border border-white/10 bg-white/5 backdrop-blur-lg shadow-xl
-        ${large ? "lg:row-span-2 h-[440px]" : "h-[220px]"}
+        ${large ? "lg:row-span-2 h-[460px]" : "h-[220px]"}
       `}
     >
       {/* IMAGE */}
@@ -57,9 +73,8 @@ function OverlayCard({ title, img, large }) {
           {title}
         </h3>
 
-        <p className="text-sm text-white/80 leading-relaxed">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+         <p className="text-sm text-white/80 leading-relaxed">
+          {description}
         </p>
       </div>
     </div>
