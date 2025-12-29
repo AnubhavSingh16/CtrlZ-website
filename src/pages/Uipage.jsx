@@ -46,6 +46,9 @@ import mask2 from "../assets/mask2.png";
 import mask3 from "../assets/mask3.png";
 import mask4 from "../assets/mask4.png";
 
+import { processData } from "../data/OurProcessData";
+
+
 const webSlides = [
   {
     image: sample1,
@@ -231,9 +234,8 @@ export default function Uipage() {
         </div>
       </div>
       
-      <FloatingText lines={1} />
-
-      <div className="w-full flex flex-col items-center justify-center text-center px-4 pt-16">
+      <div className="w-full flex flex-col items-center justify-center text-center px-4">
+         <FloatingText lines={1} />
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 tracking-wide px-14">
           Proven Performance, Measurable Results
         </h2>
@@ -256,10 +258,7 @@ export default function Uipage() {
               <p className="text-lg lg:text-2xl font-semibold mt-3 text-white">
                 Project Delivered
               </p>
-              <p className="text-sm mt-3 text-white max-w-xs">
-                From brand websites to full-scale digital ecosystems built in
-                2025 alone
-              </p>
+             
             </div>
 
             {/* Card 2 */}
@@ -271,10 +270,7 @@ export default function Uipage() {
               <p className="text-lg lg:text-2xl font-semibold mt-3 text-white">
                 Client Satisfaction
               </p>
-              <p className="text-sm mt-3 text-white max-w-xs">
-                Clients appreciate our transparent process, timely delivery, and
-                quality output
-              </p>
+             
             </div>
 
             {/* Card 3 */}
@@ -286,10 +282,7 @@ export default function Uipage() {
               <p className="text-lg lg:text-2xl font-semibold mt-3 text-white">
                 Happy Clients
               </p>
-              <p className="text-sm mt-3 text-white max-w-xs">
-                Every CtrlZ’s website is optimized for performance and SEO
-                readiness
-              </p>
+             
             </div>
 
             {/* Card 4 */}
@@ -301,9 +294,7 @@ export default function Uipage() {
               <p className="text-lg lg:text-2xl font-semibold mt-3 text-white">
                 On-Time Delivery
               </p>
-              <p className="text-sm mt-3 text-white max-w-xs">
-                We stay connected, from strategy to launch and beyond
-              </p>
+             
             </div>
           </div>
         </div>
@@ -313,7 +304,8 @@ export default function Uipage() {
 
       <WhatWeOffer slides={webSlides} slidesPerView={3} delay={2200} />
 
-      <OurProcess />
+      <OurProcess processData={processData.UiDevelopment} />
+
 
       <WhyCtrlZsDiff />
 

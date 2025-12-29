@@ -43,10 +43,12 @@ export default function WhyCtrlZsDiff() {
 
   return (
     <section className="w-full py-16 sm:py-20 lg:py-24 bg-[#fafafa] relative overflow-hidden">
+      
       {/* Dotted background */}
       <div className="absolute inset-0 bg-[radial-gradient(#e5e5e5_1px,transparent_1px)] [background-size:18px_18px]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* Heading */}
         <h2 className="text-center text-2xl sm:text-3xl lg:text-6xl font-extrabold text-[#5b1db3] mb-10 sm:mb-14">
           WHY CTRL ZS?
@@ -56,7 +58,7 @@ export default function WhyCtrlZsDiff() {
         <div className="border-8 border-[#3E008E] rounded-xl overflow-hidden shadow-lg">
           
           {/* Header Row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 text-center font-bold text-xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 text-center font-bold text-2xl">
             <div className="bg-[#FFDDDD] py-4 text-black">
               ❌ THE PROBLEM
             </div>
@@ -66,12 +68,15 @@ export default function WhyCtrlZsDiff() {
           </div>
 
           {/* Difference Rows */}
-          <div className="">
+          <div>
             {differences.map((item, index) => (
-              <div key={index} className="grid grid-cols-1 md:grid-cols-2">
+              <div
+                key={index}
+                className="grid grid-cols-1 md:grid-cols-2 border-t border-black/10"
+              >
                 
                 {/* Problem */}
-                <div className="bg-[#FFDDDD] p-1 sm:p-8 flex gap-3">
+                <div className="bg-[#FFDDDD] px-4 py-3 sm:p-8 flex gap-3">
                   <FaTimesCircle className="text-red-500 mt-1 flex-shrink-0" />
                   <p className="text-sm sm:text-[15px] text-black leading-relaxed">
                     {item.problem}
@@ -79,7 +84,7 @@ export default function WhyCtrlZsDiff() {
                 </div>
 
                 {/* Solution */}
-                <div className="bg-[#EDDFFF] p-6 sm:p-8 flex gap-3">
+                <div className="bg-[#EDDFFF] px-4 py-3 sm:p-8 flex gap-3">
                   <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
                   <p className="text-sm sm:text-[15px] text-black leading-relaxed">
                     {item.solution}
@@ -89,6 +94,7 @@ export default function WhyCtrlZsDiff() {
               </div>
             ))}
           </div>
+
         </div>
       </div>
     </section>

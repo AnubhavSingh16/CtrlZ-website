@@ -34,6 +34,9 @@ import m2 from "../assets/m2.png";
 import m3 from "../assets/m3.png";
 import m4 from "../assets/m4.png";
 
+import { processData } from "../data/OurProcessData";
+
+
 export default function WebDevelopmentPage() {
   const cards = [sample1, sample2, sample3, sample1, sample2, sample3];
 
@@ -316,7 +319,7 @@ export default function WebDevelopmentPage() {
 
       {/* <WhatWeOfferComman/> */}
 
-      <OurProcess />
+      <OurProcess processData={processData.webDevelopment} />
 
       <WhyCtrlZ />
 

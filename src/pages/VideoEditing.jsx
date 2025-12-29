@@ -39,42 +39,44 @@ import mask2 from "../assets/mask2.png";
 import mask3 from "../assets/mask3.png";
 import mask4 from "../assets/mask4.png";
 
+import { processData } from "../data/OurProcessData";
+
 const webSlides = [
   {
     image: sample1,
-    title: "Custom Coded Website Design & Development",
+    title: "Commercial & Corporate Videos",
     description:
-      "Build a website that’s as unique as your brand. We create custom-coded, scalable websites using Webflow, React, Next.js, and WordPress — engineered for performance, flexibility, and growth. Every line of code is optimized for SEO, speed, and long-term stability.",
+    "Brand films, testimonials, product showcases, corporate explainers.",
   },
   {
     image: sample2,
-    title: "Custom Coded Website Design & Development",
+    title: "Social Media Short-Form",
     description:
-      "Build a website that’s as unique as your brand. We create custom-coded, scalable websites using Webflow, React, Next.js, and WordPress — engineered for performance, flexibility, and growth. Every line of code is optimized for SEO, speed, and long-term stability.",
+    "Shorts/Reels/TikTok optimized for hooks, captions, and fast-paced edits.",
   },
   {
     image: sample3,
-    title: "Custom Coded Website Design & Development",
+    title: "Motion Graphics & Animation",
     description:
-      "Build a website that’s as unique as your brand. We create custom-coded, scalable websites using Webflow, React, Next.js, and WordPress — engineered for performance, flexibility, and growth. Every line of code is optimized for SEO, speed, and long-term stability.",
+    "Kinetic typography, 2D/3D animation, UI animations.",
   },
   {
     image: sample1,
-    title: "Custom Coded Website Design & Development",
+    title: "YouTube Production",
     description:
-      "Build a website that’s as unique as your brand. We create custom-coded, scalable websites using Webflow, React, Next.js, and WordPress — engineered for performance, flexibility, and growth. Every line of code is optimized for SEO, speed, and long-term stability.",
+    "Intros, outros, retention editing, chaptering, metadata-ready exports.",
   },
   {
     image: sample1,
-    title: "Custom Coded Website Design & Development",
+    title: "Color Grading & VFX",
     description:
-      "Build a website that’s as unique as your brand. We create custom-coded, scalable websites using Webflow, React, Next.js, and WordPress — engineered for performance, flexibility, and growth. Every line of code is optimized for SEO, speed, and long-term stability.",
+    "Cinematic color grading, green screen, sound design.",
   },
   {
     image: sample1,
-    title: "Custom Coded Website Design & Development",
+    title: "Podcast & Interview Editing",
     description:
-      "Build a website that’s as unique as your brand. We create custom-coded, scalable websites using Webflow, React, Next.js, and WordPress — engineered for performance, flexibility, and growth. Every line of code is optimized for SEO, speed, and long-term stability.",
+    "Multi-cam editing, subtitles, noise removal, and branding overlays.",
   },
 ];
 
@@ -205,10 +207,10 @@ export default function VideoEditing() {
               <p className="text-lg lg:text-2xl font-semibold mt-3 text-white">
                 Project Delivered
               </p>
-              <p className="text-sm mt-3 text-white max-w-xs">
+              {/* <p className="text-sm mt-3 text-white max-w-xs">
                 From brand websites to full-scale digital ecosystems built in
                 2025 alone
-              </p>
+              </p> */}
             </div>
 
             {/* Card 2 */}
@@ -220,10 +222,10 @@ export default function VideoEditing() {
               <p className="text-lg lg:text-2xl font-semibold mt-3 text-white">
                 Client Satisfaction
               </p>
-              <p className="text-sm mt-3 text-white max-w-xs">
+              {/* <p className="text-sm mt-3 text-white max-w-xs">
                 Clients appreciate our transparent process, timely delivery, and
                 quality output
-              </p>
+              </p> */}
             </div>
 
             {/* Card 3 */}
@@ -235,10 +237,10 @@ export default function VideoEditing() {
               <p className="text-lg lg:text-2xl font-semibold mt-3 text-white">
                 Happy Clients
               </p>
-              <p className="text-sm mt-3 text-white max-w-xs">
+              {/* <p className="text-sm mt-3 text-white max-w-xs">
                 Every CtrlZ’s website is optimized for performance and SEO
                 readiness
-              </p>
+              </p> */}
             </div>
 
             {/* Card 4 */}
@@ -250,9 +252,9 @@ export default function VideoEditing() {
               <p className="text-lg lg:text-2xl font-semibold mt-3 text-white">
                 On-Time Delivery
               </p>
-              <p className="text-sm mt-3 text-white max-w-xs">
+              {/* <p className="text-sm mt-3 text-white max-w-xs">
                 We stay connected, from strategy to launch and beyond
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
@@ -262,7 +264,7 @@ export default function VideoEditing() {
 
       <WhatWeOffer slides={webSlides} slidesPerView={3} delay={2200} />
 
-      <OurProcess />
+ <OurProcess processData={processData.videoEditing} />
 
       <WhyCtrlZ />
 
