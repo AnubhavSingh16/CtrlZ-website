@@ -32,6 +32,7 @@ import FaqServices from "../components/FaqServices";
 import OurProcess from "../components/OurProcess";
 import WhyCtrlZ from "../components/WhyCtrlz";
 import WhyCtrlZsDiff from "../components/whyCtrlzDiff";
+import FloatingText from "../components/FloatingText";
 
 import mask1 from "../assets/mask1.png";
 import mask2 from "../assets/mask2.png";
@@ -180,19 +181,19 @@ export default function VideoEditing() {
         </div>
       </div>
 
-      <div className="w-full flex flex-col items-center justify-center text-center px-4 pt-16">
-  <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 tracking-wide px-14">
-    Proven Performance, Measurable Results
-  </h2>
+      <div className="w-full flex flex-col items-center justify-center text-center px-4 ">
+        <FloatingText lines={1} />
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 tracking-wide px-14">
+          Proven Performance, Measurable Results
+        </h2>
 
-  <p className="max-w-2xl text-sm sm:text-base lg:text-2xl text-white ">
-    Key numbers that reflect how we build, deliver, and support our clients.
-  </p>
-</div>
-
+        <p className="max-w-2xl text-sm sm:text-base lg:text-2xl text-white ">
+          Key numbers that reflect how we build, deliver, and support our
+          clients.
+        </p>
+      </div>
 
       <div className="w-full py-12 mt-10">
-
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {/* Card 1 */}
@@ -256,7 +257,6 @@ export default function VideoEditing() {
           </div>
         </div>
       </div>
-
 
       <TrustedBy />
 

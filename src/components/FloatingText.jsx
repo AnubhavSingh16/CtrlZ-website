@@ -52,7 +52,7 @@ function FloatingText({
 /* ---------- STYLES ---------- */
 
 const defaultText =
-  "Video Editing  •  UI/UX Design  •  SEO  •  Web Development  •  Paid Ads  •  Graphic Design  •";
+  "Video Editing  •  UI/UX Design  •  Ai Marketing  •  Web Development   •  Graphic Design  •";
 
 const containerStyle = {
   width: "100%",
@@ -60,8 +60,8 @@ const containerStyle = {
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  margin: "4rem 0",
-  padding: "3rem 0",
+  margin: "1rem 0",
+  padding: "2rem 0",
 };
 
 const rowStyle = { width: "100%", overflow: "hidden", whiteSpace: "nowrap", textAlign: "center", };

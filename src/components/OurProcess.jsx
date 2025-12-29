@@ -19,7 +19,7 @@ import "../styles/pages/commanComponents.css";
 
 function ProcessSteps() {
   const steps = [
-    "DISCOVER (1 WEEK)",
+    "DISCOVER",
     "RESEARCH & STRATEGY",
     "WIREFRAMES & FLOWS",
     "DESIGN & PROTOTYPING",
@@ -114,7 +114,7 @@ export default function Process() {
           <Card
             img={prog1}
             title="DISCOVER & STRATEGY"
-            text=" We understand your goals, target audience, and competitive landscape to craft a conversion-driven web strategy."
+            text="We understand your goals, target audience, and competitive landscape to craft a conversion-driven web strategy."
           />
 
           <Card
