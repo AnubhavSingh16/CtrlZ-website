@@ -47,6 +47,7 @@ import mask3 from "../assets/mask3.png";
 import mask4 from "../assets/mask4.png";
 
 import { processData } from "../data/OurProcessData";
+import { differencesData } from "../data/DifferencesData";
 
 
 const webSlides = [
@@ -307,7 +308,7 @@ export default function Uipage() {
       <OurProcess processData={processData.UiDevelopment} />
 
 
-      <WhyCtrlZsDiff />
+      <WhyCtrlZsDiff data ={differencesData.ui}/>
 
       {/* <WhyCtrlZ /> */}
 

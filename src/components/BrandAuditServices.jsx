@@ -5,7 +5,6 @@ export default function GetStarted() {
   return (
     <section className="w-full bg-gradient-to-br from-[black] via-[#0d021b] to-black py-20 px-6">
       <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-2xl grid grid-cols-1 lg:grid-cols-2 overflow-hidden">
-
         {/* LEFT CONTENT */}
         <div className="p-8 md:p-12">
           <h2 className="text-[#6E00FF] text-5xl md:text-4xl font-extrabold">
@@ -17,10 +16,10 @@ export default function GetStarted() {
           </h3>
 
           <p className="mt-4 text-[#424242] text-base">
-            Before you go live, make sure your website is built to convert.
-            Get CtrlZs’ exclusive 40-point Web Development Checklist. Covering
-            everything from performance and SEO to design and security.
-            Trusted by founders and creators to launch websites that actually work.
+            Before you go live, make sure your website is built to convert. Get
+            CtrlZs’ exclusive 40-point Web Development Checklist. Covering
+            everything from performance and SEO to design and security. Trusted
+            by founders and creators to launch websites that actually work.
           </p>
 
           {/* LIST */}
@@ -79,8 +78,8 @@ export default function GetStarted() {
                 placeholder="www.yourwebsite.com or Describe your business idea"
               />
 
-           <select
-  className="
+              <select
+                className="
     w-full 
     rounded-md 
     px-4 
@@ -94,12 +93,12 @@ export default function GetStarted() {
     focus:ring-2 
     focus:ring-purple-500
   "
->
-  <option>Select your budget range</option>
-  <option>₹25,000 – ₹50,000</option>
-  <option>₹50,000 – ₹1,00,000</option>
-  <option>₹1,00,000+</option>
-</select>
+              >
+                <option>Select your budget range</option>
+                <option>₹25,000 – ₹50,000</option>
+                <option>₹50,000 – ₹1,00,000</option>
+                <option>₹1,00,000+</option>
+              </select>
               <button
                 type="button"
                 className="w-full mt-4 bg-[#A66CFF] hover:bg-[#8f56e8] text-white font-semibold py-3 rounded-lg transition-none"
@@ -119,9 +118,7 @@ export default function GetStarted() {
 function Input({ label, placeholder, type = "text" }) {
   return (
     <div>
-      <label className="block text-sm font-bold text-black mb-1">
-        {label}
-      </label>
+      <label className="block text-sm font-bold text-black mb-1">{label}</label>
 
       <input
         type={type}

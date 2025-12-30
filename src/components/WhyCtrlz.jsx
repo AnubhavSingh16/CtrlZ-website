@@ -1,10 +1,10 @@
 import React from "react";
-import sample1 from "../assets/webdev/web.png";
 
-export default function WhyCtrlZ() {
+export default function WhyCtrlZ({ data }) {
+  if (!data || !data.cards) return null;
+
   return (
     <section className="relative w-full md:py-18 py-8 px-4">
-
       {/* Heading */}
       <h2 className="text-center text-white text-3xl md:text-6xl font-bold tracking-wide mb-8 md:mb-14">
         WHY CTRL ZS?
@@ -12,37 +12,20 @@ export default function WhyCtrlZ() {
 
       {/* GRID */}
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-        {/* BIG CARD (2x height) */}
-        <OverlayCard
-         title="Results-Focused Thinking"  
-        description="We don’t build websites just to look good. We design with intent - aligning structure, visuals, and messaging to support real business goals like clarity, trust, and conversions."
-         img={sample1} 
-         large 
-         />
-
-        {/* SMALL CARDS */}
-        <OverlayCard title="Hands-On Experience Across Projects"
-        description="Our team has worked with startups, founders, and growing businesses across different industries, giving us practical insight into what actually works - and what doesn’t." 
-        img={sample1} />
-
-        <OverlayCard title="Fast, Thoughtful Delivery" 
-        description="We move quickly, but never carelessly. Our process is designed to ship efficiently while leaving room for feedback, iteration, and refinement."
-        img={sample1} />
-
-        <OverlayCard title="Modern, Scalable Tech" 
-        description= "Every project is built using clean, modern frameworks that are easy to scale and maintain. No lock-ins, no shortcuts - just code you can grow with."
-        img={sample1} />
-
-        <OverlayCard title="Clear & Transparent Pricing"
-        description= "You’ll always know what you’re paying for. We define scope upfront, communicate clearly, and avoid surprises - so decisions stay simple and stress-free." 
-        img={sample1} />
+        {data.cards.map((card, index) => (
+          <OverlayCard
+            key={index}
+            title={card.title}
+            description={card.description}
+            img={card.img}
+            large={card.large}
+          />
+        ))}
       </div>
     </section>
   );
 }
 
-/* OVERLAY CARD */
 function OverlayCard({ title, img, large, description }) {
   return (
     <div
@@ -73,7 +56,7 @@ function OverlayCard({ title, img, large, description }) {
           {title}
         </h3>
 
-         <p className="text-sm text-white/80 leading-relaxed">
+        <p className="text-sm text-white/80 leading-relaxed">
           {description}
         </p>
       </div>

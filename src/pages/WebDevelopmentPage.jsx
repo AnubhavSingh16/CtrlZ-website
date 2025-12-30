@@ -35,6 +35,7 @@ import m3 from "../assets/m3.png";
 import m4 from "../assets/m4.png";
 
 import { processData } from "../data/OurProcessData";
+import { whyCtrlzData } from "../data/WhyCtrlZsData";
 
 
 export default function WebDevelopmentPage() {
@@ -207,15 +208,15 @@ export default function WebDevelopmentPage() {
               Happy Clients
             </p>
 
-            <p className="mt-4 text-sm sm:text-base text-purple-900 max-w-xs">
+            {/* <p className="mt-4 text-sm sm:text-base text-purple-900 max-w-xs">
               From brand websites to full-scale digital ecosystems built in 2025
               alone
-            </p>
+            </p> */}
 
             {/* Divider */}
             <span
               className="hidden lg:block absolute top-1/2 -right-8
-        h-38 w-[2px] bg-[#310071]/60 -translate-y-1/2"
+        h-32 w-[2px] bg-[#310071]/60 -translate-y-1/2"
             ></span>
 
             <span
@@ -240,15 +241,15 @@ export default function WebDevelopmentPage() {
               Client Satisfaction
             </p>
 
-            <p className="mt-4 text-sm sm:text-base text-purple-900 max-w-xs">
+            {/* <p className="mt-4 text-sm sm:text-base text-purple-900 max-w-xs">
               Clients appreciate our transparent process, timely delivery, and
               quality output
-            </p>
+            </p> */}
 
             {/* Divider */}
             <span
               className="hidden lg:block absolute top-1/2 -right-8
-        h-38 w-[2px] bg-[#310071]/60 -translate-y-1/2"
+        h-32 w-[2px] bg-[#310071]/60 -translate-y-1/2"
             ></span>
 
             <span
@@ -272,16 +273,16 @@ export default function WebDevelopmentPage() {
             <p className="mt-2 text-lg sm:text-xl font-semibold text-purple-900">
               Average Load Time
             </p>
-
+{/* 
             <p className="mt-4 text-sm sm:text-base text-purple-900 max-w-xs">
               Every CtrlZ’s website is optimized for performance and SEO
               readiness
-            </p>
+            </p> */}
 
             {/* Divider */}
             <span
               className="hidden lg:block absolute top-1/2 -right-8
-        h-38 w-[2px] bg-[#310071]/60 -translate-y-1/2"
+        h-32 w-[2px] bg-[#310071]/60 -translate-y-1/2"
             ></span>
 
             <span
@@ -306,9 +307,9 @@ export default function WebDevelopmentPage() {
               Support Available
             </p>
 
-            <p className="mt-4 text-sm sm:text-base text-purple-900 max-w-xs">
+            {/* <p className="mt-4 text-sm sm:text-base text-purple-900 max-w-xs">
               We stay connected, from strategy to launch and beyond
-            </p>
+            </p> */}
           </div>
         </div>
       </div>
@@ -321,7 +322,7 @@ export default function WebDevelopmentPage() {
 
       <OurProcess processData={processData.webDevelopment} />
 
-      <WhyCtrlZ />
+      <WhyCtrlZ data = {whyCtrlzData.web}/>
 
       <Pricing
         plans={[

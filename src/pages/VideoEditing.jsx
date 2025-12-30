@@ -40,43 +40,43 @@ import mask3 from "../assets/mask3.png";
 import mask4 from "../assets/mask4.png";
 
 import { processData } from "../data/OurProcessData";
+import { whyCtrlzData } from "../data/WhyCtrlZsData";
+import { differencesData } from "../data/DifferencesData";
 
 const webSlides = [
   {
     image: sample1,
     title: "Commercial & Corporate Videos",
     description:
-    "Brand films, testimonials, product showcases, corporate explainers.",
+      "Brand films, testimonials, product showcases, corporate explainers.",
   },
   {
     image: sample2,
     title: "Social Media Short-Form",
     description:
-    "Shorts/Reels/TikTok optimized for hooks, captions, and fast-paced edits.",
+      "Shorts/Reels/TikTok optimized for hooks, captions, and fast-paced edits.",
   },
   {
     image: sample3,
     title: "Motion Graphics & Animation",
-    description:
-    "Kinetic typography, 2D/3D animation, UI animations.",
+    description: "Kinetic typography, 2D/3D animation, UI animations.",
   },
   {
     image: sample1,
     title: "YouTube Production",
     description:
-    "Intros, outros, retention editing, chaptering, metadata-ready exports.",
+      "Intros, outros, retention editing, chaptering, metadata-ready exports.",
   },
   {
     image: sample1,
     title: "Color Grading & VFX",
-    description:
-    "Cinematic color grading, green screen, sound design.",
+    description: "Cinematic color grading, green screen, sound design.",
   },
   {
     image: sample1,
     title: "Podcast & Interview Editing",
     description:
-    "Multi-cam editing, subtitles, noise removal, and branding overlays.",
+      "Multi-cam editing, subtitles, noise removal, and branding overlays.",
   },
 ];
 
@@ -264,9 +264,11 @@ export default function VideoEditing() {
 
       <WhatWeOffer slides={webSlides} slidesPerView={3} delay={2200} />
 
- <OurProcess processData={processData.videoEditing} />
+      <OurProcess processData={processData.videoEditing} />
 
-      <WhyCtrlZ />
+      <WhyCtrlZ data={whyCtrlzData.video}/>
+
+      <WhyCtrlZsDiff data={differencesData.video}/>
 
       <Pricing
         plans={[

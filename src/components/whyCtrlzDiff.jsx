@@ -1,100 +1,73 @@
 import React from "react";
 import { FaTimesCircle, FaCheckCircle } from "react-icons/fa";
+import uibackg from "../assets/uibackg.png";
 
-export default function WhyCtrlZsDiff() {
-  const differences = [
-    {
-      problem:
-        "Users leave within seconds because your site is confusing, cluttered, or doesn’t immediately show value.",
-      solution:
-        "We create intuitive navigation and user flows that guide visitors exactly where they need to go, reducing bounce rates by up to 60%."
-    },
-    {
-      problem:
-        "Visitors browse your site but rarely take action—sign up, purchase, or contact you.",
-      solution:
-        "Strategic placement of CTAs, simplified checkout flows, and persuasive visual hierarchy that turns browsers into customers."
-    },
-    {
-      problem:
-        "Your mobile users struggle with tiny buttons, unreadable text, and broken layouts on their devices.",
-      solution:
-        "Responsive designs that work flawlessly across all devices, ensuring every user has a premium experience regardless of screen size."
-    },
-    {
-      problem:
-        "Complex user journeys force users to click through endless screens to complete simple tasks.",
-      solution:
-        "We eliminate unnecessary steps and optimize task flows, reducing completion time and user frustration dramatically."
-    },
-    {
-      problem:
-        "Your product looks different across platforms, confusing users and diluting your brand identity.",
-      solution:
-        "We create comprehensive design systems ensuring consistent, recognizable experiences across every touchpoint."
-    },
-    {
-      problem:
-        "Your product excludes users with disabilities, limiting your reach and potentially violating regulations.",
-      solution:
-        "WCAG-compliant designs that welcome all users, expanding your market reach while meeting global accessibility standards."
-    }
-  ];
+export default function WhyCtrlZsDiff({ data }) {
+  if (!data || !data.differences) return null;
 
   return (
-    <section className="w-full py-16 sm:py-20 lg:py-24 bg-[#fafafa] relative overflow-hidden">
-      
-      {/* Dotted background */}
-      <div className="absolute inset-0 bg-[radial-gradient(#e5e5e5_1px,transparent_1px)] [background-size:18px_18px]" />
+    <section className="relative overflow-hidden py-16 sm:pb-20 lg:pb-24">
+      {/* Background Image */}
+      <img
+        src={uibackg}
+        alt="background"
+        className="absolute inset-0 w-full h-full object-cover -z-20"
+      />
 
+      {/* White Overlay */}
+      <div className="absolute inset-0 bg-white/90 -z-10" />
+
+      {/* Dotted Texture (optional – keeps your previous feel) */}
+      <div className="absolute inset-0 bg-[radial-gradient(#e5e5e5_1px,transparent_1px)] [background-size:18px_18px] opacity-60 -z-0" />
+
+      {/* Foreground Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         {/* Heading */}
-        <h2 className="text-center text-2xl sm:text-3xl lg:text-6xl font-extrabold text-[#5b1db3] mb-10 sm:mb-14">
-          WHY CTRL ZS?
+        <h2 className="text-center text-2xl sm:text-3xl lg:text-5xl font-extrabold text-[#5b1db3] mb-4">
+          {data.heading || "WHY CTRL ZS?"}
         </h2>
 
+        <h3 className="text-center text-lg sm:text-xl lg:text-2xl font-semibold text-[#5b1db3] mb-10 sm:mb-14 max-w-3xl mx-auto">
+          {data.subHeading || "More about us, what difference we create"}
+        </h3>
+
         {/* Main Comparison Card */}
-        <div className="border-8 border-[#3E008E] rounded-xl overflow-hidden shadow-lg">
-          
+        <div className="border-8 border-[#3E008E] rounded-xl overflow-hidden shadow-xl backdrop-blur-sm bg-white/70">
           {/* Header Row */}
-          <div className="grid grid-cols-1 md:grid-cols-2 text-center font-bold text-2xl">
-            <div className="bg-[#FFDDDD] py-4 text-black">
-              ❌ THE PROBLEM
+          <div className="grid grid-cols-1 md:grid-cols-2 text-center font-bold">
+            <div className="bg-[#FFDDDD] py-3 sm:py-4 text-black text-lg sm:text-xl md:text-2xl lg:text-3xl">
+              THE PROBLEM
             </div>
-            <div className="bg-[#EDDFFF] py-4 text-black">
-              ✅ OUR SOLUTION
+            <div className="bg-[#EDDFFF] py-3 sm:py-4 text-black text-lg sm:text-xl md:text-2xl lg:text-3xl">
+              OUR SOLUTION
             </div>
           </div>
 
-          {/* Difference Rows */}
+          {/* Rows */}
           <div>
-            {differences.map((item, index) => (
+            {data.differences.map((item, index) => (
               <div
                 key={index}
                 className="grid grid-cols-1 md:grid-cols-2 border-t border-black/10"
               >
-                
                 {/* Problem */}
-                <div className="bg-[#FFDDDD] px-4 py-3 sm:p-8 flex gap-3">
+                <div className="bg-[#FFDDDD] px-4 py-2 sm:py-4 sm:px-6 flex gap-3">
                   <FaTimesCircle className="text-red-500 mt-1 flex-shrink-0" />
-                  <p className="text-sm sm:text-[15px] text-black leading-relaxed">
+                  <p className="text-sm sm:text-[15px] text-black leading-snug">
                     {item.problem}
                   </p>
                 </div>
 
                 {/* Solution */}
-                <div className="bg-[#EDDFFF] px-4 py-3 sm:p-8 flex gap-3">
+                <div className="bg-[#EDDFFF] px-4 py-2 sm:py-4 sm:px-6 flex gap-3">
                   <FaCheckCircle className="text-green-500 mt-1 flex-shrink-0" />
-                  <p className="text-sm sm:text-[15px] text-black leading-relaxed">
+                  <p className="text-sm sm:text-[15px] text-black leading-snug">
                     {item.solution}
                   </p>
                 </div>
-
               </div>
             ))}
           </div>
-
         </div>
       </div>
     </section>
