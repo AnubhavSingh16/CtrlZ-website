@@ -35,7 +35,6 @@ function App() {
       {/* FOOTER */}
       <Footer />
 
-      {/* CONTACT MODAL (THIS WAS MISSING) */}
       <ContactModal
         open={openContact}
         onClose={() => setOpenContact(false)}

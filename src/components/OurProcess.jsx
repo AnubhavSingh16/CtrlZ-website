@@ -17,7 +17,6 @@ import prog6 from "../assets/prog6.png";
 
 import "../styles/pages/commanComponents.css";
 
-
 function ProcessSteps({ steps }) {
   return (
     <div className="w-full mt-12 mb-20 px-4">
@@ -33,21 +32,25 @@ function ProcessSteps({ steps }) {
               min-w-[140px] sm:min-w-[160px]
               max-w-[180px] sm:max-w-[220px]
               text-center leading-tight
-              ${index % 2 === 0 ? "bg-[#a970ff] text-white" : "bg-white text-[#7b3fe4]"}
+              ${
+                index % 2 === 0
+                  ? "bg-[#a970ff] text-white"
+                  : "bg-white text-[#7b3fe4]"
+              }
               clip-arrow
             `}
           >
-         <span
-  className={`
+            <span
+              className={`
     mr-1 ml-4 w-6 aspect-square p-1
     rounded-full
     flex items-center justify-center
     text-xs font-bold leading-none
     ${index % 2 === 0 ? "bg-white text-[#7b3fe4]" : "bg-[#a970ff] text-white"}
   `}
->
-  {index + 1}
-</span>
+            >
+              {index + 1}
+            </span>
 
             {/* SAME TITLE */}
             <span>{step.title}</span>
@@ -58,10 +61,9 @@ function ProcessSteps({ steps }) {
   );
 }
 
-
-export default function Process({processData}) {
+export default function Process({ processData }) {
   const { steps } = processData;
-  console.log('stepss', steps);
+  console.log("stepss", steps);
 
   return (
     <>

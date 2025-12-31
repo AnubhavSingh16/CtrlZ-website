@@ -1,34 +1,30 @@
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
 
-export default function Pricing({ plans = []}) {
+export default function Pricing({ data }) {
+  if (!data) return null;
+
+  const { title, subheading, plans } = data;
+
   return (
     <section className="w-full bg-black py-24 px-6 relative overflow-hidden">
-      
       {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#3a1f5c] via-black to-black opacity-90" />
 
       <div className="relative z-10 max-w-7xl mx-auto text-center">
         {/* Heading */}
         <h2 className="text-4xl md:text-5xl font-extrabold text-white">
-          READY TO START?
+          {title}
         </h2>
 
         <p className="mt-4 text-white max-w-2xl mx-auto text-base md:text-lg">
-          Choose the package that fits your needs. All packages include clean
-          code, responsive design, and our commitment to excellence
+          {subheading}
         </p>
 
         {/* Cards */}
-        <div className="mt-25 grid grid-cols-1 md:grid-cols-3 gap-2 items-end">
+        <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-6 items-end">
           {plans.map((plan, index) => (
-            <PricingCard
-              key={index}
-              title={plan.title}
-              price={plan.price}
-              features={plan.features}
-              popular={plan.popular}
-            />
+            <PricingCard key={index} {...plan} />
           ))}
         </div>
       </div>
@@ -36,18 +32,20 @@ export default function Pricing({ plans = []}) {
   );
 }
 
-
 function PricingCard({ title, price, features, popular }) {
   return (
     <div
-      className={`m-4 relative rounded-2xl border-2 border-[#CCA6FF] overflow-visible bg-gradient-to-b from-[#6a1bdc] to-[#1a1a1a]
+      className={`relative rounded-2xl border-2 border-[#CCA6FF] overflow-visible
+      bg-gradient-to-b from-[#6a1bdc] to-[#1a1a1a]
       ${popular ? "scale-105" : ""}`}
     >
       {/* Popular badge */}
       {popular && (
-        <div className="absolute -top-5 left-1/2 -translate-x-1/2 
+        <div
+          className="absolute -top-5 left-1/2 -translate-x-1/2 
                         bg-white text-purple-700 text-sm font-semibold 
-                        px-5 py-1.5 rounded-full shadow-md z-20">
+                        px-5 py-1.5 rounded-full shadow-md z-20"
+        >
           Most Popular
         </div>
       )}
@@ -58,9 +56,7 @@ function PricingCard({ title, price, features, popular }) {
           {title}
         </span>
 
-        <h3 className="mt-6 text-4xl font-extrabold text-white">
-          {price}
-        </h3>
+        <h3 className="mt-6 text-4xl font-extrabold text-white">{price}</h3>
       </div>
 
       {/* Features */}
@@ -68,14 +64,25 @@ function PricingCard({ title, price, features, popular }) {
         <ul className="space-y-4 text-gray-200 text-sm">
           {features.map((item, i) => (
             <li key={i} className="flex items-start gap-3">
-              <FaCheckCircle className="text-green-400 mt-1" />
+              <FaCheckCircle className="text-green-400 mt-1 shrink-0" />
               <span>{item}</span>
             </li>
           ))}
         </ul>
 
-        {/* Button */}
-        <button className="mt-8 w-full py-3 rounded-lg bg-[#5600C733] border border-white hover:bg-purple-700 text-white shadow-sm font-semibold transition-none shadow-white">
+        <button
+          className="
+    mt-8 w-full py-3 rounded-lg
+    bg-[#5600C733] border border-white
+    text-white font-semibold
+
+    shadow-[0_0_18px_rgba(255,255,255,0.35)]
+    hover:shadow-[0_0_28px_rgba(255,255,255,0.6)]
+    hover:bg-purple-700
+
+    transition-all duration-300
+  "
+        >
           Get Started
         </button>
       </div>

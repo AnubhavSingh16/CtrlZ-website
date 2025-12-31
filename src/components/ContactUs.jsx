@@ -12,6 +12,7 @@ import { useLocation } from "react-router-dom";
 
 export default function ContactModal({ open, onClose }) {
   const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   const [errors, setErrors] = useState({});
 
@@ -196,7 +197,7 @@ export default function ContactModal({ open, onClose }) {
                   { icon: FaInstagram, label: "Instagram" },
                   { icon: FaLinkedin, label: "Linked In" },
                   { icon: FaFacebook, label: "Facebook" },
-                  { icon: FaFacebook, label: "Twitter" },
+                  
                 ].map(({ icon: Icon, label }, i) => (
                   <button
                     key={i}
@@ -240,82 +241,142 @@ export default function ContactModal({ open, onClose }) {
               </div>
 
               <form className="space-y-4" onSubmit={handleSubmit}>
-                {[
-                  {
-                    label: "Name",
-                    name: "name",
-                    placeholder: "Your Full Name",
-                  },
-                  {
-                    label: "Email",
-                    name: "email",
-                    placeholder: "yourname@example.com",
-                  },
-                  {
-                    label: "Contact Number",
-                    name: "phone",
-                    placeholder: "+91 Mobile Number",
-                  },
-                  {
-                    label: "Services Interested In",
-                    name: "service",
-                    placeholder: "Services",
-                  },
-                ].map((field, i) => (
-                  <div key={i}>
+                {/* Name */}
+                <div>
+                  <label className="text-lg text-white">
+                    Name <span className="text-red-400 ml-1">*</span>
+                  </label>
+                  <input
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Your Full Name"
+                    className={`
+        w-full mt-1 px-4 py-2.5 rounded-lg
+        bg-white/10 outline-none placeholder:text-white/50
+        ${
+          errors.name
+            ? "border-2 border-red-500 focus:ring-red-400"
+            : "border border-white focus:ring-[#AB6BFF]"
+        }
+      `}
+                  />
+                  {errors.name && (
+                    <p className="text-red-400 text-sm mt-1">{errors.name}</p>
+                  )}
+                </div>
+
+                {/* Email */}
+                <div>
+                  <label className="text-lg text-white">
+                    Email <span className="text-red-400 ml-1">*</span>
+                  </label>
+                  <input
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="yourname@example.com"
+                    className={`
+        w-full mt-1 px-4 py-2.5 rounded-lg
+        bg-white/10 outline-none placeholder:text-white/50
+        ${
+          errors.email
+            ? "border-2 border-red-500 focus:ring-red-400"
+            : "border border-white focus:ring-[#AB6BFF]"
+        }
+      `}
+                  />
+                  {errors.email && (
+                    <p className="text-red-400 text-sm mt-1">{errors.email}</p>
+                  )}
+                </div>
+
+                {/* Contact Number */}
+                <div>
+                  <label className="text-lg text-white">
+                    Contact Number <span className="text-red-400 ml-1">*</span>
+                  </label>
+                  <input
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="+91 Mobile Number"
+                    inputMode="numeric"
+                    className={`
+        w-full mt-1 px-4 py-2.5 rounded-lg
+        bg-white/10 outline-none placeholder:text-white/50
+        ${
+          errors.phone
+            ? "border-2 border-red-500 focus:ring-red-400"
+            : "border border-white focus:ring-[#AB6BFF]"
+        }
+      `}
+                  />
+                  {errors.phone && (
+                    <p className="text-red-400 text-sm mt-1">{errors.phone}</p>
+                  )}
+                </div>
+
+                {/* Services Interested In — DROPDOWN */}
+              
+                  <div>
                     <label className="text-lg text-white">
-                      {field.label}
-                      {["name", "email", "phone"].includes(field.name) && (
-                        <span className="text-red-400 ml-1">*</span>
-                      )}
+                      Services Interested In
                     </label>
 
-                    <input
-                      name={field.name}
-                      value={formData[field.name]}
+                    <select
+                      name="service"
+                      value={formData.service}
                       onChange={handleChange}
-                      placeholder={field.placeholder}
-                      inputMode={field.name === "phone" ? "numeric" : "text"}
                       className={`
-          w-full
-          mt-1
-          px-4
-          py-2.5
-          rounded-lg
-          bg-white/10
-          outline-none
-          placeholder:text-white/50
-          ${
-            errors[field.name]
-              ? "border-2 border-red-500 focus:ring-red-400"
-              : "border border-white focus:ring-[#AB6BFF]"
-          }
-        `}
-                    />
+        w-full mt-1 px-4 py-2.5 rounded-lg
+        bg-white/10 text-white outline-none appearance-none
+        ${
+          errors.service
+            ? "border-2 border-red-500 focus:ring-red-400"
+            : "border border-white focus:ring-[#AB6BFF]"
+        }
+      `}
+                    >
+                      <option value="" disabled className="text-black">
+                        Select a service
+                      </option>
+                      <option value="Web Development" className="text-black">
+                        Web Development
+                      </option>
+                      <option value="UI/UX Design" className="text-black">
+                        UI / UX Design
+                      </option>
+                      <option value="Branding" className="text-black">
+                        Branding
+                      </option>
+                      <option value="SEO & Marketing" className="text-black">
+                        SEO & Marketing
+                      </option>
+                      <option value="E-commerce" className="text-black">
+                        E-commerce
+                      </option>
+                      <option value="Not sure yet" className="text-black">
+                        Custom
+                      </option>
+                    </select>
 
-                    {errors[field.name] && (
+                    {errors.service && (
                       <p className="text-red-400 text-sm mt-1">
-                        {errors[field.name]}
+                        {errors.service}
                       </p>
                     )}
                   </div>
-                ))}
+      
 
+                {/* Submit */}
                 <button
                   type="submit"
                   className="
-      w-full
-      mt-6
-      py-3
-      rounded-lg
-      bg-[#AB6BFF]
-      font-semibold
-      shadow-lg
-      hover:scale-[1.02]
-      transition
-      border-2
-      border-white
-      text-white
+      w-full mt-6 py-3 rounded-lg
+      bg-[#AB6BFF] font-semibold text-white
+      border-2 border-white shadow-lg
+      hover:scale-[1.02] transition
     "
                 >
                   Submit

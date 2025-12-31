@@ -6,6 +6,8 @@ import { BiStopwatch } from "react-icons/bi";
 import { IoPeople } from "react-icons/io5";
 import { TbClock24 } from "react-icons/tb";
 
+import { useState } from "react";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Autoplay } from "swiper/modules";
 
@@ -28,6 +30,7 @@ import OurProcess from "../components/OurProcess";
 import WhyCtrlZ from "../components/WhyCtrlz";
 import FloatingText from "../components/FloatingText";
 import WhatWeOfferComman from "../components/WhatWeOfferComman";
+import ContactModal from "../components/ContactUs";
 
 import m1 from "../assets/m1.png";
 import m2 from "../assets/m2.png";
@@ -36,10 +39,12 @@ import m4 from "../assets/m4.png";
 
 import { processData } from "../data/OurProcessData";
 import { whyCtrlzData } from "../data/WhyCtrlZsData";
-
+import { pricingData } from "../data/PricingData";
 
 export default function WebDevelopmentPage() {
   const cards = [sample1, sample2, sample3, sample1, sample2, sample3];
+
+  const [openContact, setOpenContact] = useState(false);
 
   const webSlides = [
     {
@@ -52,31 +57,31 @@ export default function WebDevelopmentPage() {
       image: sample2,
       title: "CMS Website Development",
       description:
-      "Manage content effortlessly with a powerful CMS. Whether it’s Webflow CMS or WordPress, we develop intuitive backends that allow your team to publish, edit, and update content without touching code - built for both editors and search engines.",
+        "Manage content effortlessly with a powerful CMS. Whether it’s Webflow CMS or WordPress, we develop intuitive backends that allow your team to publish, edit, and update content without touching code - built for both editors and search engines.",
     },
     {
       image: sample3,
       title: "E-Commerce Development",
       description:
-      "Turn browsers into buyers. We build conversion-driven online stores using Shopify, WooCommerce, or Webflow E-Commerce, complete with secure payment gateways, inventory management, and real-time analytics.",
+        "Turn browsers into buyers. We build conversion-driven online stores using Shopify, WooCommerce, or Webflow E-Commerce, complete with secure payment gateways, inventory management, and real-time analytics.",
     },
     {
       image: sample1,
       title: "Website Performance Optimization",
       description:
-      "Speed, Core Web Vitals, and mobile responsiveness define your rankings. We optimize load times, server response, and site architecture - ensuring your website performs flawlessly on Google’s PageSpeed, Lighthouse, and mobile-first indexing.",
+        "Speed, Core Web Vitals, and mobile responsiveness define your rankings. We optimize load times, server response, and site architecture - ensuring your website performs flawlessly on Google’s PageSpeed, Lighthouse, and mobile-first indexing.",
     },
     {
       image: sample1,
       title: "Website Maintenance & Support",
       description:
-      "Stay online, secure, and stress-free. Our maintenance plans include backups, uptime monitoring, security updates, and content management - so your website runs smoothly while you focus on your business.",
+        "Stay online, secure, and stress-free. Our maintenance plans include backups, uptime monitoring, security updates, and content management - so your website runs smoothly while you focus on your business.",
     },
     {
       image: sample1,
       title: "Multi-Platform & API Integration",
       description:
-      "Connect everything. From CRM (HubSpot, Salesforce) to chatbots, analytics, and booking systems, we integrate third-party tools that automate workflows and create a seamless digital ecosystem.",
+        "Connect everything. From CRM (HubSpot, Salesforce) to chatbots, analytics, and booking systems, we integrate third-party tools that automate workflows and create a seamless digital ecosystem.",
     },
   ];
 
@@ -169,7 +174,12 @@ export default function WebDevelopmentPage() {
             </Swiper>
           </div>
           {/* CTA BUTTON */}
-          <button className="webdev-btn">Start Your Project</button>
+         <button
+  className="webdev-btn relative z-50 pointer-events-auto"
+  onClick={() => setOpenContact(true)}
+>
+  Start Your Project
+</button>
 
           <div className="bg-black "></div>
 
@@ -273,7 +283,7 @@ export default function WebDevelopmentPage() {
             <p className="mt-2 text-lg sm:text-xl font-semibold text-purple-900">
               Average Load Time
             </p>
-{/* 
+            {/* 
             <p className="mt-4 text-sm sm:text-base text-purple-900 max-w-xs">
               Every CtrlZ’s website is optimized for performance and SEO
               readiness
@@ -322,67 +332,66 @@ export default function WebDevelopmentPage() {
 
       <OurProcess processData={processData.webDevelopment} />
 
-      <WhyCtrlZ data = {whyCtrlzData.web}/>
+      <WhyCtrlZ data={whyCtrlzData.web} />
 
-      <Pricing
-        plans={[
-          {
-            title: "Starter",
-            price: "₹49,999",
-            popular: false,
-            features: [
-              "5-page responsive website",
-              "Mobile-first design",
-              "Basic SEO optimization",
-              "Contact form integration",
-              "1 month post-launch support",
-              "Google Analytics setup",
-              "Social media integration",
-              "SSL certificate included",
-            ],
-          },
-          {
-            title: "Professional",
-            price: "₹99,999",
-            popular: true,
-            features: [
-              "10-page responsive website",
-              "Custom UI/UX design",
-              "Advanced SEO optimization",
-              "CMS integration (WordPress/Webflow)",
-              "1 month post-launch support",
-              "3 months premium support",
-              "Performance optimization",
-              "Email marketing integration",
-              "Blog setup",
-              "Lead generation forms",
-              "Chat widget integration",
-            ],
-          },
-          {
-            title: "Enterprise",
-            price: "₹2,49,999",
-            popular: false,
-            features: [
-              "Unlimited pages",
-              "Custom React/Next.js development",
-              "Full e-commerce functionality",
-              "Advanced animations & interactions",
-              "12 months premium support",
-              "Multi-language support",
-              "Custom admin dashboard",
-              "Priority support & SLA",
-              "Dedicated project manager",
-              "White-glove onboarding",
-              "Training sessions included",
-            ],
-          },
-        ]}
-      />
+      <Pricing data={pricingData.web} />
+
+      <div className="w-full bg-white py-12 px-10">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
+          {/* Left text — 70% */}
+          <div className="w-full md:w-[70%] text-left">
+            <p className="text-xl md:text-3xl font-bold text-gray-900 leading-snug">
+              Tell us your requirements and we’ll build a tailored plan just for
+              you.
+            </p>
+          </div>
+
+          {/* Right button — 30% */}
+          <div className="w-full md:w-[30%] flex md:justify-end">
+            <button
+             onClick={() => setOpenContact(true)} 
+              className="
+    relative isolate
+    w-full md:w-auto
+    px-12 py-4 rounded-full
+    bg-purple-700 text-white font-semibold
+    overflow-hidden
+
+    transition-all duration-300
+    hover:scale-[1.03]
+
+    shadow-[0_0_20px_rgba(168,85,247,0.45)]
+  "
+
+              /* glow ring */
+            >
+              {/* Rotating glow */}
+              <span
+                className="
+      pointer-events-none
+      absolute inset-[-2px]
+      rounded-full
+
+      bg-[conic-gradient(from_0deg,transparent,rgba(255,255,255,0.9),transparent)]
+      animate-[spin_4s_linear_infinite]
+
+      opacity-70
+      blur-md
+    "
+              />
+
+              {/* Button content */}
+              <span className="relative z-10">Get in touch</span>
+            </button>
+          </div>
+        </div>
+      </div>
 
       <GetStarted />
 
       <FaqServices faqsLeft={faqsLeft} faqsRight={faqsRight} />
+
+      <ContactModal open={openContact} onClose={() => setOpenContact(false)} />
     </>
   );
 }

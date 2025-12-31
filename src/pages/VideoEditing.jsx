@@ -42,6 +42,7 @@ import mask4 from "../assets/mask4.png";
 import { processData } from "../data/OurProcessData";
 import { whyCtrlzData } from "../data/WhyCtrlZsData";
 import { differencesData } from "../data/DifferencesData";
+import { pricingData } from "../data/PricingData";
 
 const webSlides = [
   {
@@ -271,65 +272,59 @@ export default function VideoEditing() {
       <WhyCtrlZsDiff data={differencesData.video}/>
 
       <Pricing
-        plans={[
-          {
-            title: "Starter",
-            price: "₹29,999",
-            popular: false,
-            features: [
-              "Individuals & small businesses",
-              "Basic user interviews + personas",
-              "Low-fidelity wireframes",
-              "Basic UI screens (desktop only)",
-              "Short remote testing sessions",
-              "Basic component guide",
-              "Figma files + specs",
-              "1 revision cycle",
-              "1–2 weeks",
-              "Up to 5 pages",
-              "Figma, Miro",
-            ],
-          },
-
-          {
-            title: "Enterprise",
-            price: "₹99,999",
-            popular: true,
-            features: [
-              "Established brands & product teams",
-              "In-depth research + competitor analysis",
-              "High-fidelity, interactive prototypes",
-              "Pixel-perfect UI with animations (up to 20 pages)",
-              "Full moderated & unmoderated testing",
-              "Fully documented comprehensive design system",
-              "Full dev handoff + style tokens & Storybook support",
-              "Multiple iterations + ongoing support",
-              "6–8 weeks",
-              "Up to 40 pages",
-              "Figma, Miro, Lookback, Hotjar, UsabilityHub",
-            ],
-          },
-
-          {
-            title: "Professional",
-            price: "₹49,999",
-            popular: false,
-            features: [
-              "Startups & SMEs",
-              "Detailed interviews + journey mapping",
-              "Interactive mid-fidelity prototypes",
-              "Responsive UI for web & mobile (up to 10 pages)",
-              "Standard usability testing",
-              "Reusable components & style guide",
-              "Complete handoff with developer-ready docs",
-              "2 revision cycles + post-launch support",
-              "3–5 weeks",
-              "Up to 10 pages",
-              "Figma, Miro, Lookback, Hotjar",
-            ],
-          },
-        ]}
+       data = {pricingData.video}
       />
+
+        <div className="w-full bg-white py-12 px-10">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
+          {/* Left text — 70% */}
+          <div className="w-full md:w-[70%] text-left">
+            <p className="text-xl md:text-3xl font-bold text-gray-900 leading-snug">
+              Tell us your requirements and we’ll build a tailored plan just for
+              you.
+            </p>
+          </div>
+
+          {/* Right button — 30% */}
+          <div className="w-full md:w-[30%] flex md:justify-end">
+            <button
+             onClick={() => setOpenContact(true)} 
+              className="
+    relative isolate
+    w-full md:w-auto
+    px-12 py-4 rounded-full
+    bg-purple-700 text-white font-semibold
+    overflow-hidden
+
+    transition-all duration-300
+    hover:scale-[1.03]
+
+    shadow-[0_0_20px_rgba(168,85,247,0.45)]
+  "
+
+              /* glow ring */
+            >
+              {/* Rotating glow */}
+              <span
+                className="
+      pointer-events-none
+      absolute inset-[-2px]
+      rounded-full
+
+      bg-[conic-gradient(from_0deg,transparent,rgba(255,255,255,0.9),transparent)]
+      animate-[spin_4s_linear_infinite]
+
+      opacity-70
+      blur-md
+    "
+              />
+
+              {/* Button content */}
+              <span className="relative z-10">Get in touch</span>
+            </button>
+          </div>
+        </div>
+      </div>
 
       <GetStarted />
 
