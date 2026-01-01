@@ -49,6 +49,7 @@ import mask4 from "../assets/mask4.png";
 import { processData } from "../data/OurProcessData";
 import { differencesData } from "../data/DifferencesData";
 import { pricingData } from "../data/PricingData";
+import { getStartedData } from "../data/GetStartedData";
 
 
 const webSlides = [
@@ -368,7 +369,7 @@ export default function Uipage() {
         </div>
       </div>
 
-      <GetStarted />
+      <GetStarted data={getStartedData.ui}/>
 
       <FaqServices faqsLeft={faqsLeft} faqsRight={faqsRight} />
     </>

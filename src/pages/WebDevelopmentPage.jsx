@@ -40,6 +40,7 @@ import m4 from "../assets/m4.png";
 import { processData } from "../data/OurProcessData";
 import { whyCtrlzData } from "../data/WhyCtrlZsData";
 import { pricingData } from "../data/PricingData";
+import { getStartedData } from "../data/GetStartedData";
 
 export default function WebDevelopmentPage() {
   const cards = [sample1, sample2, sample3, sample1, sample2, sample3];
@@ -387,7 +388,7 @@ export default function WebDevelopmentPage() {
         </div>
       </div>
 
-      <GetStarted />
+      <GetStarted data={getStartedData.web} />
 
       <FaqServices faqsLeft={faqsLeft} faqsRight={faqsRight} />
 

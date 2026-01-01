@@ -44,7 +44,13 @@ import mask2 from "../assets/mask2.png";
 import mask3 from "../assets/mask3.png";
 import mask4 from "../assets/mask4.png";
 
+
+import { processData } from "../data/OurProcessData";
+import { whyCtrlzData } from "../data/WhyCtrlZsData";
+import { differencesData } from "../data/DifferencesData";
 import { pricingData } from "../data/PricingData";
+import { getStartedData } from "../data/GetStartedData";
+
 
 const webSlides = [
   {
@@ -412,7 +418,7 @@ flex flex-col items-center justify-center"
         </div>
       </div>
 
-      <GetStarted />
+      <GetStarted data={getStartedData.ai} />
 
       <FaqServices faqsLeft={faqsLeft} faqsRight={faqsRight} />
     </>

@@ -66,14 +66,25 @@ export default function FaqServices({ faqsLeft = [], faqsRight = [] }) {
         </div>
 
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row justify-center gap-6">
-          <button className="bg-purple-500 hover:bg-purple-600 text-white border-white border font-semibold px-15 py-4 rounded-xl transition-all">
-            Let’s Build Your Website
-          </button>
-          <button className="border border-white hover:border-purple-400 text-white font-semibold px-15 py-4 rounded-xl transition-all">
-            Book a Free Consultation
-          </button>
-        </div>
+       <div className="flex justify-center">
+  <button
+    className="
+      border border-white
+      bg-purple-500
+      hover:bg-white/90
+      hover:text-black
+      text-white
+      font-semibold
+      px-24
+      py-4
+      rounded-xl
+      transition-all
+    "
+  >
+    Book a Free Consultation
+  </button>
+</div>
+
       </div>
     </section>
   );

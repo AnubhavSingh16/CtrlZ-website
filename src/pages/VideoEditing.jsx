@@ -43,6 +43,7 @@ import { processData } from "../data/OurProcessData";
 import { whyCtrlzData } from "../data/WhyCtrlZsData";
 import { differencesData } from "../data/DifferencesData";
 import { pricingData } from "../data/PricingData";
+import { getStartedData } from "../data/GetStartedData";
 
 const webSlides = [
   {
@@ -326,7 +327,7 @@ export default function VideoEditing() {
         </div>
       </div>
 
-      <GetStarted />
+      <GetStarted data={getStartedData.video}/>
 
       <FaqServices faqsLeft={faqsLeft} faqsRight={faqsRight} />
     </>

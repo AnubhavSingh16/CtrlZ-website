@@ -1,144 +1,272 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaCheck } from "react-icons/fa";
 
-export default function GetStarted() {
+export default function GetStarted({ data }) {
+  if (!data) return null;
+
+  const { left, form } = data;
+
+  const [values, setValues] = useState({
+    name: "",
+    email: "",
+    contact: "",
+    website: "",
+  });
+
+  const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  /* ---------- VALIDATION ---------- */
+  const validate = () => {
+    const e = {};
+
+    // Name (required)
+    if (!values.name.trim()) e.name = "Required";
+
+    // Email (optional but validated if entered)
+    if (values.email.trim() && !/\S+@\S+\.\S+/.test(values.email)) {
+      e.email = "Invalid email";
+    }
+
+    // Contact (required + 10 digits)
+    if (!values.contact.trim()) {
+      e.contact = "Required";
+    } else if (!/^\d{10}$/.test(values.contact)) {
+      e.contact = "Must be a 10-digit number";
+    }
+
+    return e;
+  };
+
+  /* ---------- SUBMIT ---------- */
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    setErrors({});
+    setLoading(true);
+
+    // fake API call
+    setTimeout(() => {
+      setLoading(false);
+      setShowModal(true);
+      setValues({ name: "", email: "", contact: "", website: "" });
+    }, 1500);
+  };
+
   return (
-    <section className="w-full bg-gradient-to-br from-[black] via-[#0d021b] to-black py-20 px-6">
-      <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-2xl grid grid-cols-1 lg:grid-cols-2 overflow-hidden">
-        {/* LEFT CONTENT */}
-        <div className="p-8 md:p-12">
-          <h2 className="text-[#6E00FF] text-5xl md:text-4xl font-extrabold">
-            Free Download:
-          </h2>
+    <>
+      <section className="w-full bg-gradient-to-br from-black via-[#0d021b] to-black py-14 sm:py-20 px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-2xl grid grid-cols-1 lg:grid-cols-2 overflow-hidden">
+          {/* LEFT CONTENT (UNCHANGED) */}
+          <div className="p-6 sm:p-8 md:p-12 text-center lg:text-left">
+            <h2 className="text-[#6E00FF] text-3xl sm:text-3xl md:text-5xl font-extrabold">
+              {left.headingTop}
+            </h2>
 
-          <h3 className="mt-2 text-4xl md:text-4xl font-extrabold text-black leading-tight">
-            Ultimate Website Launch <br /> & Performance Checklist
-          </h3>
-
-          <p className="mt-4 text-[#424242] text-base">
-            Before you go live, make sure your website is built to convert. Get
-            CtrlZs’ exclusive 40-point Web Development Checklist. Covering
-            everything from performance and SEO to design and security. Trusted
-            by founders and creators to launch websites that actually work.
-          </p>
-
-          {/* LIST */}
-          <ul className="mt-6 space-y-4">
-            {[
-              "Core Web Vitals & Speed Optimization Framework",
-              "Conversion-Focused Design Principles",
-              "SEO & Indexing Best Practices",
-              "Responsive & Mobile-First Guidelines",
-              "Security & Maintenance Essentials",
-            ].map((item, i) => (
-              <li key={i} className="flex items-start gap-3 text-gray-800">
-                <span className="mt-1 w-5 h-5 rounded-full bg-gray-200 flex items-center justify-center">
-                  <FaCheck className="text-black text-xs" />
-                </span>
-                <span className="text-sm">{item}</span>
-              </li>
-            ))}
-          </ul>
-
-          {/* STATS */}
-          {/* <div className="mt-10 flex items-center gap-8">
-            <div>
-              <p className="text-5xl font-extrabold text-black">98%</p>
-              <p className="text-md text-black ">Satisfaction Rate</p>
-            </div>
-
-            <div className="h-12 w-px bg-[#A4A4A4]" />
-
-            <div>
-              <p className="text-5xl font-extrabold text-black">15min</p>
-              <p className="text-md text-black">Quick Analysis</p>
-            </div>
-          </div> */}
-        </div>
-
-        {/* RIGHT FORM */}
-        <div className="p-8 md:p-12 bg-white relative">
-          {/* subtle circles */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,#e9e9e9_1px,transparent_1px)] bg-[length:80px_80px] opacity-50 pointer-events-none" />
-
-          <div className="relative z-10">
-            <h3 className="text-3xl font-bold text-[#4E2F76]">
-              Get Started Today
+            <h3 className="mt-2 text-2xl sm:text-3xl md:text-4xl font-extrabold text-black leading-tight">
+              {left.headingMain}
             </h3>
-            <p className="mt-1 text-sm text-gray-500">
-              Fill out the form below and we’ll be in touch shortly.
+
+            <p className="mt-4 text-md md:text-sm sm:text-base text-[#424242] leading-relaxed">
+              {left.description}
             </p>
 
-            <form className="mt-6 space-y-5">
-              <Input label="Name" placeholder="Your Full Name" />
-              <Input label="Email" placeholder="you@example.com" type="email" />
-              <Input label="Contact Number" placeholder="+91  Mobile Number*" />
-              <Input
-                label="Website / Idea Description"
-                placeholder="www.yourwebsite.com or Describe your business idea"
-              />
+            <ul className="mt-8 space-y-3 sm:space-y-4">
+              {left.checklist.map((item, i) => (
+                <li
+                  key={i}
+                  className="flex items-start gap-3 text-gray-800 justify-center sm:justify-start"
+                >
+                  <span className="mt-0 w-5 h-5 rounded-full bg-gray-200 flex items-center justify-center flex-shrink-0">
+                    <FaCheck className="text-black text-xs" />
+                  </span>
+                  <span className="text-sm md:text-sm sm:text-base text-left">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-              <select
-                className="
-    w-full 
-    rounded-md 
-    px-4 
-    py-3 
-    text-sm 
-    text-black 
-    bg-gray-100 
-    border 
-    border-gray-300 
-    focus:outline-none 
-    focus:ring-2 
-    focus:ring-purple-500
-  "
+          {/* RIGHT FORM (UI SAME, LOGIC ADDED) */}
+          <div className="p-6 sm:p-8 md:p-12 bg-white relative">
+            <div className="relative z-10">
+              <h3 className="text-2xl sm:text-3xl font-bold text-[#4E2F76] text-center">
+                {form.title}
+              </h3>
+
+              <p className="mt-2 text-xs sm:text-sm text-[#222222] text-center">
+                {form.subtitle}
+              </p>
+
+              <form
+                onSubmit={handleSubmit}
+                className="mt-6 space-y-4 sm:space-y-5"
               >
-                <option>Select your budget range</option>
-                <option>₹25,000 – ₹50,000</option>
-                <option>₹50,000 – ₹1,00,000</option>
-                <option>₹1,00,000+</option>
-              </select>
-              <button
-                type="button"
-                className="w-full mt-4 bg-[#A66CFF] hover:bg-[#8f56e8] text-white font-semibold py-3 rounded-lg transition-none"
-              >
-                Get Our Free Audit
-              </button>
-            </form>
+                <Input
+                  label="Name"
+                  required
+                  placeholder="Enter your full name"
+                  value={values.name}
+                  error={errors.name}
+                  onChange={(e) =>
+                    setValues({ ...values, name: e.target.value })
+                  }
+                />
+
+                <Input
+                  label="Contact Number"
+                  required
+                  placeholder="10-digit mobile number"
+                  value={values.contact}
+                  error={errors.contact}
+                  onChange={(e) =>
+                    setValues({ ...values, contact: e.target.value })
+                  }
+                />
+
+                <Input
+                  label="Email"
+                  type="email"
+                  value={values.email}
+                  placeholder="you@example.com (optional)"
+                  error={errors.email}
+                  onChange={(e) =>
+                    setValues({ ...values, email: e.target.value })
+                  }
+                />
+
+                <Input
+                  label="Website / Idea Description"
+                  placeholder="Your website URL or brief idea"
+                  value={values.website}
+                  onChange={(e) =>
+                    setValues({ ...values, website: e.target.value })
+                  }
+                />
+
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full mt-4 bg-[#A66CFF] hover:bg-[#8f56e8] text-white font-semibold py-3 rounded-lg"
+                >
+                  {loading ? "Sending..." : form.buttonText}
+                </button>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {showModal && <SuccessModal onClose={() => setShowModal(false)} />}
+    </>
   );
 }
 
-/* ================= INPUT ================= */
-
-function Input({ label, placeholder, type = "text" }) {
+/* ---------- INPUT (UI SAME) ---------- */
+function Input({
+  label,
+  value,
+  onChange,
+  type = "text",
+  error,
+  required,
+  placeholder,
+}) {
   return (
     <div>
-      <label className="block text-sm font-bold text-black mb-1">{label}</label>
-
+      <label className="block text-xs sm:text-sm font-bold text-black mb-1">
+        {label}
+        {required && <span className="text-red-500 ml-0.5">*</span>}
+      </label>
       <input
         type={type}
+        value={value}
+        onChange={onChange}
         placeholder={placeholder}
         className="
-          w-full 
-          rounded-md 
-          px-4 
-          py-3 
-          text-sm 
-          text-black 
-          bg-gray-100 
-          border 
-          border-gray-300 
-          placeholder-gray-500
-          focus:outline-none 
-          focus:ring-2 
-          focus:ring-purple-500
+          w-full rounded-md px-4 py-2.5 sm:py-3 text-sm
+          text-black bg-gray-100 border border-gray-300
+          focus:outline-none focus:ring-2 focus:ring-purple-500
         "
       />
+
+      {error && <p className="text-xs text-red-500 mt-1">{error}</p>}
+    </div>
+  );
+}
+
+/* ---------- MODAL ---------- */
+function SuccessModal({ onClose }) {
+  return (
+    <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center px-4 ">
+      <div className="bg-white max-w-lg w-full rounded-2xl p-6 text-center shadow-2xl border-4 border-purple-800">
+        <h2 className="text-2xl font-extrabold text-[#4E2F76]">
+          Your checklist is on the way 🚀
+        </h2>
+
+        <p className="mt-4 text-sm text-gray-700 leading-relaxed">
+          Thanks for trusting <b>Ctrl Zs</b>.
+          <br />
+          <br />
+          Your 40-point Website Launch & Performance Checklist has been sent to
+          your email.
+          <br />
+          <br />
+          It covers performance, SEO, design, and security — everything you need
+          to launch a website that actually works.
+          <br />
+          <br />
+          Take your time going through it, and feel free to reach out if you’d
+          like help applying any of the insights.
+        </p>
+
+        <div className="mt-6 flex flex-col sm:flex-row gap-5">
+          {/* GOT IT */}
+          <button
+            onClick={onClose}
+            className="
+      w-full
+      border border-[#A66CFF]
+      text-[#A66CFF]
+      font-semibold
+      py-3
+      rounded-lg
+      hover:bg-[#A66CFF]/10
+      transition
+    "
+          >
+            Got it
+          </button>
+
+          {/* EXPLORE */}
+          <button
+            onClick={() => {
+              onClose();
+              window.location.href = "/";
+            }}
+            className="
+      w-full
+      bg-[#A66CFF]
+      hover:bg-[#8f56e8]
+      text-white
+      font-semibold
+      py-3
+      rounded-lg
+      transition
+    "
+          >
+            Explore Ctrl Zs
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
