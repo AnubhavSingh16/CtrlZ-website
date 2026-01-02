@@ -11,7 +11,8 @@ import LogoDesign from "./pages/LogoDesign";
 import WebDevelopmentPage from "./pages/WebDevelopmentPage";
 import Uipage from "./pages/Uipage";
 import AiMarketing from "./pages/AiMarketing";
-
+import AboutUs
+ from "./pages/AboutUs";
 import "./App.css";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path="/video-editing" element={<VideoEditing />} />
         <Route path="/logo-design" element={<LogoDesign />} />
         <Route path="/ai-marketing" element={<AiMarketing />} />
+        <Route path="/about" element={<AboutUs />} />
       </Routes>
 
       {/* FOOTER */}
