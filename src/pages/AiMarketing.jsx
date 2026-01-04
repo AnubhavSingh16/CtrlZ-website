@@ -361,11 +361,15 @@ flex flex-col items-center justify-center"
 
       <WhatWeOffer slides={webSlides} slidesPerView={3} delay={2200} />
 
-      <OurProcess />
+     <OurProcess processData={processData.ai} />
 
-      <WhyCtrlZ />
+      <WhyCtrlZ data={whyCtrlzData.ai}/>
 
-      <Pricing data={pricingData.ai} />
+      <WhyCtrlZsDiff data={differencesData.ai}/>
+
+      <Pricing
+       data = {pricingData.video}
+      />
 
       <div className="w-full bg-white py-12 px-10">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center">

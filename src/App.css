@@ -13,37 +13,38 @@
 
 /* GLOBAL PAGE BACKGROUND */
 body {
-   background-attachment: fixed;
   margin: 0;
+  color: white;
+
   background:
+    /* RIGHT TOP PURPLE GLOW */
     radial-gradient(
-      1000px 700px at 95% 20%,
-      rgba(192, 158, 234, 0.55),
-      rgba(171, 107, 255, 0.15) 40%,
+      1400px 900px at 95% 10%,
+      rgba(174, 102, 246, 0.80),
+      
       transparent 70%
     ),
+
+    /* LEFT BOTTOM SOFT GLOW */
     radial-gradient(
       900px 600px at 10% 85%,
-   rgba(192, 158, 234, 0.55),
+      rgba(174, 102, 246, 0.80),
       transparent 70%
     ),
+
+    /* MAIN DIAGONAL GRADIENT (matches bg-gradient-to-br) */
     linear-gradient(
-      90deg,
-      rgba(11, 7, 16, 0.95) 0%,
-      rgba(45, 28, 75, 0.4) 40%,
-      rgba(171, 107, 255, 0.18) 100%
-    ),
-    linear-gradient(
-      180deg,
-      #2a1e37 0%,
-      #110a1a 50%,
-      #0b0710 100%
+      135deg,
+      #160a24 0%,
+      #07010d 45%,
+      #000000 100%
     );
-  
-  background-attachment: fixed; /* smooth gradient on scroll */
+
+  background-attachment: fixed;
   background-size: cover;
-  color: white;
 }
+
+
 
 /* ================= MOBILE MENU ================= */
 .mobile-menu {
@@ -1120,4 +1121,24 @@ body {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
+}
+
+@keyframes floatContactus {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+
+@keyframes fadeInUp-contactus {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp-contactus {
+  animation: fadeInUp 0.8s ease forwards;
 }

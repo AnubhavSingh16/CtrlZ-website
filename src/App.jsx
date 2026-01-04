@@ -14,6 +14,9 @@ import AiMarketing from "./pages/AiMarketing";
 import AboutUs
  from "./pages/AboutUs";
 import "./App.css";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import ContactUs from "./pages/ContactUsPage";
 
 function App() {
   const [openContact, setOpenContact] = useState(false);
@@ -32,6 +35,12 @@ function App() {
         <Route path="/logo-design" element={<LogoDesign />} />
         <Route path="/ai-marketing" element={<AiMarketing />} />
         <Route path="/about" element={<AboutUs />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/contact-us" element={<ContactUs />} />
+
+
+
       </Routes>
 
       {/* FOOTER */}

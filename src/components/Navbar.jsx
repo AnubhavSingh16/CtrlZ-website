@@ -63,9 +63,9 @@ export default function Navbar({ onContactClick }) {
               <Link to="/ai-marketing" className="dropdown-item">
                 AI Marketing
               </Link>
-              <Link to="/logo-design" className="dropdown-item">
+              {/* <Link to="/logo-design" className="dropdown-item">
                 Logo Design
-              </Link>
+              </Link> */}
             </div>
           </div>
 
@@ -113,7 +113,7 @@ export default function Navbar({ onContactClick }) {
               <Link to="/ui-development">UI Development</Link>
               <Link to="/video-editing">Video Editing</Link>
               <Link to="/ai-marketing">AI Marketing</Link>
-              <Link to="/logo-design">Logo Design</Link>
+              {/* <Link to="/logo-design">Logo Design</Link> */}
             </div>
           )}
 

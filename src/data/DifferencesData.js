@@ -129,7 +129,7 @@ export const differencesData = {
     ],
   },
 
-  Ai: {
+  ai: {
     heading: "WHY CTRL ZS?",
     subHeading: "",
     differences: [

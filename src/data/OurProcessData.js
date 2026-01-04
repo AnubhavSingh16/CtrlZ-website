@@ -139,7 +139,7 @@ export const processData = {
     ],
   },
 
-  AiMarketing: {
+  ai: {
     subheading:
       "A proven methodology that transforms your marketing into a scalable growth engine",
 

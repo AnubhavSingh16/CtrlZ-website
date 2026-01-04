@@ -348,14 +348,12 @@ export default function ContactModal({ open, onClose }) {
                         UI / UX Design
                       </option>
                       <option value="Branding" className="text-black">
-                        Branding
+                        Video Editing
                       </option>
                       <option value="SEO & Marketing" className="text-black">
-                        SEO & Marketing
+                        Ai Marketing
                       </option>
-                      <option value="E-commerce" className="text-black">
-                        E-commerce
-                      </option>
+                      
                       <option value="Not sure yet" className="text-black">
                         Custom
                       </option>

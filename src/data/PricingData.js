@@ -239,5 +239,63 @@ export const pricingData = {
     ],
   },
 
-  graphic: {},
+graphic: {
+    title: "Ready to Start?",
+    subheading:
+      "Choose the package that fits your needs. All packages include clean code, responsive design, and our commitment to excellence",
+    plans: [
+      {
+        title: "Starter Edit",
+        price: "₹30,000",
+        popular: false,
+        features: [
+          "5-page responsive website",
+          "Mobile-first, performance-focused design",
+          "Basic on-page SEO setup",
+          "Contact form integration",
+          "Google Analytics support",
+          "Social media link integration",
+          "SSL security included",
+          "1 week of post-launch support",
+        ],
+      },
+
+      {
+        title: "Professional",
+        price: "₹70,000",
+        popular: true,
+        features: [
+          "10-page responsive website",
+          "Custom UI/UX design",
+          "Advanced SEO optimization",
+          "CMS setup & content structuring",
+          "Performance optimization",
+          "Email marketing integration",
+          "Blog setup",
+          "Lead generation forms",
+          "Chat widget integration",
+          "1 month of launch support",
+        ],
+      },
+
+      {
+        title: "Enterprise",
+        price: "₹2,00,000",
+        popular: false,
+        features: [
+          "Unlimited pages",
+          "Full e-commerce capability (optional)",
+          "Advanced animations & interactions",
+          "Custom dashboard (if required)",
+          "Multi-language support",
+          "Priority support & SLA",
+          "Dedicated project manager",
+          "White-glove onboarding",
+          "3 months of launch support",
+          "Training sessions included",
+        ],
+      },
+    ],
+  },
+
 };

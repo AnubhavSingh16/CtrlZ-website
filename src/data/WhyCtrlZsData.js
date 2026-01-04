@@ -102,4 +102,38 @@ export const whyCtrlzData = {
       },
     ],
   },
+ 
+  ai: {
+    cards: [
+      {
+        title: "Story-First Approach",
+        description: "We craft narratives before frames—story always leads.",
+       img: sample1,
+        large: true,
+      },
+      {
+        title: "Brand Consistency",
+        description:
+          "Every video aligns visually and emotionally with your brand.",
+         img: sample1,
+      },
+      {
+        title: "Platform Optimization",
+        description:
+          "Videos tailored for web, reels, ads, and social platforms.",
+         img: sample1,
+      },
+      {
+        title: "Fast Turnarounds",
+        description: "Efficient workflows without sacrificing polish.",
+        img: sample1,
+      },
+      {
+        title: "Performance Metrics",
+        description: "Videos designed to retain attention and drive action.",
+         img: sample1,
+      },
+    ],
+  },
+
 };
