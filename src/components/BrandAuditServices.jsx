@@ -1,7 +1,28 @@
 import React, { useState } from "react";
 import { FaCheck } from "react-icons/fa";
+import { successModalData } from "../data/SuccessModalData";
+import { useLocation } from "react-router-dom";
 
 export default function GetStarted({ data }) {
+  const location = useLocation();
+  const pathname = location.pathname;
+
+  const routeToModalKey = {
+    "/web-development": "web",
+    "/video-editing": "video",
+    "/ui-development": "ui",
+    "/ai-marketing": "ai",
+    "/logo-design": "graphic",
+  };
+
+  const modalKey =
+    routeToModalKey[pathname] && successModalData[routeToModalKey[pathname]]
+      ? routeToModalKey[pathname]
+      : "custom";
+
+  const modalData = successModalData[modalKey];
+
+  console.log("success", successModalData);
   if (!data) return null;
 
   const { left, form } = data;
@@ -165,7 +186,9 @@ export default function GetStarted({ data }) {
         </div>
       </section>
 
-      {showModal && <SuccessModal onClose={() => setShowModal(false)} />}
+      {showModal && (
+        <SuccessModal onClose={() => setShowModal(false)} data={modalData} />
+      )}
     </>
   );
 }
@@ -204,66 +227,61 @@ function Input({
 }
 
 /* ---------- MODAL ---------- */
-function SuccessModal({ onClose }) {
+function SuccessModal({ onClose, data }) {
+  console.log("im inmodalk", data);
+  if (!data) return null;
+
+  const { title, description, primaryButton, secondaryButton } = data;
+
   return (
-    <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center px-4 ">
+    <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center px-4">
       <div className="bg-white max-w-lg w-full rounded-2xl p-6 text-center shadow-2xl border-4 border-purple-800">
-        <h2 className="text-2xl font-extrabold text-[#4E2F76]">
-          Your checklist is on the way 🚀
-        </h2>
+        {/* TITLE */}
+        <h2 className="text-2xl font-extrabold text-[#4E2F76]">{title}</h2>
 
-        <p className="mt-4 text-sm text-gray-700 leading-relaxed">
-          Thanks for trusting <b>Ctrl Zs</b>.
-          <br />
-          <br />
-          Your 40-point Website Launch & Performance Checklist has been sent to
-          your email.
-          <br />
-          <br />
-          It covers performance, SEO, design, and security — everything you need
-          to launch a website that actually works.
-          <br />
-          <br />
-          Take your time going through it, and feel free to reach out if you’d
-          like help applying any of the insights.
-        </p>
+        {/* DESCRIPTION */}
+        <p
+          className="mt-4 text-sm text-gray-700 leading-relaxed"
+          dangerouslySetInnerHTML={{ __html: description }}
+        />
 
+        {/* ACTIONS */}
         <div className="mt-6 flex flex-col sm:flex-row gap-5">
-          {/* GOT IT */}
+          {/* SECONDARY */}
           <button
             onClick={onClose}
             className="
-      w-full
-      border border-[#A66CFF]
-      text-[#A66CFF]
-      font-semibold
-      py-3
-      rounded-lg
-      hover:bg-[#A66CFF]/10
-      transition
-    "
+              w-full
+              border border-[#A66CFF]
+              text-[#A66CFF]
+              font-semibold
+              py-3
+              rounded-lg
+              hover:bg-[#A66CFF]/10
+              transition
+            "
           >
-            Got it
+            {secondaryButton.text}
           </button>
 
-          {/* EXPLORE */}
+          {/* PRIMARY */}
           <button
             onClick={() => {
               onClose();
-              window.location.href = "/";
+              window.location.href = primaryButton.redirectTo;
             }}
             className="
-      w-full
-      bg-[#A66CFF]
-      hover:bg-[#8f56e8]
-      text-white
-      font-semibold
-      py-3
-      rounded-lg
-      transition
-    "
+              w-full
+              bg-[#A66CFF]
+              hover:bg-[#8f56e8]
+              text-white
+              font-semibold
+              py-3
+              rounded-lg
+              transition
+            "
           >
-            Explore Ctrl Zs
+            {primaryButton.text}
           </button>
         </div>
       </div>

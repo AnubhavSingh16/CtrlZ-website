@@ -4,7 +4,7 @@
 //   )
 // }
 
-import React from "react";
+import React, {useState} from "react";
 import "../styles/pages/uiPage.css";
 import editedVideo from "../assets/editedVideo.mp4";
 import { FaUsers, FaStar, FaClock } from "react-icons/fa";
@@ -44,6 +44,7 @@ import mask2 from "../assets/mask2.png";
 import mask3 from "../assets/mask3.png";
 import mask4 from "../assets/mask4.png";
 
+import ContactModal from "../components/ContactUs";
 
 import { processData } from "../data/OurProcessData";
 import { whyCtrlzData } from "../data/WhyCtrlZsData";
@@ -51,92 +52,82 @@ import { differencesData } from "../data/DifferencesData";
 import { pricingData } from "../data/PricingData";
 import { getStartedData } from "../data/GetStartedData";
 
-
 const webSlides = [
   {
     image: sample1,
-    title: "Custom Coded Website Design & Development",
-    description:
-      "Build a website that’s as unique as your brand. We create custom-coded, scalable websites using Webflow, React, Next.js, and WordPress — engineered for performance, flexibility, and growth. Every line of code is optimized for SEO, speed, and long-term stability.",
-  },
-  {
-    image: sample2,
-    title: "Custom Coded Website Design & Development",
-    description:
-      "Build a website that’s as unique as your brand. We create custom-coded, scalable websites using Webflow, React, Next.js, and WordPress — engineered for performance, flexibility, and growth. Every line of code is optimized for SEO, speed, and long-term stability.",
-  },
-  {
-    image: sample3,
-    title: "Custom Coded Website Design & Development",
-    description:
-      "Build a website that’s as unique as your brand. We create custom-coded, scalable websites using Webflow, React, Next.js, and WordPress — engineered for performance, flexibility, and growth. Every line of code is optimized for SEO, speed, and long-term stability.",
+    title: "Performance Marketing (Meta + Google Ads)",
+    description: "Scale smarter, not harder. We use data-driven targeting, creative testing, and continuous optimization to reduce CAC and improve ROAS. \n Includes \n Meta Ads (Facebook & Instagram),Google Search & Display Ads, Budget allocation & optimization, Audience & keyword clustering, Creative testing frameworks, Conversion tracking & performance dashboards",
   },
   {
     image: sample1,
-    title: "Custom Coded Website Design & Development",
-    description:
-      "Build a website that’s as unique as your brand. We create custom-coded, scalable websites using Webflow, React, Next.js, and WordPress — engineered for performance, flexibility, and growth. Every line of code is optimized for SEO, speed, and long-term stability.",
+    title: "Social Media Marketing & LinkedIn Presence (Founder + Company)",
+    description: "Build authority, visibility, and trust across platforms - not just posts. \n Includes \n Social media strategy for brand & founders, LinkedIn founder personal branding, LinkedIn company page management, Content strategy & monthly calendars, Reels & short-form video editing, Graphic design for posts & creatives, Copywriting, captions & hooks, Scheduling & publishing, Hashtag & trend research, Monthly analytics & insights",
   },
   {
     image: sample1,
-    title: "Custom Coded Website Design & Development",
-    description:
-      "Build a website that’s as unique as your brand. We create custom-coded, scalable websites using Webflow, React, Next.js, and WordPress — engineered for performance, flexibility, and growth. Every line of code is optimized for SEO, speed, and long-term stability.",
+    title: "Content Marketing & Authority Building",
+    description: "Build trust, visibility, and long-term growth through structured, evergreen content. \n Includes \n Keyword-driven content outlines, Long-form blogs & landing page content, Topical authority & content clustering, Multi-platform content repurposing, SEO-optimized blogs, Content performance tracking",
   },
   {
     image: sample1,
-    title: "Custom Coded Website Design & Development",
-    description:
-      "Build a website that’s as unique as your brand. We create custom-coded, scalable websites using Webflow, React, Next.js, and WordPress — engineered for performance, flexibility, and growth. Every line of code is optimized for SEO, speed, and long-term stability.",
+    title: "SEO, AEO, GEO & ORM Optimization",
+    description: "A complete search and reputation system built for visibility, credibility, and long-term growth. \nIncludes\n Technical SEO (site health, speed, indexing, crawlability), On-Page SEO (content optimization, headings, internal linking), Off-Page SEO (authority building, backlinks, brand signals), Answer Engine Optimization (AEO) for question-based & conversational searches, Voice & conversational search optimization, Geographic SEO (GEO) for multi-location & multi-country visibility, Keyword research & search intent mapping, Content structure & topical authority planning, Structured data, schema & FAQ implementation, Google Search Console & indexing setup, Region-specific pages & keyword optimization",
   },
+  
 ];
 
 const faqsLeft = [
   {
-    q: "How long does editing take?",
-    a: `Basic: 3–5 days
- Pro: 2–3 days
- Enterprise: 24–48 hours
- Rush delivery available.
-`,
-  },
-
-  {
-    q: "What formats do you accept?",
-    a: "MP4, MOV, AVI, RAW footage, all camera formats. Deliverables include MP4 (H.264), 4K/8K exports.",
+    q: "What is included in your AI Marketing services?",
+    a: `SEO, content creation, paid ads, social media management, analytics, and automation —
+everything needed to drive scalable and performance-focused digital growth.`,
   },
   {
-    q: "Do you provide music?",
-    a: "Yes — royalty-free + optional custom compositions.",
+    q: "Is AI Marketing suitable for small businesses?",
+    a: `Yes. AI reduces operational costs, improves targeting accuracy,
+and helps small businesses compete effectively with larger brands.`,
   },
   {
-    q: "Do you help with script/storyboarding?",
-    a: "Yes. Included in Enterprise; available as add-ons.",
+    q: "Do you create content and creatives too?",
+    a: `Yes. We handle posts, reels, ad creatives, thumbnails,
+captions, hooks, and scripts as part of execution.`,
+  },
+  {
+    q: "Will I have to sign a long-term contract?",
+    a: `No. We offer flexible monthly plans with optional retainers —
+no long-term lock-ins.`,
   },
 ];
 
 const faqsRight = [
   {
-    q: "Can you create videos without footage?",
-    a: "Yes — stock, animations, motion graphics, AI-generated visuals.",
+    q: "What platforms do you manage?",
+    a: `Instagram, LinkedIn, YouTube, Facebook,
+Google Ads, Meta Ads, and other major platforms.`,
   },
   {
-    q: "Do you optimize for YouTube/Reels/TikTok?",
-    a: "Yes. Includes aspect ratio, pacing, hooks, captions, metadata suggestions.",
+    q: "Do you provide performance reports?",
+    a: `Yes. Monthly performance reports, live dashboards,
+and bi-weekly calls (depending on the plan).`,
   },
   {
-    q: "Refund policy?",
-    a: "Full refund if you’re unsatisfied after the first draft and revisions don’t fix it.",
+    q: "Can you manage ads and organic content together?",
+    a: `Yes. Most clients choose a blended strategy
+for better reach, engagement, and conversions.`,
   },
-
-  // {
-  //   q: "Do you work internationally?",
-  //   a: "Yes — 100%. We work with clients across the US, UK, Europe, and Asia, offering remote collaboration, virtual reviews, and real-time updates.",
-  // },
+  {
+    q: "What if I only want SEO or only social media?",
+    a: `We offer standalone SEO and social media packages.
+Contact us to customize a plan that fits your needs.`,
+  },
 ];
+
 
 export default function AiMarketing() {
   const location = useLocation();
+
+   const [openContact, setOpenContact] = useState(false);
+  
 
   const color = location.state?.color || "purple";
 
@@ -269,6 +260,8 @@ flex flex-col items-center justify-center"
 
             {/* CTA */}
             <button
+
+            onClick={() => {setOpenContact(true)}}
               className="mt-20 w-[50%] bg-white text-[#160032]
     font-bold py-4 rounded-lg shadow
     hover:scale-[1.03] transition"
@@ -304,10 +297,7 @@ flex flex-col items-center justify-center"
               <p className="text-lg lg:text-2xl font-semibold mt-3 text-white">
                 Project Delivered
               </p>
-              <p className="text-sm mt-3 text-white max-w-xs">
-                From brand websites to full-scale digital ecosystems built in
-                2025 alone
-              </p>
+             
             </div>
 
             {/* Card 2 */}
@@ -319,10 +309,7 @@ flex flex-col items-center justify-center"
               <p className="text-lg lg:text-2xl font-semibold mt-3 text-white">
                 Client Satisfaction
               </p>
-              <p className="text-sm mt-3 text-white max-w-xs">
-                Clients appreciate our transparent process, timely delivery, and
-                quality output
-              </p>
+             
             </div>
 
             {/* Card 3 */}
@@ -334,10 +321,7 @@ flex flex-col items-center justify-center"
               <p className="text-lg lg:text-2xl font-semibold mt-3 text-white">
                 Happy Clients
               </p>
-              <p className="text-sm mt-3 text-white max-w-xs">
-                Every CtrlZ’s website is optimized for performance and SEO
-                readiness
-              </p>
+             
             </div>
 
             {/* Card 4 */}
@@ -349,9 +333,7 @@ flex flex-col items-center justify-center"
               <p className="text-lg lg:text-2xl font-semibold mt-3 text-white">
                 On-Time Delivery
               </p>
-              <p className="text-sm mt-3 text-white max-w-xs">
-                We stay connected, from strategy to launch and beyond
-              </p>
+             
             </div>
           </div>
         </div>
@@ -361,15 +343,13 @@ flex flex-col items-center justify-center"
 
       <WhatWeOffer slides={webSlides} slidesPerView={3} delay={2200} />
 
-     <OurProcess processData={processData.ai} />
+      <OurProcess processData={processData.ai} />
 
-      <WhyCtrlZ data={whyCtrlzData.ai}/>
+      <WhyCtrlZ data={whyCtrlzData.ai} />
+{/* 
+      <WhyCtrlZsDiff data={differencesData.ai} /> */}
 
-      <WhyCtrlZsDiff data={differencesData.ai}/>
-
-      <Pricing
-       data = {pricingData.video}
-      />
+      <Pricing data={pricingData.ai} />
 
       <div className="w-full bg-white py-12 px-10">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
@@ -425,6 +405,8 @@ flex flex-col items-center justify-center"
       <GetStarted data={getStartedData.ai} />
 
       <FaqServices faqsLeft={faqsLeft} faqsRight={faqsRight} />
+
+      <ContactModal open={openContact} onClose={() => setOpenContact(false)} />
     </>
   );
 }

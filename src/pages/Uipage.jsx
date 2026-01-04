@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import "../styles/pages/uiPage.css";
 import { FaUsers, FaStar, FaClock } from "react-icons/fa";
 import { BiStopwatch } from "react-icons/bi";
@@ -11,6 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow, Autoplay } from "swiper/modules";
 
 import WhatWeOffer from "../components/whatWeOffer";
+import ContactModal from "../components/ContactUs";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -50,7 +51,6 @@ import { processData } from "../data/OurProcessData";
 import { differencesData } from "../data/DifferencesData";
 import { pricingData } from "../data/PricingData";
 import { getStartedData } from "../data/GetStartedData";
-
 
 const webSlides = [
   {
@@ -143,6 +143,8 @@ const iconConnect = [wp, ig, youtube, linkedIn];
 
 export default function Uipage() {
   const location = useLocation();
+    const [openContact, setOpenContact] = useState(false);
+  
 
   const color = location.state?.color || "purple";
 
@@ -217,7 +219,9 @@ export default function Uipage() {
             </div>
 
             {/* CTA */}
-            <button className="mt-8 px-16 py-4 bg-gradient-to-r from-purple-600 via-purple-400 to-purple-600 text-white font-semibold rounded-lg shadow-lg hover:scale-105 transition-transform">
+            <button 
+            onClick={() => {setOpenContact(true)}}
+            className="mt-8 px-16 py-4 bg-gradient-to-r from-purple-600 via-purple-400 to-purple-600 text-white font-semibold rounded-lg shadow-lg hover:scale-105 transition-transform">
               Start Your Project
             </button>
 
@@ -236,9 +240,9 @@ export default function Uipage() {
           </div>
         </div>
       </div>
-      
+
       <div className="w-full flex flex-col items-center justify-center text-center px-4">
-         <FloatingText lines={1} />
+        <FloatingText lines={1} />
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 tracking-wide px-14">
           Proven Performance, Measurable Results
         </h2>
@@ -261,7 +265,6 @@ export default function Uipage() {
               <p className="text-lg lg:text-2xl font-semibold mt-3 text-white">
                 Project Delivered
               </p>
-             
             </div>
 
             {/* Card 2 */}
@@ -273,7 +276,6 @@ export default function Uipage() {
               <p className="text-lg lg:text-2xl font-semibold mt-3 text-white">
                 Client Satisfaction
               </p>
-             
             </div>
 
             {/* Card 3 */}
@@ -285,7 +287,6 @@ export default function Uipage() {
               <p className="text-lg lg:text-2xl font-semibold mt-3 text-white">
                 Happy Clients
               </p>
-             
             </div>
 
             {/* Card 4 */}
@@ -297,7 +298,6 @@ export default function Uipage() {
               <p className="text-lg lg:text-2xl font-semibold mt-3 text-white">
                 On-Time Delivery
               </p>
-             
             </div>
           </div>
         </div>
@@ -309,15 +309,12 @@ export default function Uipage() {
 
       <OurProcess processData={processData.UiDevelopment} />
 
-
-      <WhyCtrlZsDiff data ={differencesData.ui}/>
+      <WhyCtrlZsDiff data={differencesData.ui} />
 
       {/* <WhyCtrlZ /> */}
 
-    <Pricing
-           data = {pricingData.ui}
-          />
-    
+      <Pricing data={pricingData.ui} />
+
       <div className="w-full bg-white py-12 px-10">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
           {/* Left text — 70% */}
@@ -331,7 +328,7 @@ export default function Uipage() {
           {/* Right button — 30% */}
           <div className="w-full md:w-[30%] flex md:justify-end">
             <button
-             onClick={() => setOpenContact(true)} 
+              onClick={() => setOpenContact(true)}
               className="
     relative isolate
     w-full md:w-auto
@@ -369,9 +366,12 @@ export default function Uipage() {
         </div>
       </div>
 
-      <GetStarted data={getStartedData.ui}/>
+      <GetStarted data={getStartedData.ui} />
 
       <FaqServices faqsLeft={faqsLeft} faqsRight={faqsRight} />
+
+      <ContactModal open={openContact} onClose={() => setOpenContact(false)}/>
+      
     </>
   );
 }

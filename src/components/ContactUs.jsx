@@ -122,7 +122,7 @@ export default function ContactModal({ open, onClose }) {
   return (
     /* BACKDROP */
     <div
-      className="fixed inset-0 z-[9999] bg-black/10 backdrop-blur-sm"
+      className="fixed inset-0 z-[9999] bg-black/50 backdrop-blur-md"
       onClick={onClose}
     >
       {/* POSITION (matches top:154px but responsive) */}

@@ -139,15 +139,15 @@ export const getStartedData = {
 
     left: {
       headingTop: "Free Download:",
-      headingMain: "UX Red Flags Checklist",
-      description:
-      "A crisp, one-page visual guide that highlights the most common UX issues users face. Each red flag comes straight from real product audits across multiple industries.",
+      headingMain: "The AI Marketing Playbook 2026",
+      description: "Before spending on ads or SEO, ensure your marketing foundation is built for performance.",
       checklist: [
-        "Navigation red flags",
-        "Form-field red flags",
-        "Visual hierarchy warnings",
-        "Mobile red flags",
-        "Includes quick-fix suggestions",
+        "AEO + GEO SEO Checklist",
+        "Predictive Modeling Templates",
+        "Meta & Google Ads Scripts",
+        "Global Scaling Framework",
+        "10× Content Engine System",
+         "CRO Optimization Guide",
       ],
     },
 
@@ -172,7 +172,7 @@ export const getStartedData = {
         "₹1,00,000+",
       ],
 
-      buttonText: "Get Free checklist",
+      buttonText: "Get My Free Playbook",
     },
   },
 

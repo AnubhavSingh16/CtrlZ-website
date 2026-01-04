@@ -1,10 +1,5 @@
-// export default function VideoEditing() {
-//   return (
-//     <div>VideoEditing</div>
-//   )
-// }
 
-import React from "react";
+import React, { useState } from "react";
 import "../styles/pages/uiPage.css";
 import editedVideo from "../assets/editedVideo.mp4";
 import { FaUsers, FaStar, FaClock } from "react-icons/fa";
@@ -33,6 +28,8 @@ import OurProcess from "../components/OurProcess";
 import WhyCtrlZ from "../components/WhyCtrlz";
 import WhyCtrlZsDiff from "../components/whyCtrlzDiff";
 import FloatingText from "../components/FloatingText";
+
+import ContactModal from "../components/ContactUs";
 
 import mask1 from "../assets/mask1.png";
 import mask2 from "../assets/mask2.png";
@@ -128,6 +125,7 @@ const faqsRight = [
 
 export default function VideoEditing() {
   const location = useLocation();
+  const [openContact, setOpenContact] = useState(false);
 
   const color = location.state?.color || "purple";
 
@@ -174,6 +172,9 @@ export default function VideoEditing() {
     </button> */}
 
           <button
+            onClick={() => {
+              setOpenContact(true);
+            }}
             className="mt-12 px-18 py-5 bg-white text-[#160032]
              font-bold rounded-xl
              shadow-[0_15px_35px_rgba(168,85,247,0.45)]
@@ -268,15 +269,13 @@ export default function VideoEditing() {
 
       <OurProcess processData={processData.videoEditing} />
 
-      <WhyCtrlZ data={whyCtrlzData.video}/>
+      <WhyCtrlZ data={whyCtrlzData.video} />
 
-      <WhyCtrlZsDiff data={differencesData.video}/>
+      <WhyCtrlZsDiff data={differencesData.video} />
 
-      <Pricing
-       data = {pricingData.video}
-      />
+      <Pricing data={pricingData.video} />
 
-        <div className="w-full bg-white py-12 px-10">
+      <div className="w-full bg-white py-12 px-10">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center">
           {/* Left text — 70% */}
           <div className="w-full md:w-[70%] text-left">
@@ -289,7 +288,7 @@ export default function VideoEditing() {
           {/* Right button — 30% */}
           <div className="w-full md:w-[30%] flex md:justify-end">
             <button
-             onClick={() => setOpenContact(true)} 
+              onClick={() => setOpenContact(true)}
               className="
     relative isolate
     w-full md:w-auto
@@ -327,9 +326,11 @@ export default function VideoEditing() {
         </div>
       </div>
 
-      <GetStarted data={getStartedData.video}/>
+      <GetStarted data={getStartedData.video} />
 
       <FaqServices faqsLeft={faqsLeft} faqsRight={faqsRight} />
+
+      <ContactModal open={openContact} onClose={() => setOpenContact(false)} />
     </>
   );
 }

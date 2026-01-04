@@ -1,8 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 import { FaCheckCircle } from "react-icons/fa";
+
+import ContactModal from "../components/ContactUs";
+
 
 export default function Pricing({ data }) {
   if (!data) return null;
+  
+    const [openContact, setOpenContact] = useState(false);
 
   const { title, subheading, plans } = data;
 
@@ -24,15 +29,18 @@ export default function Pricing({ data }) {
         {/* Cards */}
         <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-6 items-end">
           {plans.map((plan, index) => (
-            <PricingCard key={index} {...plan} />
+            <PricingCard key={index} {...plan} setOpenContact={setOpenContact}/>
           ))}
         </div>
       </div>
+
+            <ContactModal open={openContact} onClose={() => setOpenContact(false)} />
+
     </section>
   );
 }
 
-function PricingCard({ title, price, features, popular }) {
+function PricingCard({ title, price, features, popular, setOpenContact }) {
   return (
     <div
       className={`relative rounded-2xl border-2 border-[#CCA6FF] overflow-visible
@@ -71,6 +79,7 @@ function PricingCard({ title, price, features, popular }) {
         </ul>
 
         <button
+        onClick={()=> {setOpenContact(true)}}
           className="
     mt-8 w-full py-3 rounded-lg
     bg-[#5600C733] border border-white

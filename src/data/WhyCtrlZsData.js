@@ -106,31 +106,31 @@ export const whyCtrlzData = {
   ai: {
     cards: [
       {
-        title: "Story-First Approach",
-        description: "We craft narratives before frames—story always leads.",
+        title: "Result-Driven Approach",
+        description: "Our strategies prioritize measurable outcomes — traffic, leads, conversions, and revenue.",
        img: sample1,
         large: true,
       },
       {
-        title: "Brand Consistency",
+        title: "Industry Expertise",
         description:
-          "Every video aligns visually and emotionally with your brand.",
+          "From edtech to finance to creators, we design growth systems that work across industries.",
          img: sample1,
       },
       {
-        title: "Platform Optimization",
+        title: "Future-Proof Technology",
         description:
-          "Videos tailored for web, reels, ads, and social platforms.",
+          "We combine AI tools, automation, analytics, and data for faster, smarter decision-making.",
          img: sample1,
       },
       {
-        title: "Fast Turnarounds",
-        description: "Efficient workflows without sacrificing polish.",
+        title: "Transparent Pricing",
+        description: "Clear packages, no hidden charges, structured reporting, and full visibility into performance.",
         img: sample1,
       },
       {
-        title: "Performance Metrics",
-        description: "Videos designed to retain attention and drive action.",
+        title: "24/7 Premium Support",
+        description: "Real-time communication, weekly calls, and dedicated growth support.",
          img: sample1,
       },
     ],

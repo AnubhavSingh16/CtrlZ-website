@@ -58,7 +58,7 @@ export default function BrandAudit() {
   };
 
   return (
-    <section className="w-full bg-gradient-to-bl from-[#2b1246]/80 via-[#1a0d24] to-black py-12 md:py-16">
+    <section className="w-full py-12 md:py-16">
       <div className="max-w-7xl mx-auto px-4 lg:px-6">
         {/* GRID */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-0 items-start">

@@ -175,12 +175,12 @@ export default function WebDevelopmentPage() {
             </Swiper>
           </div>
           {/* CTA BUTTON */}
-         <button
-  className="webdev-btn relative z-50 pointer-events-auto"
-  onClick={() => setOpenContact(true)}
->
-  Start Your Project
-</button>
+          <button
+            className="webdev-btn-start relative z-50 pointer-events-auto px-16 py-4"
+            onClick={() => setOpenContact(true)}
+          >
+            Start Your Project
+          </button>
 
           <div className="bg-black "></div>
 
@@ -350,7 +350,7 @@ export default function WebDevelopmentPage() {
           {/* Right button — 30% */}
           <div className="w-full md:w-[30%] flex md:justify-end">
             <button
-             onClick={() => setOpenContact(true)} 
+              onClick={() => setOpenContact(true)}
               className="
     relative isolate
     w-full md:w-auto

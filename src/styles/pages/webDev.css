@@ -6,21 +6,24 @@
 /* ================= DIAGONAL BACKGROUND ================= */
 .webdev-diagonal-bg {
   position: absolute;
-  top: 40%;
+  top: 20%;
   right: -30%;
   width: 200%;
   height: 60%;
 
   background: linear-gradient(
     135deg,
-    #AB6BFF00 0%,
-    #3a1d62 60%,
-    #3a1f5c 100%
+    rgba(0, 0, 0, 0.98) 0%,
+    rgba(6, 1, 13, 0.95) 30%,
+    rgba(37, 25, 57, 0.9) 55%,
+    rgba(126, 47, 224, 0.75) 75%,
+    rgba(166, 126, 212, 0.25) 100%
   );
 
   transform: rotate(-25deg);
   z-index: -10;
 }
+
 /* GLOBAL WRAPPER */
 .webdev-wrapper {
   width: 100%;
@@ -140,10 +143,9 @@ width: clamp(400px, 26vw, 360px) !important;
    CTA BUTTON
 ===============================*/
 
-.webdev-btn {
+.webdev-btn-start {
   margin-top: clamp(1px, 4vw, 60px);
 
- 
   background: white;
   color: #310071;
 
@@ -158,7 +160,7 @@ width: clamp(400px, 26vw, 360px) !important;
   z-index: 10; 
 }
 
-.webdev-btn:hover {
+.webdev-btn-start:hover {
   background: #e6e6e6;
 }
 
@@ -288,7 +290,7 @@ width: clamp(400px, 26vw, 360px) !important;
 
 
 @media (max-width: 600px) {
-  .webdev-btn {
+  .webdev-btn-start {
     font-size: 16px;
     padding: 14px 28px;
   }

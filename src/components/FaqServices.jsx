@@ -1,8 +1,13 @@
 import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
+import ContactModal from "../components/ContactUs";
+
 
 export default function FaqServices({ faqsLeft = [], faqsRight = [] }) {
   const [openIndex, setOpenIndex] = useState(null);
+     const [openContact, setOpenContact] = useState(false);
+  
+
 
   const renderFAQ = (item, index) => {
     const isOpen = openIndex === index;
@@ -68,6 +73,7 @@ export default function FaqServices({ faqsLeft = [], faqsRight = [] }) {
         {/* Buttons */}
        <div className="flex justify-center">
   <button
+  onClick={() => {setOpenContact(true)}}
     className="
       border border-white
       bg-purple-500
@@ -86,6 +92,8 @@ export default function FaqServices({ faqsLeft = [], faqsRight = [] }) {
 </div>
 
       </div>
+
+       <ContactModal open={openContact} onClose={() => setOpenContact(false)} />
     </section>
   );
 }
