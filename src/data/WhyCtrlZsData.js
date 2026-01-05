@@ -136,4 +136,37 @@ export const whyCtrlzData = {
     ],
   },
 
+   graphic: {
+    cards: [
+      {
+        title: "Strategic Design Breakdown ",
+        description: "We don’t just give you a “final version.” We give you a complete breakdown of why every decision was made — color psychology, UX logic, typography rationale, and behavioral insights. This turns every design into a strategic asset, not a decorative graphic.",
+       img: sample1,
+        large: true,
+      },
+      {
+        title: "ROI-Focused Design Philosophy",
+        description:
+          "Every color, layout, and hierarchy choice follows proven principles from Behavioral psychology, Conversion optimization, Eye-tracking research, Funnel design logic, Global brand strategy",
+         img: sample1,
+      },
+      {
+        title: "Premium Quality, Guaranteed",
+        description:
+          "Unlimited revisions until the design is exactly what your brand needs — not “good enough.”",
+         img: sample1,
+      },
+      {
+        title: "Brand Consistency Framework",
+        description: "We build complete design systems so that every future graphic automatically stays on-brand. Logos, ads, social posts, decks — everything looks unified.",
+        img: sample1,
+      },
+      {
+        title: "Dedicated Design Partner",
+        description: "No freelancer roulette. One designer learns your brand inside-out and becomes your long-term partner.",
+         img: sample1,
+      },
+    ],
+  },
+
 };

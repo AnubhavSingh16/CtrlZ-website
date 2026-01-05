@@ -1,6 +1,6 @@
 export const differencesData = {
   web: {
-    heading: "WHY CTRL ZS?",
+    heading: "Problems We Solve?",
     subHeading: "",
     differences: [
       {
@@ -130,7 +130,7 @@ export const differencesData = {
   },
 
   ai: {
-    heading: "WHY CTRL ZS?",
+    heading: "Problems We Solve?",
     subHeading: "",
     differences: [
       {
@@ -170,5 +170,49 @@ export const differencesData = {
           "WCAG-compliant designs that welcome all users, expanding your market reach while meeting global accessibility standards.",
       },
     ],
+  },
+
+  graphic: {
+    heading: "Problems We Solve?",
+    subHeading: "",
+    differences: [
+  {
+    problem:
+      "Editing takes 10+ hours per video, slowing down content output and breaking consistency.",
+    solution:
+      "A streamlined workflow with 24–48 hour delivery, helping you save 40+ hours every month.",
+  },
+  {
+    problem:
+      "Even great content fails because poor edits kill engagement and watch-time.",
+    solution:
+      "Hook optimization, pacing, and retention-focused editing designed to drive up to 3× higher engagement.",
+  },
+  {
+    problem:
+      "Every video looks different, leading to weak brand recall and diluted identity.",
+    solution:
+      "Custom brand templates and style guides ensure 100% visual consistency across all videos.",
+  },
+  {
+    problem:
+      "In-house editing means paying for editors, software, and upgrades—often crossing ₹6–8L per year.",
+    solution:
+      "Professional editing starting at ₹499 per video, helping you cut costs by up to 70%.",
+  },
+  {
+    problem:
+      "DIY or low-skill edits fail to meet professional brand expectations.",
+    solution:
+      "Cinematic color grading, clean audio design, and motion graphics for a studio-level finish.",
+  },
+  {
+    problem:
+      "Videos aren’t optimized for platforms, so algorithms suppress reach and visibility.",
+    solution:
+      "Platform-specific editing (format, pacing, captions, thumbnails) designed to unlock up to 5× organic reach.",
+  },
+],
+
   },
 };

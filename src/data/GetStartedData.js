@@ -176,5 +176,46 @@ export const getStartedData = {
     },
   },
 
+    graphic: {
+    sectionTitle:
+      "Free Download: Ultimate Website Launch & Performance Checklist ",
+
+    left: {
+      headingTop: "Free Download:",
+      headingMain: "Strategic Design Blueprint 2026",
+      description: "10 Psychological Design Principles That Increase Conversions by 2–3×",
+      checklist: [
+        "Color psychology map",
+        "Layout decision tree",
+        "CTA placement models",
+        "Brand consistency checklist",
+        "Algorithm-proof design formats",
+      ],
+    },
+
+    form: {
+      title: "Get Started Today",
+      subtitle: "Fill out the form below and we’ll be in touch shortly.",
+
+      fields: [
+        { label: "Name", placeholder: "Your Full Name", type: "text" },
+        { label: "Email", placeholder: "you@example.com", type: "email" },
+        { label: "Contact Number", placeholder: "+91  Mobile Number*" },
+        {
+          label: "Website / Idea Description",
+          placeholder: "www.yourwebsite.com or Describe your business idea",
+        },
+      ],
+
+      budgetOptions: [
+        "Select your budget range",
+        "₹25,000 – ₹50,000",
+        "₹50,000 – ₹1,00,000",
+        "₹1,00,000+",
+      ],
+
+      buttonText: "Download Free Blueprint",
+    },
+  },
 
 };

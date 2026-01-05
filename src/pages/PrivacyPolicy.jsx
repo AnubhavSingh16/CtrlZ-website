@@ -132,7 +132,7 @@ export default function PrivacyPolicy() {
 function Section({ title, children }) {
   return (
     <div>
-      <h2 className="text-xl sm:text-2xl font-bold mb-4 text-[#bfa2ff]">
+      <h2 className="text-xl sm:text-2xl font-bold mb-4 text-[#ffffff]">
         {title}
       </h2>
       <div className="text-sm sm:text-base leading-relaxed text-white/85">

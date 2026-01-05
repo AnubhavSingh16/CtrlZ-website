@@ -183,15 +183,14 @@ export const processData = {
     ],
   },
 
-  GraphicDesign: {
+  graphic: {
     subheading:
-      "A structured, collaborative approach that turns ideas into visually compelling designs that communicate, convert, and scale with your brand.",
-
+     "A structured, collaborative approach that turns ideas into visually compelling designs that communicate, convert, and scale with your brand.",
     steps: [
       {
         img: prog1,
         title: "Discovery & Strategy",
-        text: "We analyze your brand deeply before designing anything. This phase focuses on understanding your positioning, audience, competitors, and messaging direction so every design decision is purposeful and aligned with business goals.",
+        text: "We analyze your brand deeply before designing anything. This phase includes brand audit, Target audience analysis, competitor mapping, positioning strategy, messaging alignment",
         active: false,
       },
       {
@@ -203,19 +202,19 @@ export const processData = {
       {
         img: prog3,
         title: "Design Refinement",
-        text: "Your feedback drives iteration and refinement. We polish the selected concept with unlimited revisions until the design perfectly matches your vision, goals, and brand identity.",
+        text: "Your feedback drives iteration and refinement. We polish the selected concept with unlimited revisions until the design matches your goals. ",
         active: false,
       },
       {
         img: prog4,
         title: "Strategic Review",
-        text: "Before delivery, every design undergoes a detailed quality, conversion, and technical review to ensure brand consistency, color accuracy, responsiveness, and cross-platform compatibility.",
+        text: "You get a complete quality, conversion, and technical check. It includes CRO alignment, brand consistency, color accuracy, cross-platform compatibility ",
         active: true,
       },
       {
         img: prog5,
         title: "Delivery & Launch",
-        text: "You receive everything needed for real-world implementation, including all required file formats, editable source files, clear usage guidance, and support during rollout.",
+        text: "You receive everything needed for real-world implementation, including all file formats (PNG, JPG, PDF, SVG), editable source files, usage guidelines, implementation support",
         active: false,
       },
       {

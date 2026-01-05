@@ -68,12 +68,11 @@ export const successModalData = {
   },
 
   graphic: {
-    title: "Your checklist is on the way 🚀",
+    title: "Your Strategic Design Blueprint is on the way 🚀",
     description: `
     Thanks for trusting <b>Ctrl Zs</b>.<br/><br/>
-    Your 40-point Website Launch & Performance Checklist has been sent to your email.<br/><br/>
-    It covers performance, SEO, design, and security — everything you need to launch a website that actually works.<br/><br/>
-    Take your time going through it, and feel free to reach out if you’d like help applying any of the insights.
+    Inside, you’ll find 10 proven psychological design principles used by high-performing brands to drive 2–3× higher conversions - from color psychology and layout decisions to CTA placement and brand consistency.<br/><br/>
+    Go through it at your own pace, and if you’d like help applying any of these principles to your brand, we’d be happy to guide you.
   `,
     primaryButton: {
       text: "Explore Ctrl Zs",

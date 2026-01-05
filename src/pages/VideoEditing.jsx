@@ -265,7 +265,7 @@ export default function VideoEditing() {
 
       <TrustedBy />
 
-      <WhatWeOffer slides={webSlides} slidesPerView={3} delay={2200} />
+      <WhatWeOffer data={webSlides} />
 
       <OurProcess processData={processData.videoEditing} />
 
