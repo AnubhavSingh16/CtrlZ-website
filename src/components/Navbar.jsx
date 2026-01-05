@@ -10,6 +10,10 @@ export default function Navbar({ onContactClick }) {
   const isUiPage = location.pathname === "/ui-development";
   const isHomePage = location.pathname === "/";
 
+  const closeDropdown = () => {
+    setOpenDropdown(false);
+  };
+
   /* ===== DESKTOP DROPDOWN ===== */
   const handleEnter = () => {
     clearTimeout(timeoutRef.current);
@@ -46,26 +50,46 @@ export default function Navbar({ onContactClick }) {
             onMouseEnter={handleEnter}
             onMouseLeave={handleLeave}
           >
-            <button className="cursor-pointer flex items-center gap-1">
+            <button className="cursor-pointer flex items-center">
               Services ▾
             </button>
 
             <div className={`dropdown-menu ${openDropdown ? "show" : ""}`}>
-              <Link to="/web-development" className="dropdown-item">
+              <Link
+                to="/web-development"
+                className="dropdown-item"
+                onClick={closeDropdown}
+              >
                 Web Development
               </Link>
-              <Link to="/ui-development" className="dropdown-item">
+              <Link
+                to="/ui-development"
+                className="dropdown-item"
+                onClick={closeDropdown}
+              >
                 UI Development
               </Link>
-              <Link to="/video-editing" className="dropdown-item">
+              <Link
+                to="/video-editing"
+                className="dropdown-item"
+                onClick={closeDropdown}
+              >
                 Video Editing
               </Link>
-              <Link to="/ai-marketing" className="dropdown-item">
+              <Link
+                to="/ai-marketing"
+                className="dropdown-item"
+                onClick={closeDropdown}
+              >
                 AI Marketing
               </Link>
-              {/* <Link to="/logo-design" className="dropdown-item">
-                Logo Design
-              </Link> */}
+              <Link
+                to="/graphic-design"
+                className="dropdown-item"
+                onClick={closeDropdown}
+              >
+                Graphic Design
+              </Link>
             </div>
           </div>
 
@@ -113,7 +137,7 @@ export default function Navbar({ onContactClick }) {
               <Link to="/ui-development">UI Development</Link>
               <Link to="/video-editing">Video Editing</Link>
               <Link to="/ai-marketing">AI Marketing</Link>
-              {/* <Link to="/logo-design">Logo Design</Link> */}
+              <Link to="/graphic-design">Graphic Design</Link>
             </div>
           )}
 

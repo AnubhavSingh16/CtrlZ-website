@@ -192,24 +192,35 @@ body {
 /* ================= DROPDOWN ================= */
 .dropdown-menu {
   position: absolute;
-  left: 0;
+  left: -40px;
   top: 100%;
-  margin-top: 8px;
-  width: 180px;
+  margin-top: 20px;
+  width: 190px;
 
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateY(8px);
   pointer-events: none;
 
-  background: rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  border-radius: 12px;
+  /* STRONG GLASS BASE */
+  background: rgba(44, 5, 83, 0.8); /* darker + solid */
+  backdrop-filter: blur(70px) saturate(180%);
+  -webkit-backdrop-filter: blur(70px) saturate(380%);
 
-  padding: 10px 0;
+  /* BORDER + SHINE */
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 14px;
+
+  /* DEPTH */
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+  padding: 12px 0;
+
   transition: opacity 0.25s ease, transform 0.25s ease;
-  z-index: 50;
+  z-index: 999;
 }
+
 
 .dropdown-menu.show {
   opacity: 1;

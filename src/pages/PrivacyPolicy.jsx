@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function PrivacyPolicy() {
+
+
   return (
     <section className="relative w-full min-h-screen overflow-hidden bg-[#0b0710] text-white">
       {/* BACKGROUND GRADIENT */}

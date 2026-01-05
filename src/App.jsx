@@ -17,13 +17,18 @@ import "./App.css";
 import TermsAndConditions from "./pages/TermsAndConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ContactUs from "./pages/ContactUsPage";
+import ScrollToTop from "./helper/ScrollToTop"; 
+import GraphicDesign from "./pages/GraphicDesign";
 
 function App() {
   const [openContact, setOpenContact] = useState(false);
 
   return (
     <Router>
-      {/* NAVBAR */}
+     
+       <ScrollToTop />
+       
+       {/* NAVBAR */}
       <Navbar onContactClick={() => setOpenContact(true)} />
 
       {/* ROUTES */}
@@ -34,6 +39,8 @@ function App() {
         <Route path="/video-editing" element={<VideoEditing />} />
         <Route path="/logo-design" element={<LogoDesign />} />
         <Route path="/ai-marketing" element={<AiMarketing />} />
+        <Route path="/graphic-design" element={<GraphicDesign />} />
+
         <Route path="/about" element={<AboutUs />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
