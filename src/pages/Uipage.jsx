@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "../styles/pages/uiPage.css";
 import { FaUsers, FaStar, FaClock } from "react-icons/fa";
 import { BiStopwatch } from "react-icons/bi";
@@ -52,42 +52,44 @@ import { differencesData } from "../data/DifferencesData";
 import { pricingData } from "../data/PricingData";
 import { getStartedData } from "../data/GetStartedData";
 
+import testimonialBackg from "../assets/testimonialBackg.svg";
+
 const webSlides = [
   {
     image: sample1,
-    title: "Custom Coded Website Design & Development",
+    title: "UI Design",
     description:
-      "Build a website that’s as unique as your brand. We create custom-coded, scalable websites using Webflow, React, Next.js, and WordPress — engineered for performance, flexibility, and growth. Every line of code is optimized for SEO, speed, and long-term stability.",
+      "Pixel-perfect interfaces that blend aesthetics with functionality, creating memorable visual experiences.",
   },
   {
     image: sample2,
-    title: "Custom Coded Website Design & Development",
+    title: "UX Research",
     description:
-      "Build a website that’s as unique as your brand. We create custom-coded, scalable websites using Webflow, React, Next.js, and WordPress — engineered for performance, flexibility, and growth. Every line of code is optimized for SEO, speed, and long-term stability.",
+      "Deep user insights through interviews, surveys, and behavioral analysis to inform design decisions.",
   },
   {
     image: sample3,
-    title: "Custom Coded Website Design & Development",
+    title: "Wireframing & Prototyping",
     description:
-      "Build a website that’s as unique as your brand. We create custom-coded, scalable websites using Webflow, React, Next.js, and WordPress — engineered for performance, flexibility, and growth. Every line of code is optimized for SEO, speed, and long-term stability.",
+      "Interactive prototypes that bring ideas to life and validate concepts before development.",
   },
   {
     image: sample1,
-    title: "Custom Coded Website Design & Development",
+    title: "Design Systems",
     description:
-      "Build a website that’s as unique as your brand. We create custom-coded, scalable websites using Webflow, React, Next.js, and WordPress — engineered for performance, flexibility, and growth. Every line of code is optimized for SEO, speed, and long-term stability.",
+      "Scalable design systems that ensure consistency and accelerate product development.",
   },
   {
     image: sample1,
-    title: "Custom Coded Website Design & Development",
+    title: "Usability Testing",
     description:
-      "Build a website that’s as unique as your brand. We create custom-coded, scalable websites using Webflow, React, Next.js, and WordPress — engineered for performance, flexibility, and growth. Every line of code is optimized for SEO, speed, and long-term stability.",
+      "Real user testing to validate designs and optimize for maximum conversion and satisfaction.",
   },
   {
     image: sample1,
-    title: "Custom Coded Website Design & Development",
+    title: "Conversion Optimization",
     description:
-      "Build a website that’s as unique as your brand. We create custom-coded, scalable websites using Webflow, React, Next.js, and WordPress — engineered for performance, flexibility, and growth. Every line of code is optimized for SEO, speed, and long-term stability.",
+      "Data-driven design improvements that directly impact your bottom line and business metrics.",
   },
 ];
 
@@ -143,8 +145,7 @@ const iconConnect = [wp, ig, youtube, linkedIn];
 
 export default function Uipage() {
   const location = useLocation();
-    const [openContact, setOpenContact] = useState(false);
-  
+  const [openContact, setOpenContact] = useState(false);
 
   const color = location.state?.color || "purple";
 
@@ -219,9 +220,12 @@ export default function Uipage() {
             </div>
 
             {/* CTA */}
-            <button 
-            onClick={() => {setOpenContact(true)}}
-            className="mt-8 px-16 py-4 bg-gradient-to-r from-purple-600 via-purple-400 to-purple-600 text-white font-semibold rounded-lg shadow-lg hover:scale-105 transition-transform">
+            <button
+              onClick={() => {
+                setOpenContact(true);
+              }}
+              className="mt-8 px-16 py-4 bg-gradient-to-r from-purple-600 via-purple-400 to-purple-600 text-white font-semibold rounded-lg shadow-lg hover:scale-105 transition-transform"
+            >
               Start Your Project
             </button>
 
@@ -305,9 +309,29 @@ export default function Uipage() {
 
       <TrustedBy />
 
-      <WhatWeOffer slides={webSlides} slidesPerView={3} delay={2200} />
+      <WhatWeOffer data={webSlides} />
 
-      <OurProcess processData={processData.UiDevelopment} />
+      <div className="relative min-h-screen w-full overflow-hidden">
+        {/* BLURRED BACKGROUND IMAGE */}
+        <div
+          className="absolute inset-0 -z-20 scale-100"
+          style={{
+            backgroundImage: `url(${testimonialBackg})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            filter: "blur(1px)",
+          }}
+        />
+
+        {/* DARK / COLOR OVERLAY (optional but recommended) */}
+        {/* <div className="absolute inset-0 bg-black/40 -z-10" /> */}
+
+        {/* CONTENT GOES HERE */}
+        <div className="relative z-10">
+          <OurProcess processData={processData.UiDevelopment} />
+        </div>
+      </div>
 
       <WhyCtrlZsDiff data={differencesData.ui} />
 
@@ -370,8 +394,7 @@ export default function Uipage() {
 
       <FaqServices faqsLeft={faqsLeft} faqsRight={faqsRight} />
 
-      <ContactModal open={openContact} onClose={() => setOpenContact(false)}/>
-      
+      <ContactModal open={openContact} onClose={() => setOpenContact(false)} />
     </>
   );
 }

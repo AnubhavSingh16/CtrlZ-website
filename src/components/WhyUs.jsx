@@ -97,7 +97,7 @@ export default function WhyCtrlZs() {
                 key={index}
                 onClick={() => handleClick(index)}
                 className={`
-                  rounded-md px-5 py-4 text-left cursor-pointer
+                 px-5 py-4 text-left cursor-pointer
                   transition-all duration-500 ease-in-out
                   ${
                     isActive
@@ -120,7 +120,7 @@ export default function WhyCtrlZs() {
         {/* RIGHT CARD */}
         <div className="flex-1 flex justify-center mt-10 md:mt-0">
           <div
-            className="bg-white/10 border border-white/50 rounded-xl
+            className=" bg-[#221038] border border-white/50 
       p-6 shadow-xl text-center flex flex-col items-center
       justify-start max-w-sm w-full"
           >
@@ -138,13 +138,13 @@ export default function WhyCtrlZs() {
         `}
                 style={{ perspective: "1200px" }}
               >
-                {/* GLOW */}
+                {/* GLOW   */}
                 <div
                   className="
             absolute
             w-56 h-56 sm:w-64 sm:h-64
             rounded-full
-            bg-gradient-to-r from-[#06000ba6] via-[#f3f3f3] to-[#06000d]
+            bg-[#a960ec]
             blur-2xl opacity-60
           "
                 />

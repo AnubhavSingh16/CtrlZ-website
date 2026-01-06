@@ -42,6 +42,8 @@ import { whyCtrlzData } from "../data/WhyCtrlZsData";
 import { pricingData } from "../data/PricingData";
 import { getStartedData } from "../data/GetStartedData";
 
+import testimonialBackg from "../assets/testimonialBackg.svg";
+
 export default function WebDevelopmentPage() {
   const cards = [sample1, sample2, sample3, sample1, sample2, sample3];
 
@@ -327,11 +329,32 @@ export default function WebDevelopmentPage() {
 
       <TrustedBy />
 
-      <WhatWeOffer slides={webSlides} slidesPerView={3} delay={2200} />
+      {/* <WhatWeOffer slides={webSlides} slidesPerView={3} delay={2200} /> */}
+      <WhatWeOffer data={webSlides} />
 
       {/* <WhatWeOfferComman/> */}
 
-      <OurProcess processData={processData.webDevelopment} />
+      <div className="relative min-h-screen w-full overflow-hidden">
+        {/* BLURRED BACKGROUND IMAGE */}
+        <div
+          className="absolute inset-0 -z-20 scale-100"
+          style={{
+            backgroundImage: `url(${testimonialBackg})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            filter: "blur(1px)",
+          }}
+        />
+
+        {/* DARK / COLOR OVERLAY (optional but recommended) */}
+        {/* <div className="absolute inset-0 bg-black/40 -z-10" /> */}
+
+        {/* CONTENT GOES HERE */}
+        <div className="relative z-10">
+          <OurProcess processData={processData.webDevelopment} />
+        </div>
+      </div>
 
       <WhyCtrlZ data={whyCtrlzData.web} />
 

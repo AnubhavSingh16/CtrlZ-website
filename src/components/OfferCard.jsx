@@ -2,7 +2,9 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 export default function OfferCard({ index, total, item }) {
+  console.log("itemmmmm offer", item);
   const ref = useRef(null);
+  
   const isInView = useInView(ref, {
     margin: "-40% 0px -40% 0px",
     once: false,
@@ -17,7 +19,7 @@ export default function OfferCard({ index, total, item }) {
         }}
         transition={{ type: "spring", stiffness: 120, damping: 20 }}
         style={{
-          top: `calc(-6vh + ${index * 36}px)`,
+          top: `calc(-12vh + ${index * 36}px)`,
           zIndex: total - index,
         }}
         className="
@@ -32,20 +34,24 @@ export default function OfferCard({ index, total, item }) {
         "
       >
         {/* LEFT */}
-        <div className="flex items-center justify-center">
-          <div className="w-40 h-40 rounded-full border-4 border-purple-600 flex items-center justify-center font-bold text-purple-700">
-            ⚛
-          </div>
+        <div className="relative w-full h-full flex items-center justify-center bg-white">
+          <img
+            src={item.image}
+            alt={item.title}
+            loading="lazy"
+            className="
+      w-full h-full
+      object-cover
+    "
+          />
         </div>
 
         {/* RIGHT */}
-        <div className="bg-gradient-to-br from-[#3b0ca3] to-[#6a1cff] px-10 py-12 flex flex-col justify-center">
-          <h3 className="text-xl font-semibold text-white mb-4">
+        <div className="bg-gradient-to-b from-[#310071] to-[#5D00D7] px-10 py-12 flex flex-col text-center ">
+          <h3 className="text-3xl font-semibold text-white mb-4">
             {item.title}
           </h3>
-          <p className="text-white/90 leading-relaxed">
-            {item.description}
-          </p>
+          <p className="text-white/90 leading-relaxed text-xl">{item.description}</p>
         </div>
       </motion.div>
     </div>

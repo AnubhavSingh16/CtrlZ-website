@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import "../styles/pages/uiPage.css";
 import editedVideo from "../assets/editedVideo.mp4";
@@ -41,6 +40,8 @@ import { whyCtrlzData } from "../data/WhyCtrlZsData";
 import { differencesData } from "../data/DifferencesData";
 import { pricingData } from "../data/PricingData";
 import { getStartedData } from "../data/GetStartedData";
+
+import testimonialBackg from "../assets/testimonialBackg.svg";
 
 const webSlides = [
   {
@@ -267,7 +268,27 @@ export default function VideoEditing() {
 
       <WhatWeOffer data={webSlides} />
 
-      <OurProcess processData={processData.videoEditing} />
+      <div className="relative min-h-screen w-full overflow-hidden">
+        {/* BLURRED BACKGROUND IMAGE */}
+        <div
+          className="absolute inset-0 -z-20 scale-100"
+          style={{
+            backgroundImage: `url(${testimonialBackg})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            filter: "blur(1px)",
+          }}
+        />
+
+        {/* DARK / COLOR OVERLAY (optional but recommended) */}
+        {/* <div className="absolute inset-0 bg-black/40 -z-10" /> */}
+
+        {/* CONTENT GOES HERE */}
+        <div className="relative z-10">
+          <OurProcess processData={processData.videoEditing} />
+        </div>
+      </div>
 
       <WhyCtrlZ data={whyCtrlzData.video} />
 

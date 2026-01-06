@@ -44,7 +44,7 @@ export default function FaqServices({ faqsLeft = [], faqsRight = [] }) {
   };
 
   return (
-    <section className="w-full bg-gradient-to-br from-black to-[#2b1247] py-20 px-6">
+    <section className="w-full bg-gradient-to-b from-[black] via-[#0d0214] to-black py-20 px-6">
       <div className="max-w-7xl mx-auto text-center">
         {/* Pill */}
         <div className="inline-flex items-center justify-center mb-6">

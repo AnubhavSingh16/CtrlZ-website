@@ -5,18 +5,17 @@ import paidads from "../assets/paidads.png";
 import web from "../assets/web.png";
 import { useNavigate } from "react-router-dom";
 
-
 const services = [
   {
     title: "Web Development",
     desc: "Modern, scalable & high-converting websites",
     path: "/web-development",
-    img: web,
+    img: seo,
   },
   {
-    title: "Paid Ads",
+    title: "Graphic Design",
     desc: "Performance marketing & growth strategy",
-    path: "/web-development",
+    path: "/graphic-design",
     img: paidads,
   },
   {
@@ -32,16 +31,10 @@ const services = [
     img: ui,
   },
   {
-    title: "Paid Ads",
+    title: "Ai Marketing",
     desc: "Performance marketing & growth strategy",
-    path: "/ui-development",
+    path: "/ai-marketing",
     img: paidads,
-  },
-  {
-    title: "SEO",
-    desc: "Organic traffic & long-term visibility",
-    path: "/logo-design",
-    img: seo,
   },
 ];
 
@@ -52,10 +45,22 @@ export default function Services() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % services.length);
-    }, 3000);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, []);
+
+  //   useEffect(() => {
+  //   const timeout = setTimeout(() => {
+  //     const interval = setInterval(() => {
+  //       setActiveIndex((prev) => (prev + 1) % services.length);
+  //     }, 500);
+
+  //     return () => clearInterval(interval);
+  //   }, 2000);
+
+  //   return () => clearTimeout(timeout);
+  // }, []);
 
   return (
     <section className="home-services-section">
@@ -87,9 +92,14 @@ export default function Services() {
               role="button"
               tabIndex={0}
             >
+              {/* IMAGE */}
               <img src={service.img} alt={service.title} />
-              <h3>{service.title}</h3>
-              <p>{service.desc}</p>
+
+              {/* TEXT OVERLAY */}
+              <div className="home-services-text">
+                <h3>{service.title}</h3>
+                <p>{service.desc}</p>
+              </div>
             </div>
           );
         })}

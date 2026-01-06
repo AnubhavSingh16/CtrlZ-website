@@ -225,7 +225,8 @@ width: clamp(400px, 26vw, 360px) !important;
 
 
 /* FLOATING TEXT SECTION */
-.floating-text-container {
+.floating-text-cont
+ainer {
   width: 100%;
   overflow: hidden;
   padding: 25px 0;

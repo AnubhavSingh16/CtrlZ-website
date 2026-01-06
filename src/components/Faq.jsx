@@ -106,7 +106,7 @@ export default function FAQ() {
           {faqs.map((item, index) => (
             <div
               key={index}
-              className="bg-black/30 backdrop-blur-lg border border-white rounded-xl overflow-hidden"
+              className="bg-black/30 backdrop-blur-lg border border-white rounded-md overflow-hidden"
             >
               {/* HEADER */}
               <button

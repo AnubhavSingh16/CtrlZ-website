@@ -92,7 +92,7 @@ export default function Process({ processData }) {
 
 function Card({ img, title, text, active }) {
   return (
-    <div className="relative bg-white/10 backdrop-blur-xl border border-[#BF8EFF] rounded-lg px-5 pt-20 pb-8 text-center shadow-2xl group hover:cursor-pointer">
+    <div className="relative bg-black/40 backdrop-blur-2xl border border-[#BF8EFF] rounded-lg px-5 pt-20 pb-8 text-center shadow-2xl group hover:cursor-pointer">
       {/* IMAGE BADGE */}
       <div
         className={`

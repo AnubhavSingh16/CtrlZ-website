@@ -49,11 +49,11 @@ const projects = [
 
 export default function OurWork() {
   return (
-    <section className="w-full py-[50px] text-white relative ">
+    <section className="w-full py-[50px] text-white relative mt-10 ">
 
       {/* TITLE */}
             {/* HEADING */}
-        <h2 className="text-center text-6xl font-bold text-white mb-6">
+        <h2 className="text-center text-6xl font-bold text-white">
           Our Work
         </h2>
 
@@ -89,11 +89,11 @@ export default function OurWork() {
                 {p.desc}
               </p>
 
-              {/* <button
+              <button
                 className="mt-4 w-[60%] bg-[#E3CDFF] text-[#4E2F76] font-semibold py-2 rounded-md hover:bg-white transition px-3"
               >
                 Explore →
-              </button> */}
+              </button>
             </div>
           ))}
 

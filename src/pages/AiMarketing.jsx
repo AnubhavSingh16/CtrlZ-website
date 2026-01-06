@@ -52,29 +52,36 @@ import { differencesData } from "../data/DifferencesData";
 import { pricingData } from "../data/PricingData";
 import { getStartedData } from "../data/GetStartedData";
 
+import testimonialBackg from "../assets/testimonialBackg.svg";
+
+
 const webSlides = [
   {
     image: sample1,
     title: "Performance Marketing (Meta + Google Ads)",
-    description: "Scale smarter, not harder. We use data-driven targeting, creative testing, and continuous optimization to reduce CAC and improve ROAS. \n Includes \n Meta Ads (Facebook & Instagram),Google Search & Display Ads, Budget allocation & optimization, Audience & keyword clustering, Creative testing frameworks, Conversion tracking & performance dashboards",
+    description:
+      "We help you scale profitably with data-driven ad strategies. From audience targeting to creative testing and budget optimization, everything is built to reduce CAC and improve ROAS across Meta and Google Ads.",
   },
   {
     image: sample1,
-    title: "Social Media Marketing & LinkedIn Presence (Founder + Company)",
-    description: "Build authority, visibility, and trust across platforms - not just posts. \n Includes \n Social media strategy for brand & founders, LinkedIn founder personal branding, LinkedIn company page management, Content strategy & monthly calendars, Reels & short-form video editing, Graphic design for posts & creatives, Copywriting, captions & hooks, Scheduling & publishing, Hashtag & trend research, Monthly analytics & insights",
+    title: "Social Media Marketing & LinkedIn Presence",
+    description:
+      "Build visibility and authority for both your brand and founders. We handle strategy, content, design, short-form videos, posting, and analytics to grow a strong, consistent presence across social platforms and LinkedIn.",
   },
   {
     image: sample1,
     title: "Content Marketing & Authority Building",
-    description: "Build trust, visibility, and long-term growth through structured, evergreen content. \n Includes \n Keyword-driven content outlines, Long-form blogs & landing page content, Topical authority & content clustering, Multi-platform content repurposing, SEO-optimized blogs, Content performance tracking",
+    description:
+      "Grow long-term trust with structured, SEO-driven content. From blogs and landing pages to content repurposing, we help you build topical authority that compounds over time.",
   },
   {
     image: sample1,
-    title: "SEO, AEO, GEO & ORM Optimization",
-    description: "A complete search and reputation system built for visibility, credibility, and long-term growth. \nIncludes\n Technical SEO (site health, speed, indexing, crawlability), On-Page SEO (content optimization, headings, internal linking), Off-Page SEO (authority building, backlinks, brand signals), Answer Engine Optimization (AEO) for question-based & conversational searches, Voice & conversational search optimization, Geographic SEO (GEO) for multi-location & multi-country visibility, Keyword research & search intent mapping, Content structure & topical authority planning, Structured data, schema & FAQ implementation, Google Search Console & indexing setup, Region-specific pages & keyword optimization",
+    title: "SEO, AEO, GEO & Online Reputation Optimization",
+    description:
+      "A complete visibility system for search, voice, and local discovery. We optimize technical SEO, content, backlinks, structured data, and regional targeting to improve rankings, credibility, and long-term search performance.",
   },
-  
 ];
+
 
 const faqsLeft = [
   {
@@ -341,9 +348,30 @@ flex flex-col items-center justify-center"
 
       <TrustedBy />
 
-      <WhatWeOffer slides={webSlides} slidesPerView={3} delay={2200} />
+      <WhatWeOffer data={webSlides}/>
 
+
+      <div className="relative min-h-screen w-full overflow-hidden">
+        {/* BLURRED BACKGROUND IMAGE */}
+        <div
+          className="absolute inset-0 -z-20 scale-100"
+          style={{
+            backgroundImage: `url(${testimonialBackg})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            filter: "blur(1px)",
+          }}
+        />
+
+        {/* DARK / COLOR OVERLAY (optional but recommended) */}
+        {/* <div className="absolute inset-0 bg-black/40 -z-10" /> */}
+
+        {/* CONTENT GOES HERE */}
+        <div className="relative z-10">
       <OurProcess processData={processData.ai} />
+        </div>
+      </div>
 
       <WhyCtrlZ data={whyCtrlzData.ai} />
 {/* 

@@ -54,6 +54,9 @@ import { differencesData } from "../data/DifferencesData";
 import { pricingData } from "../data/PricingData";
 import { getStartedData } from "../data/GetStartedData";
 
+import testimonialBackg from "../assets/testimonialBackg.svg";
+
+
 const webSlides = [
   {
     image: sample1,
@@ -217,6 +220,9 @@ export default function GraphicDesign() {
 
               {/* BUTTON */}
               <button
+              onClick={() => {
+                setOpenContact(true);
+              }}
                 className="
                 mt-4
                 bg-white text-black
@@ -301,9 +307,30 @@ export default function GraphicDesign() {
 
       <TrustedBy />
 
-      <WhatWeOffer slides={webSlides} slidesPerView={3} delay={2200} />
+      <WhatWeOffer data={webSlides}/>
 
+
+      <div className="relative min-h-screen w-full overflow-hidden">
+        {/* BLURRED BACKGROUND IMAGE */}
+        <div
+          className="absolute inset-0 -z-20 scale-100"
+          style={{
+            backgroundImage: `url(${testimonialBackg})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            filter: "blur(1px)",
+          }}
+        />
+
+        {/* DARK / COLOR OVERLAY (optional but recommended) */}
+        {/* <div className="absolute inset-0 bg-black/40 -z-10" /> */}
+
+        {/* CONTENT GOES HERE */}
+        <div className="relative z-10">
       <OurProcess processData={processData.graphic} />
+        </div>
+      </div>
 
       <WhyCtrlZ data={whyCtrlzData.graphic} />
       {/* 
