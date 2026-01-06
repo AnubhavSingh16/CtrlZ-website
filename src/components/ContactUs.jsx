@@ -10,6 +10,10 @@ import {
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "../firebase";
+
+
 export default function ContactModal({ open, onClose }) {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
@@ -79,28 +83,26 @@ export default function ContactModal({ open, onClose }) {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    if (!validateForm()) return;
+  if (!validateForm()) return;
 
-    const submissionData = {
-      ...formData,
-      sourcePage: location.pathname,
-      submittedAt: new Date().toISOString(),
-    };
+  const submissionData = {
+    name: formData.name.trim(),
+    email: formData.email.trim(),
+    phone: formData.phone.trim(),
+    service: formData.service || "Not specified",
+    sourcePage: location.pathname,
+    submittedAt: serverTimestamp(),
+  };
 
-    console.log("Contact Form Submission:", submissionData);
-    alert(
-      `Contact Form Submitted ✅\n\n` +
-        `Name: ${submissionData.name}\n` +
-        `Email: ${submissionData.email}\n` +
-        `Phone: ${submissionData.phone}\n` +
-        `Service: ${submissionData.service || "Not specified"}\n` +
-        `Source Page: ${submissionData.sourcePage}`
-    );
+  try {
+    await addDoc(collection(db, "contactSubmissions"), submissionData);
 
-    // Reset
+    alert("Thanks! Your details have been submitted successfully ✅");
+
+    // Reset form
     setFormData({
       name: "",
       email: "",
@@ -110,7 +112,12 @@ export default function ContactModal({ open, onClose }) {
     setErrors({});
 
     onClose();
-  };
+  } catch (error) {
+    console.error("Error submitting contact form:", error);
+    alert("Something went wrong. Please try again.");
+  }
+};
+
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "auto";
