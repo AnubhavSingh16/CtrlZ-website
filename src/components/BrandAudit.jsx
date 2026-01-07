@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaCheckCircle } from "react-icons/fa";
+import formBg from "../assets/formBg.png";
 
 export default function BrandAudit() {
   const [formData, setFormData] = useState({
@@ -114,118 +115,123 @@ export default function BrandAudit() {
             </div>
           </div>
 
-          {/* RIGHT – FORM */}
-          <div className="flex justify-center lg:justify-start">
-            <form className="w-full max-w-lg bg-white border border-white/10 rounded-2xl p-6 shadow-xl px-15">
-              <h4 className="text-center text-[#4E2F76] font-bold text-xl md:text-2xl mb-1">
-                Get Started Today
-              </h4>
+        {/* RIGHT – FORM */}
+<div className="flex justify-center lg:justify-start">
+ <form
+  className="w-full max-w-lg bg-white border border-white/10 rounded-2xl p-6 shadow-xl px-15 bg-cover bg-center"
+  style={{ backgroundImage: `url(${formBg})` }}
+>
 
-              <p className="text-center text-xs text-[#474747] mb-4">
-                Fill out the form below and we'll be in touch shortly.
-              </p>
+    <h4 className="text-center text-[#4E2F76] font-bold text-xl md:text-2xl mb-1">
+      Get Started Today
+    </h4>
 
-              {/* FORM */}
-              <div className="space-y-2">
-                {/* Name */}
-                <div>
-                  <label className="text-xs font-semibold text-[#474747]">
-                    Name <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full bg-[#F1F1F1] border border-black rounded-md px-3 py-2 text-sm mt-1 text-[#656565]"
-                    placeholder="Your Full Name"
-                  />
-                  {errors.name && (
-                    <p className="text-xs text-red-500">{errors.name}</p>
-                  )}
-                </div>
+    <p className="text-center text-xs text-[#474747] mb-4">
+      Fill out the form below and we'll be in touch shortly.
+    </p>
 
-                {/* Email */}
-                <div>
-                  <label className="text-xs font-semibold text-[#474747]">
-                    Email <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full bg-[#F1F1F1] border border-black rounded-md px-3 py-2 text-sm mt-1 text-[#656565]"
-                    placeholder="you@example.com"
-                  />
-                  {errors.email && (
-                    <p className="text-xs text-red-500">{errors.email}</p>
-                  )}
-                </div>
+    {/* FORM */}
+    <div className="space-y-2">
+      {/* Name */}
+      <div>
+        <label className="text-xs font-semibold text-[#474747]">
+          Name <span className="text-red-500">*</span>
+        </label>
+        <input
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          className="w-full bg-[#F1F1F1] border border-black rounded-md px-3 py-2 text-sm mt-1 text-[#656565]"
+          placeholder="Your Full Name"
+        />
+        {errors.name && (
+          <p className="text-xs text-red-500">{errors.name}</p>
+        )}
+      </div>
 
-                {/* Contact Number */}
-                <div>
-                  <label className="text-xs font-semibold text-[#474747]">
-                    Contact Number <span className="text-red-500">*</span>
-                  </label>
-                  <div className="flex gap-2 mt-1">
-                    <select className="bg-[#F1F1F1] text-[#656565] border border-black rounded-md px-3 py-2 text-sm">
-                      <option>+91 IN</option>
-                    </select>
-                    <input
-                      name="contact"
-                      value={formData.contact}
-                      onChange={handleChange}
-                      maxLength={10}
-                      className="flex-1 bg-[#F1F1F1] text-[#656565] border border-black rounded-md px-3 py-2 text-sm"
-                      placeholder="Mobile Number*"
-                    />
-                  </div>
-                  {errors.contact && (
-                    <p className="text-xs text-red-500">{errors.contact}</p>
-                  )}
-                </div>
+      {/* Email */}
+      <div>
+        <label className="text-xs font-semibold text-[#474747]">
+          Email <span className="text-red-500">*</span>
+        </label>
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          className="w-full bg-[#F1F1F1] border border-black rounded-md px-3 py-2 text-sm mt-1 text-[#656565]"
+          placeholder="you@example.com"
+        />
+        {errors.email && (
+          <p className="text-xs text-red-500">{errors.email}</p>
+        )}
+      </div>
 
-                {/* Website */}
-                <div>
-                  <label className="text-xs font-semibold text-[#474747]">
-                    Website URL
-                  </label>
-                  <input
-                    name="website"
-                    value={formData.website}
-                    onChange={handleChange}
-                    className="w-full bg-[#F1F1F1] border border-black rounded-md px-3 py-2 text-sm mt-1 text-[#474747]"
-                    placeholder="www.yourwebsite.com"
-                  />
-                </div>
+      {/* Contact Number */}
+      <div>
+        <label className="text-xs font-semibold text-[#474747]">
+          Contact Number <span className="text-red-500">*</span>
+        </label>
+        <div className="flex gap-2 mt-1">
+          <select className="bg-[#F1F1F1] text-[#656565] border border-black rounded-md px-3 py-2 text-sm">
+            <option>+91 IN</option>
+          </select>
+          <input
+            name="contact"
+            value={formData.contact}
+            onChange={handleChange}
+            maxLength={10}
+            className="flex-1 bg-[#F1F1F1] text-[#656565] border border-black rounded-md px-3 py-2 text-sm"
+            placeholder="Mobile Number*"
+          />
+        </div>
+        {errors.contact && (
+          <p className="text-xs text-red-500">{errors.contact}</p>
+        )}
+      </div>
 
-                {/* Company */}
-                <div>
-                  <label className="text-xs font-semibold text-[#474747]">
-                    Company
-                  </label>
-                  <input
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    className="w-full bg-[#F1F1F1] border border-black rounded-md px-3 py-2 text-sm mt-1 text-[#656565]"
-                    placeholder="Your company name"
-                  />
-                </div>
-              </div>
+      {/* Website */}
+      <div>
+        <label className="text-xs font-semibold text-[#474747]">
+          Website URL
+        </label>
+        <input
+          name="website"
+          value={formData.website}
+          onChange={handleChange}
+          className="w-full bg-[#F1F1F1] border border-black rounded-md px-3 py-2 text-sm mt-1 text-[#474747]"
+          placeholder="www.yourwebsite.com"
+        />
+      </div>
 
-              {/* CTA */}
-              <button
-                type="button"
-                onClick={handleSubmit}
-                className="mt-6 w-full rounded-md py-3 text-white font-semibold 
-                           bg-gradient-to-r from-[#9b66ff] to-[#8a4cf0] 
-                           hover:scale-[1.02] transition-transform"
-              >
-                Get My Free Audit
-              </button>
-            </form>
-          </div>
+      {/* Company */}
+      <div>
+        <label className="text-xs font-semibold text-[#474747]">
+          Company
+        </label>
+        <input
+          name="company"
+          value={formData.company}
+          onChange={handleChange}
+          className="w-full bg-[#F1F1F1] border border-black rounded-md px-3 py-2 text-sm mt-1 text-[#656565]"
+          placeholder="Your company name"
+        />
+      </div>
+    </div>
+
+    {/* CTA */}
+    <button
+      type="button"
+      onClick={handleSubmit}
+      className="mt-6 w-full rounded-md py-3 text-white font-semibold 
+                 bg-gradient-to-r from-[#9b66ff] to-[#8a4cf0] 
+                 hover:scale-[1.02] transition-transform"
+    >
+      Get My Free Audit
+    </button>
+  </form>
+</div>
+
         </div>
       </div>
 

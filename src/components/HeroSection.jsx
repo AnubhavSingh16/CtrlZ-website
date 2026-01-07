@@ -1,7 +1,7 @@
 // put this in Hero.jsx (React component file)
 import React, { useEffect } from "react";
 import FeatureBar from "./FeatureBar";
-import logo from "../assets/logoHome.png";
+import logo from "../assets/logoHomeMain.png";
 
 export default function Hero() {
   // useEffect(() => {
@@ -96,13 +96,13 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="">
-          <h1 className="home-hero-logo">
-            Ctrl<span className="home-hero-accent">Zs</span>
-          </h1>
-          <p className="home-hero-subtitle">Undo ordinary</p>
-        </div>
-
+       <div className="home-hero-logo-wrapper">
+  <img
+    src={logo}
+    alt="CtrlZs Logo"
+    className="home-hero-logo-image"
+  />
+</div>
         <div className="home-hero-copy m-10">
           <p className="home-hero-description">
             Where creativity meets performance we <br />

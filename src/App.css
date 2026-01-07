@@ -324,6 +324,19 @@ body {
 }
 
 /* ================== HERO SECTION ================== */
+.home-hero-logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.home-hero-logo-image {
+  max-width: 200px;   /* adjust if needed */
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
 
 .home-hero-wrapper {
   position: relative;
@@ -350,7 +363,7 @@ body {
 
 .home-hero-arcs {
   position: absolute;
-  bottom: -75%;
+  bottom: -70%;
   left: 50%;
   transform: translateX(-50%);
   width: 1500px;
@@ -592,7 +605,6 @@ body {
       justify-content: space-between; 
       align-items: stretch;
        gap: 10px;
-        background: rgba(77, 74, 74, 0.06);
          backdrop-filter: blur(14px);
           -webkit-backdrop-filter: blur(14px) ;
            border: 1px solid #ffffff;
@@ -600,6 +612,7 @@ body {
              box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
              }
 
+             
 /* ================= FEATURE ITEM ================= */
 .home-hero-featurebar-item {
   flex: 1;
