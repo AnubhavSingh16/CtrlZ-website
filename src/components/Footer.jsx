@@ -5,6 +5,7 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import logo from "../assets/logoHomeMain.png";
 
 export default function Footer() {
   return (
@@ -20,12 +21,19 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* BRAND */}
           <div>
-            <Link to="/" className="flex items-center gap-3 mb-5">
-              <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center font-bold">
-                Z
-              </div>
-              <h2 className="text-xl font-semibold">Ctrl Zs</h2>
-            </Link>
+            <div className="flex justify-center">
+              <Link to="/" className="flex items-center mb-5">
+                <div className="h-20 w-20 flex items-center justify-center overflow-hidden">
+                  <img
+                    src={logo}
+                    alt="Ctrl Zs logo"
+                    className="h-full w-full object-contain"
+                  />
+                </div>
+              </Link>
+            </div>
+
+            {/* <h2 className="text-xl font-semibold">Ctrl Zs</h2> */}
 
             <p className="text-gray-300 text-md leading-relaxed mb-6">
               AI-powered digital marketing agency crafting experiences that
@@ -68,7 +76,10 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/graphic-design" className="hover:text-white transition">
+                <Link
+                  to="/graphic-design"
+                  className="hover:text-white transition"
+                >
                   Graphic Design
                 </Link>
               </li>
@@ -134,7 +145,7 @@ export default function Footer() {
 
             <div className="flex items-center gap-3 text-gray-300 text-md mb-3">
               <FaEnvelope className="text-purple-400" />
-              hello@ctrlzs.com
+              socials@ctrlzs.com
             </div>
 
             <p className="text-gray-300 text-md">Launching January 2026</p>

@@ -85,6 +85,7 @@ export default function FaqServices({ faqsLeft = [], faqsRight = [] }) {
       py-4
       rounded-xl
       transition-all
+      
     "
   >
     Book a Free Consultation
