@@ -10,6 +10,9 @@
   
 }
 
+/* #root {
+  zoom: 0.9;
+} */
 
 /* GLOBAL PAGE BACKGROUND */
 body {
@@ -328,11 +331,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 8px;
+  margin-bottom: 0px;
 }
 
 .home-hero-logo-image {
-  max-width: 200px;   /* adjust if needed */
+  max-width: 180px;   /* adjust if needed */
   width: 100%;
   height: auto;
   object-fit: contain;
@@ -405,6 +408,7 @@ body {
   position: absolute;
   top: 18%; /* aligns with top arc */
   padding: 8px 11px;
+  
 
   display: flex;
   flex-direction: row;
@@ -415,7 +419,7 @@ body {
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.959);
   border-radius: 999px;
 
   color: #4E2F76;
@@ -427,6 +431,52 @@ body {
 
   pointer-events: none; /* decorative */
 }
+
+.revolving-glow {
+  border-radius: 999px;
+}
+
+/* Rotating glowing border */
+.revolving-glow::before {
+  content: "";
+  position: absolute;
+
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    #ffffff 0%,
+    rgba(243, 150, 43, 0.9) 20%,
+    transparent 70%
+  );
+
+  filter:
+    drop-shadow(0 0 6px rgba(255,255,255,0.9))
+    drop-shadow(0 0 24px rgba(238, 175, 4, 0.8));
+
+  /* 🔥 THIS is the revolution */
+  offset-path: inset(-1px round 999px);
+  offset-distance: 0%;
+
+  animation: revolveBorder 3s linear infinite;
+
+  pointer-events: none;
+  z-index: 3;
+}
+
+
+@keyframes revolveBorder {
+  from {
+    offset-distance: 0%;
+  }
+  to {
+    offset-distance: 100%;
+  }
+}
+
+
 
 
 .home-hero-stat-bottom-left {
@@ -536,8 +586,8 @@ body {
   height: 900px;
   top: 320px;           /* ⬅️ was 320px */
   left: 300px;
-  border: 3px solid rgba(171, 107, 255, 0.35);
-  box-shadow: 0 -0px 250px rgba(171, 107, 255, 0.25) inset;
+  border: 1px solid white;
+  box-shadow: 0 -0px 250px rgba(54, 1, 83, 0.25) inset;
 }
 
 .home-hero-arc-4 {
@@ -545,8 +595,8 @@ body {
   height: 900px;
   top: 340px;           /* ⬅️ was 320px */
   left: 325px;
-  border: 1px solid white;
-  box-shadow: 0 -30px 250px rgba(171, 107, 255, 0.25) inset;
+  border: 1px solid rgb(209, 208, 208);
+  box-shadow: 0 -30px 250px rgba(143, 72, 235, 0.25) inset;
 }
 /* ================= TEXT ================= */
 
@@ -570,47 +620,79 @@ body {
 }
 
 .home-hero-description {
-  max-width: 540px;
-  margin: 0 auto 20px;
-  font-size: 18px;
+  max-width: 650px;
+  margin: 80px auto 20px;
+  font-size: 16px;
   opacity: 0.8;
-  line-height: 1.5;
+  line-height: 1.1;
 }
 
 /* ================= BUTTON ================= */
 
 .home-hero-btn {
-  padding: 14px 44px;
+  padding: 14px 48px;
   background: white;
   color: #3A2359;
   font-weight: 700;
   font-size: 16px;
-  border-radius: 10px;
+  border-radius: 8px;
   border: none;
   cursor: pointer;
-  transition: 0.25s ease;
+
+  will-change: transform;
+
+  transition:
+    transform 0.35s cubic-bezier(0.12, 1, 0.36, 1),
+    box-shadow 0.35s ease,
+    background 0.35s ease,
+    color 0.35s ease;
 }
 
 .home-hero-btn:hover {
-  background: #e8e8e8;
+  background: linear-gradient(
+    135deg,
+    #ab6bff 0%,
+
+  );
+
+  transform: translateY(-4px) scale(1.05);
+
+  box-shadow:
+    0 14px 35px rgba(171, 107, 255, 0.45),
+    0 0 25px rgba(171, 107, 255, 0.6);
 }
 
 /* ================= GLASS FEATURE BAR ================= */
-.home-hero-featurebar { 
-  width: 70%; 
-  max-width: 1200px;
-   margin: 20px auto 0px;
-    padding: 22px 26px;
-     display: flex;
-      justify-content: space-between; 
-      align-items: stretch;
-       gap: 10px;
-         backdrop-filter: blur(14px);
-          -webkit-backdrop-filter: blur(14px) ;
-           border: 1px solid #ffffff;
-            border-radius: 20px;
-             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
-             }
+.home-hero-featurebar {
+  width: 70%;
+  margin: 20px auto 0;
+  padding: 22px 26px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 10px;
+
+  /* 🔒 FULLY SOLID LAYER */
+  background-color: #40245f;   /* or #ffffff */
+  background-image: none;
+
+  opacity: 1;
+  filter: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  mix-blend-mode: normal;
+
+  /* 🧱 FORCE ISOLATION */
+  position: relative;
+  isolation: isolate;
+  z-index: 5;
+
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+}
+
 
              
 /* ================= FEATURE ITEM ================= */

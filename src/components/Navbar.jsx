@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
+import logoNav from "../assets/logoNav.png";
 
 export default function Navbar({ onContactClick }) {
   const [openDropdown, setOpenDropdown] = useState(false);
@@ -32,8 +33,12 @@ export default function Navbar({ onContactClick }) {
     >
       <div className="navbar-inner">
         {/* LOGO */}
-        <div className="nav-logo">
-          <span className="logo-icon">CtrlZs</span>
+        <div className="nav-logo flex items-center">
+          <img
+            src={logoNav}
+            alt="CtrlZs logo"
+            className="h-12 w-auto object-contain drop-shadow-[0_0_12px_rgba(0,0,0,2)]"
+          />
         </div>
 
         {/* ===== DESKTOP LINKS ===== */}

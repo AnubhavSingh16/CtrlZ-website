@@ -3,6 +3,9 @@ import { FaCheck } from "react-icons/fa";
 import { successModalData } from "../data/SuccessModalData";
 import { useLocation } from "react-router-dom";
 
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "../firebase";
+
 export default function GetStarted({ data }) {
   const location = useLocation();
   const pathname = location.pathname;
@@ -39,29 +42,81 @@ export default function GetStarted({ data }) {
   const [showModal, setShowModal] = useState(false);
 
   /* ---------- VALIDATION ---------- */
-  const validate = () => {
-    const e = {};
+ const validate = () => {
+  const e = {};
 
-    // Name (required)
-    if (!values.name.trim()) e.name = "Required";
+  // Name (required)
+  if (!values.name.trim()) {
+    e.name = "Required";
+  }
 
-    // Email (optional but validated if entered)
-    if (values.email.trim() && !/\S+@\S+\.\S+/.test(values.email)) {
-      e.email = "Invalid email";
-    }
+  // Email (required + format)
+  if (!values.email.trim()) {
+    e.email = "Required";
+  } else if (!/\S+@\S+\.\S+/.test(values.email)) {
+    e.email = "Invalid email";
+  }
 
-    // Contact (required + 10 digits)
-    if (!values.contact.trim()) {
-      e.contact = "Required";
-    } else if (!/^\d{10}$/.test(values.contact)) {
-      e.contact = "Must be a 10-digit number";
-    }
+  // Contact (required + 10 digits)
+  if (!values.contact.trim()) {
+    e.contact = "Required";
+  } else if (!/^\d{10}$/.test(values.contact)) {
+    e.contact = "Must be a 10-digit number";
+  }
 
-    return e;
-  };
+  return e;
+};
+
 
   /* ---------- SUBMIT ---------- */
-  const handleSubmit = (e) => {
+  // const handleSubmit = async(e) => {
+  //   console.log("submitted +++");
+  //   e.preventDefault();
+
+  //   const validationErrors = validate();
+  //   if (Object.keys(validationErrors).length) {
+  //     setErrors(validationErrors);
+  //     return;
+  //   }
+
+  //   const submissionData = {
+  //     name: values.name.trim(),
+  //     email: values.email.trim(),
+  //     phone: values.phone.trim(),
+  //     service: values.service || "Not specified",
+  //     sourcePage: location.pathname,
+  //     submittedAt: serverTimestamp(),
+  //   };
+
+  //   try {
+  //     await addDoc(collection(db, "contactSubmissions"), submissionData);
+
+  //     // alert("Thanks! Your details have been submitted successfully ✅");
+
+  //     setShowModal(true);
+  //     // Reset form
+  //     setValues({
+  //       name: "",
+  //       email: "",
+  //       phone: "",
+  //       service: "",
+  //     });
+  //     setErrors({});
+
+  //     setLoading(false);
+
+  //     onClose();
+  //   } catch (error) {
+  //      setLoading(false);
+
+  //     console.error("Error submitting contact form:", error);
+  //     alert("Something went wrong. Please try again.");
+  //   }
+
+  // };
+
+  const handleSubmit = async (e) => {
+    console.log("submitted 11111111");
     e.preventDefault();
 
     const validationErrors = validate();
@@ -70,15 +125,36 @@ export default function GetStarted({ data }) {
       return;
     }
 
-    setErrors({});
     setLoading(true);
 
-    // fake API call
-    setTimeout(() => {
-      setLoading(false);
+    const submissionData = {
+      name: values.name.trim(),
+      email: values.email.trim(),
+      phone: values.contact.trim(),
+      website: values.website.trim(),
+      sourcePage: location.pathname + " - Brand Audit Services",
+      submittedAt: serverTimestamp(),
+    };
+
+    try {
+      await addDoc(collection(db, "contactSubmissions"), submissionData);
+
       setShowModal(true);
-      setValues({ name: "", email: "", contact: "", website: "" });
-    }, 1500);
+
+      setValues({
+        name: "",
+        email: "",
+        contact: "",
+        website: "",
+      });
+
+      setErrors({});
+    } catch (error) {
+      console.error("Error submitting contact form:", error);
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -155,6 +231,7 @@ export default function GetStarted({ data }) {
 
                 <Input
                   label="Email"
+                  required
                   type="email"
                   value={values.email}
                   placeholder="you@example.com (optional)"

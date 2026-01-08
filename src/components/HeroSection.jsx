@@ -2,8 +2,11 @@
 import React, { useEffect } from "react";
 import FeatureBar from "./FeatureBar";
 import logo from "../assets/logoHomeMain.png";
+import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
+  const navigate = useNavigate();
+
   // useEffect(() => {
   //   function updateArcVariables() {
   //     const hero = document.querySelector(".hero-content");
@@ -73,42 +76,43 @@ export default function Hero() {
           {/* <div className="home-hero-arc home-hero-arc-2"></div> */}
           <div className="home-hero-arc home-hero-arc-3"></div>
           {/* <div className="home-hero-arc home-hero-arc-4"></div> */}
-
           {/* === ARC STATS === */}
-          <div className="home-hero-arc-stats home-hero-stat-left">
-            <span className="home-hero-stat-value">+120%</span>
-            <span className="home-hero-stat-label">Conversions</span>
-          </div>
-
-          <div className="home-hero-arc-stats home-hero-stat-right">
-            <span className="home-hero-stat-value">35+</span>
-            <span className="home-hero-stat-label">Global Clients</span>
-          </div>
-
-          <div className="home-hero-arc-stats-bottom home-hero-stat-bottom-left">
-            <span className="home-hero-stat-value">4.8x</span>
-            <span className="home-hero-stat-label">ROI</span>
-          </div>
-
-          <div className="home-hero-arc-stats-bottom home-hero-stat-bottom-right">
-            <span className="home-hero-stat-value">98%</span>
-            <span className="home-hero-stat-label">Client Satisfaction</span>
+          <div className="home-hero-arc-stats home-hero-stat-left revolving-glow">
+            {" "}
+            <span className="home-hero-stat-value">+120%</span>{" "}
+            <span className="home-hero-stat-label">Conversions</span>{" "}
+          </div>{" "}
+          <div className="home-hero-arc-stats home-hero-stat-right revolving-glow">
+            {" "}
+            <span className="home-hero-stat-value">35+</span>{" "}
+            <span className="home-hero-stat-label">Global Clients</span>{" "}
+          </div>{" "}
+          <div className="home-hero-arc-stats-bottom home-hero-stat-bottom-left revolving-glow">
+            {" "}
+            <span className="home-hero-stat-value">4.8x</span>{" "}
+            <span className="home-hero-stat-label">ROI</span>{" "}
+          </div>{" "}
+          <div className="home-hero-arc-stats-bottom home-hero-stat-bottom-right revolving-glow">
+            {" "}
+            <span className="home-hero-stat-value">98%</span>{" "}
+            <span className="home-hero-stat-label">Client Satisfaction</span>{" "}
           </div>
         </div>
 
-       <div className="home-hero-logo-wrapper">
-  <img
-    src={logo}
-    alt="CtrlZs Logo"
-    className="home-hero-logo-image"
-  />
-</div>
-        <div className="home-hero-copy m-10">
+        <div className="home-hero-logo-wrapper">
+          <img src={logo} alt="CtrlZs Logo" className="home-hero-logo-image" />
+        </div>
+        <div className="home-hero-copy">
           <p className="home-hero-description">
             Where creativity meets performance we <br />
             design, build, and grow brands that deliver results
           </p>
-          <button className="home-hero-btn">Get a Free Brand Audit</button>
+          <button
+            onClick={() => navigate("/contact-us")}
+            className="home-hero-btn"
+          >
+            Get a Free Brand Audit
+          </button>
         </div>
       </div>
 

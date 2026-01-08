@@ -8,6 +8,8 @@ import {
 } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
 import faq from "../assets/faq.png";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "../firebase";
 
 export default function ContactUs() {
   const location = useLocation();
@@ -44,7 +46,7 @@ export default function ContactUs() {
     return Object.keys(e).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) return;
 
@@ -54,9 +56,34 @@ export default function ContactUs() {
       submittedAt: new Date().toISOString(),
     });
 
-    alert("Thanks! We’ll contact you shortly.");
-    setFormData({ name: "", email: "", phone: "", service: "" });
-    setErrors({});
+    const submissionData = {
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      phone: formData.phone.trim(),
+      service: formData.service || "Not specified",
+      sourcePage: location.pathname,
+      submittedAt: serverTimestamp(),
+    };
+
+    try {
+      await addDoc(collection(db, "contactSubmissions"), submissionData);
+
+      alert("Thanks! Your details have been submitted successfully ✅");
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+      });
+      setErrors({});
+
+      onClose();
+    } catch (error) {
+      console.error("Error submitting contact form:", error);
+      alert("Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -164,6 +191,7 @@ export default function ContactUs() {
               label="Contact Number"
               required
               name="phone"
+              length="10"
               value={formData.phone}
               onChange={handleChange}
               error={errors.phone}
