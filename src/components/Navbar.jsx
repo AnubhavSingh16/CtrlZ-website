@@ -1,11 +1,14 @@
 import React, { useState, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, Navigate, useLocation,  useNavigate  } from "react-router-dom";
 import logoNav from "../assets/logoNav.png";
 
 export default function Navbar({ onContactClick }) {
   const [openDropdown, setOpenDropdown] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const timeoutRef = useRef(null);
+
+    const navigate = useNavigate();
+
 
   const location = useLocation();
   const isUiPage = location.pathname === "/ui-development";
@@ -36,7 +39,8 @@ export default function Navbar({ onContactClick }) {
         <div className="nav-logo flex items-center">
           <img
             src={logoNav}
-            alt="CtrlZs logo"
+            onClick={() => navigate("/")}
+            alt="CtrlZs"
             className="h-12 w-auto object-contain drop-shadow-[0_0_12px_rgba(0,0,0,2)]"
           />
         </div>
