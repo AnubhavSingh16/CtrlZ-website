@@ -1,7 +1,7 @@
 // put this in Hero.jsx (React component file)
 import React, { useEffect } from "react";
 import FeatureBar from "./FeatureBar";
-import logo from "../assets/logoHomeMain.png";
+import logo from "../assets/logohomeMain.png";
 import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
