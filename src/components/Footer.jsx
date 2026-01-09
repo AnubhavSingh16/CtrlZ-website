@@ -5,7 +5,7 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import logo from "../assets/logoHomeMain.png";
+import logo from "../assets/logohomeMain.png";
 
 export default function Footer() {
   return (
