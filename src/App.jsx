@@ -21,7 +21,9 @@ import ScrollToTop from "./helper/ScrollToTop";
 import GraphicDesign from "./pages/GraphicDesign";
 
 function App() {
+  
   const [openContact, setOpenContact] = useState(false);
+  console.log("consoleee check env dev",import.meta.env.FIREBASE_API_KEY);
 
   return (
     <Router>

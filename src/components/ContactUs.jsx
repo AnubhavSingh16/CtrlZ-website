@@ -345,7 +345,7 @@ export default function ContactModal({ open, onClose }) {
         }
       `}
                     >
-                      <option value="" disabled className="text-black">
+                      <option value="No service selected" disabled className="text-black">
                         Select a service
                       </option>
                       <option value="Web Development" className="text-black">
@@ -354,14 +354,14 @@ export default function ContactModal({ open, onClose }) {
                       <option value="UI/UX Design" className="text-black">
                         UI / UX Design
                       </option>
-                      <option value="Branding" className="text-black">
+                      <option value="Video Editing" className="text-black">
                         Video Editing
                       </option>
-                      <option value="SEO & Marketing" className="text-black">
+                      <option value="Ai Marketing" className="text-black">
                         Ai Marketing
                       </option>
                       
-                      <option value="Not sure yet" className="text-black">
+                      <option value="Custom" className="text-black">
                         Custom
                       </option>
                     </select>
