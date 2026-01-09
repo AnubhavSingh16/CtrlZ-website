@@ -6,7 +6,7 @@ import OurWork from "../components/OurWork";
 import Testimonials from "../components/Testimonials";
 import WhyCtrlZs from "../components/WhyUs";
 import FAQ from "../components/Faq";
-import BrandAudit from "../components/brandAudit";
+import BrandAudit from "../components/BrandAudit";
 import FloatingText from "../components/FloatingText";
 
 
