@@ -68,7 +68,9 @@ export default function Process({ processData }) {
   return (
     <>
       <div className="text-center mt-20 mb-16 px-4">
-        <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">
+
+        
+        <h2 className="heading-3d no-underline ">
           OUR PROCESS
         </h2>
 

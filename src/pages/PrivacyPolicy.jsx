@@ -18,10 +18,10 @@ export default function PrivacyPolicy() {
           
           {/* HEADER */}
           <div className="text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
+            <h1 className="heading-3d no-underline">
               Privacy <span className="text-[#bfa2ff]">Policy</span>
             </h1>
-            <p className="mt-4 text-sm sm:text-base text-white/80 max-w-2xl mx-auto">
+            <p className=" text-xl lg:text-xl md:text-xl sm:text-sm text-white/80 max-w-2xl mx-auto">
               How <strong>Ctrl Zs</strong> handles your personal data.
             </p>
           </div>

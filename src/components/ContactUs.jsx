@@ -345,7 +345,7 @@ export default function ContactModal({ open, onClose }) {
         }
       `}
                     >
-                      <option value="No service selected" disabled className="text-black">
+                      <option value="" disabled className="text-black">
                         Select a service
                       </option>
                       <option value="Web Development" className="text-black">

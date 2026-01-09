@@ -45,7 +45,7 @@ export default function Services() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % services.length);
-    }, 2000);
+    }, 3500);
 
     return () => clearInterval(interval);
   }, []);
@@ -65,11 +65,16 @@ export default function Services() {
   return (
     <section className="home-services-section">
       {/* HEADING */}
-      <h2 className="text-center text-6xl font-bold text-white mb-6">
-        Services
-      </h2>
+ <h2
+  className="
+   heading-3d
+  "
+>
+  Services
+</h2>
 
-      <div className="mx-auto mb-14 h-[3px] w-[15%] bg-gradient-to-r from-transparent via-white to-transparent"></div>
+
+      {/* <div className="mx-auto mb-14 h-[3px] w-[15%] bg-gradient-to-r from-transparent via-white to-transparent"></div> */}
 
       <div className="home-services-stage">
         <div className="home-services-glow" />
@@ -93,7 +98,11 @@ export default function Services() {
               tabIndex={0}
             >
               {/* IMAGE */}
-              <img src={service.img} alt={service.title} />
+              <img src={service.img} 
+              alt={service.title} 
+              loading="lazy"
+              decoding="async"
+              />
 
               {/* TEXT OVERLAY */}
               <div className="home-services-text">

@@ -72,11 +72,11 @@ export default function WhyCtrlZs() {
     <section className="w-full py-16 text-white">
       {/* TITLE */}
       <div className="text-center mb-8 sm:mb-10 px-4 sm:px-5">
-        <h2 className="text-3xl sm:text-4xl md:text-6xl font-extrabold leading-tight">
+        <h2 className="heading-3d no-underline">
           Why <span className="text-[#b065ff]">Ctrl Zs?</span>
         </h2>
 
-        <p className="mt-3 sm:mt-4 text-xs sm:text-sm md:text-lg max-w-md sm:max-w-xl md:max-w-2xl mx-auto leading-relaxed">
+        <p className="sm:mt-4 text-xs sm:text-sm md:text-lg max-w-md sm:max-w-xl md:max-w-2xl mx-auto leading-relaxed">
           We help startups and SMEs grow faster with creativity that performs
           and marketing that scales globally.
         </p>

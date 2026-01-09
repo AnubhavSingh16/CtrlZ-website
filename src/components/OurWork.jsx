@@ -3,6 +3,9 @@ import seo from "../assets/seo.jpg";
 import ui from "../assets/ui.png";
 import paidads from "../assets/paidads.png";
 import web from "../assets/web.png";
+import { useNavigate } from "react-router-dom";
+
+import { Navigate } from "react-router-dom";
 
 const projects = [
   {
@@ -48,16 +51,19 @@ const projects = [
 ];
 
 export default function OurWork() {
+
+  const navigate = useNavigate();
   return (
     <section className="w-full py-[50px] text-white relative mt-10 ">
 
       {/* TITLE */}
             {/* HEADING */}
-        <h2 className="text-center text-6xl font-bold text-white">
-          Our Work
-        </h2>
+       <div className="w-full text-center">
+  <h2 className="heading-3d">
+    Our Work
+  </h2>
+</div>
 
-        <div className="mx-auto mb-14 h-[3px] w-[20%] bg-gradient-to-r from-transparent via-white to-transparent"></div>
 
       {/* INFINITE SCROLL */}
       <div className="w-full flex justify-center">
@@ -90,6 +96,7 @@ export default function OurWork() {
               </p>
 
               <button
+            onClick={() => navigate("/contact-us")}
                 className="mt-4 w-[60%] bg-[#E3CDFF] text-[#4E2F76] font-semibold py-2 rounded-md hover:bg-white transition px-3"
               >
                 Explore →

@@ -96,48 +96,43 @@ const webSlides = [
 const faqsLeft = [
   {
     q: "What’s your typical project timeline?",
-    a: `Most projects take 6–8 weeks, depending on complexity.
-
-Week 1–2: Research & UX strategy  
-Week 3–5: Wireframes, UI design, prototyping  
-Week 6: Testing, feedback, and final delivery  
-
-Need it faster? Ask about our express design sprints for startups.`,
+    a: `Most projects take 6–8 weeks, depending on complexity.`
   },
   {
     q: "How much does a UI/UX project cost?",
-    a: "Costs vary by project size and complexity. Simple websites start at $700–$1,000, while product interfaces may range higher. You’ll always receive a transparent, custom quote.",
+    a: "Costs vary by project size and complexity. Rest assured, you’ll always receive a transparent, custom quote.",
   },
   {
     q: "What’s included in your process?",
-    a: "We cover everything — from UX strategy and wireframing to UI prototyping, usability testing, and developer-ready handoff.",
+    a: "We cover everything — from UX strategy and wireframing to UI prototyping, testing, and developer-ready handoff.",
   },
   {
     q: "What tools do you use?",
-    a: "We primarily design in Figma, use Miro for ideation and workshops, and provide developer-ready handoff with design tokens and detailed specs.",
+    a: "We design primarily in Figma, use Miro for ideation, and provide developer-ready handoff with tokens and specs.",
   },
   {
     q: "How do you measure success?",
-    a: "We track conversion rates, engagement time, and usability metrics using tools like Hotjar, FullStory, and Google Analytics.",
+    a: "We track conversion rates, engagement time, and usability metrics via Hotjar, FullStory, and Google Analytics.",
+
   },
 ];
 
 const faqsRight = [
   {
     q: "Can you redesign my website or app?",
-    a: "Absolutely. We begin with a UX audit to identify gaps, then redesign the experience to improve usability, performance, and conversions.",
+    a: "Absolutely. We begin with a UX audit, identify gaps, and redesign for better usability and conversions.",
   },
   {
     q: "Can you handle development too?",
-    a: "Yes. Our UI/UX and web development teams collaborate closely to deliver pixel-perfect builds using React, Webflow, or WordPress.",
+    a: "Yes - our UI/UX and web development teams collaborate to ensure pixel-perfect builds in React, Webflow, or WordPress.",
   },
   {
     q: "Do you also design mobile apps?",
-    a: "Yes. We specialize in responsive web and mobile app UI/UX to ensure seamless experiences across all devices.",
+    a: "Yes, we specialize in responsive web and mobile app UI/UX for seamless cross-device experiences.",
   },
   {
     q: "Do you work internationally?",
-    a: "Yes — 100%. We work with clients across the US, UK, Europe, and Asia, offering remote collaboration, virtual reviews, and real-time updates.",
+    a: "100%. We offer remote UI/UX design services for clients in the US, UK, Europe, and Asia, with virtual reviews and real-time updates.",
   },
 ];
 

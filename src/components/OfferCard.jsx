@@ -15,7 +15,7 @@ export default function OfferCard({ index, total, item }) {
       <motion.div
         ref={ref}
         animate={{
-          scale: isInView ? 1 - (total - index) * 0.05 : 1,
+          scale: isInView ? 1 - (total - index) * 0.01 : 1,
         }}
         transition={{ type: "spring", stiffness: 120, damping: 20 }}
         style={{

@@ -68,6 +68,7 @@ export const successModalData = {
   },
 
   graphic: {
+    
     title: "Your Strategic Design Blueprint is on the way 🚀",
     description: `
     Thanks for trusting <b>Ctrl Zs</b>.<br/><br/>

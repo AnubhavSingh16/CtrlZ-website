@@ -58,7 +58,7 @@ export const pricingData = {
   },
 
   web: {
-    title: "Ready to Start?",
+    title: "READY TO START?",
     subheading:
       "Choose the package that fits your needs. All packages include clean code, responsive design, and our commitment to excellence",
     plans: [
@@ -190,7 +190,6 @@ export const pricingData = {
         price: "₹25,000",
         popular: false,
         features: [
-          "Deal for early-stage founders needing foundational visibility & consistent presence",
           "SEO basics (technical audit + 5 pages optimized)",
           "Keyword mapping & content plan",
           "8 social media posts/month",
@@ -207,7 +206,6 @@ export const pricingData = {
         price: "₹60,000",
         popular: true,
         features: [
-          "Best for brands ready to scale traffic, content, and conversions.",
           "Full SEO setup (AEO + GEO optimization)",
           "Monthly content briefs + on-page optimization",
           "12 social media posts/month",
@@ -226,7 +224,6 @@ export const pricingData = {
         price: "₹1,20,000",
         popular: false,
         features: [
-          "Built for brands that want aggressive growth, global reach & full-scale marketing systems.",
           "Full SEO setup (AEO + GEO optimization)",
           "Monthly content briefs + on-page optimization",
           "12 social media posts/month",

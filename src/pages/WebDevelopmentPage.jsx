@@ -124,9 +124,13 @@ export default function WebDevelopmentPage() {
       q: "What makes Ctrl Zs different?",
       a: "We bridge design, code, and marketing strategy. Our team builds business-driven websites that rank higher, convert faster, and scale globally — backed by transparent pricing and 24/7 support.",
     },
-    {
-      q: "Why Collaboration That Builds Trust?",
-      a: "We believe in clear communication, milestone-based delivery, and long-term partnerships — ensuring transparency, accountability, and measurable business impact.",
+    // {
+    //   q: "Why Collaboration That Builds Trust?",
+    //   a: "We believe in clear communication, milestone-based delivery, and long-term partnerships — ensuring transparency, accountability, and measurable business impact.",
+    // },
+     {
+      q: "What platforms do you use for web development?",
+      a: "We work with React, Next.js, Webflow, and WordPress, selecting the best technology for your business goals and scalability needs.",
     },
   ];
 
@@ -187,7 +191,7 @@ export default function WebDevelopmentPage() {
           <div className="bg-black "></div>
 
           <FloatingText lines={1} />
-          <div className="trusted-by">Trusted By Industry Leaders</div>
+          <div className="heading-3d no-underline">Trusted By Industry Leaders</div>
 
           <div>
             <p className="webdev-subtitle text-xl">

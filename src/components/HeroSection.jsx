@@ -104,7 +104,7 @@ export default function Hero() {
         </div>
         <div className="home-hero-copy">
           <p className="home-hero-description">
-            Where creativity meets performance we <br />
+            Where creativity meets performance<br/> We 
             design, build, and grow brands that deliver results
           </p>
           <button

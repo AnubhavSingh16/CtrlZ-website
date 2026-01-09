@@ -18,16 +18,16 @@ export default function Pricing({ data }) {
 
       <div className="relative z-10 max-w-7xl mx-auto text-center">
         {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-extrabold text-white">
+        <h2 className="heading-3d no-underline">
           {title}
         </h2>
 
-        <p className="mt-4 text-white max-w-2xl mx-auto text-base md:text-lg">
+        <p className="mt-4 text-white max-w-2xl mx-auto text-base md:text-lg lg:text-xl">
           {subheading}
         </p>
 
         {/* Cards */}
-        <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-6 items-end">
+        <div className="mt-12 md:mt-22 lg:mt-24 sm:mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 items-end">
           {plans.map((plan, index) => (
             <PricingCard key={index} {...plan} setOpenContact={setOpenContact}/>
           ))}
@@ -59,13 +59,20 @@ function PricingCard({ title, price, features, popular, setOpenContact }) {
       )}
 
       {/* Header */}
-      <div className="py-8 text-center">
-        <span className="inline-block px-6 py-2 border border-white rounded-full text-white text-sm font-bold">
-          {title}
-        </span>
+     <div className="py-8 text-center">
+  <span className="inline-block px-6 py-2 border border-white rounded-full text-white text-sm font-bold">
+    {title}
+  </span>
 
-        <h3 className="mt-6 text-4xl font-extrabold text-white">{price}</h3>
-      </div>
+  <h3 className="mt-6 text-white">
+    <span className="text-sm font-medium mr-1">
+      starts at
+    </span>
+    <span className="text-4xl font-extrabold">
+      {price}
+    </span>
+  </h3>
+</div>
 
       {/* Features */}
       <div className="bg-black/60 px-8 py-8 text-left">

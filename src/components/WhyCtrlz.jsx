@@ -6,10 +6,15 @@ export default function WhyCtrlZ({ data }) {
   return (
     <section className="relative w-full md:py-18 py-8 px-4">
       {/* Heading */}
-      <h2 className="text-center text-white text-3xl md:text-6xl font-bold tracking-wide mb-8 md:mb-14">
+
+       <div className="w-full text-center mb-10">
+    <h2 className="heading-3d no-underline">
         WHY CTRL ZS?
       </h2>
 
+  </div>
+
+     
       {/* GRID */}
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {data.cards.map((card, index) => (

@@ -48,9 +48,13 @@ export default function FAQ() {
   return (
     <section className="w-full py-20 pt-10 text-white ">
       {/* TITLE */}
-      <h2 className="text-center text-5xl font-extrabold mb-20">
+      <div className="w-full text-center mb-10">
+    <h2 className="heading-3d no-underline mb-10">
         Frequently <span className="text-purple-300">Asked</span> Questions
       </h2>
+  </div>
+
+      
 
       {/* LAYOUT */}
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 px-6">

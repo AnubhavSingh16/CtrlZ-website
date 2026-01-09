@@ -2,12 +2,9 @@ import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import ContactModal from "../components/ContactUs";
 
-
 export default function FaqServices({ faqsLeft = [], faqsRight = [] }) {
   const [openIndex, setOpenIndex] = useState(null);
-     const [openContact, setOpenContact] = useState(false);
-  
-
+  const [openContact, setOpenContact] = useState(false);
 
   const renderFAQ = (item, index) => {
     const isOpen = openIndex === index;
@@ -34,9 +31,7 @@ export default function FaqServices({ faqsLeft = [], faqsRight = [] }) {
         {isOpen && (
           <div className="px-6 pb-5 text-left">
             <div className="w-full h-px bg-white mb-4" />
-            <p className="text-sm text-white leading-relaxed">
-              {item.a}
-            </p>
+            <p className="text-sm text-white leading-relaxed">{item.a}</p>
           </div>
         )}
       </div>
@@ -54,9 +49,14 @@ export default function FaqServices({ faqsLeft = [], faqsRight = [] }) {
         </div>
 
         {/* Heading */}
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-14">
-          FREQUENTLY ASKED <br /> QUESTIONS
-        </h2>
+
+        <div className="w-full text-center mb-16">
+          <h2 className="heading-3d no-underline">Still Have Questions?</h2>
+
+          <p className=" max-w-3xl mx-auto text-white text-lg md:text-xl lg:text-2xl sm:text-md leading-relaxed">
+            Here are a few things clients often ask us before we begin.
+          </p>
+        </div>
 
         {/* FAQ Grid */}
         <div className="grid md:grid-cols-2 gap-6 mb-16">
@@ -64,17 +64,17 @@ export default function FaqServices({ faqsLeft = [], faqsRight = [] }) {
             {faqsLeft.map((item, i) => renderFAQ(item, i))}
           </div>
           <div className="space-y-4">
-            {faqsRight.map((item, i) =>
-              renderFAQ(item, i + faqsLeft.length)
-            )}
+            {faqsRight.map((item, i) => renderFAQ(item, i + faqsLeft.length))}
           </div>
         </div>
 
         {/* Buttons */}
-       <div className="flex justify-center">
-  <button
-  onClick={() => {setOpenContact(true)}}
-    className="
+        <div className="flex justify-center">
+          <button
+            onClick={() => {
+              setOpenContact(true);
+            }}
+            className="
       border border-white
       bg-purple-500
       hover:bg-white/90
@@ -87,14 +87,13 @@ export default function FaqServices({ faqsLeft = [], faqsRight = [] }) {
       transition-all
       
     "
-  >
-    Book a Free Consultation
-  </button>
-</div>
-
+          >
+            Book a Free Consultation
+          </button>
+        </div>
       </div>
 
-       <ContactModal open={openContact} onClose={() => setOpenContact(false)} />
+      <ContactModal open={openContact} onClose={() => setOpenContact(false)} />
     </section>
   );
 }

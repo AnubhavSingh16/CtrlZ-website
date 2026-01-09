@@ -121,8 +121,10 @@ export default function WhatWeOffer({data}) {
   return (
     <section className="relative min-h-[300vh] px-6">
       {/* TITLE */}
-      <div className="z-30">
-        <h1 className="text-center text-white font-extrabold text-6xl">
+
+
+      <div className="z-30 w-full text-center">
+        <h1 className="heading-3d no-underline ">
           WHAT WE OFFER
         </h1>
       </div>

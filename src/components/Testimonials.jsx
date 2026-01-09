@@ -34,7 +34,7 @@ const testimonials = [
     name: "Sahil Tuteja",
     rating: 5,
   },
-    {
+  {
     text: "Calm, collaborative design process, the final interface truly reflects our brand.",
     name: "Akash Chauhan",
     rating: 5,
@@ -44,24 +44,20 @@ const testimonials = [
     name: "SK & KD",
     rating: 5,
   },
-  
 ];
 
 export default function TrustedBy() {
   return (
-<section
-  className="min-h-screen w-full relative overflow-hidden"
-  style={{
-    backgroundImage: `url(${testimonialBackg})`,
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  }}
->
-
-      
+    <section
+      className="min-h-screen w-full relative overflow-hidden"
+      style={{
+        backgroundImage: `url(${testimonialBackg})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
       <div className="w-full mx-auto py-16">
-
         <style>{`
           .marquee {
             width: 100%;
@@ -120,95 +116,80 @@ export default function TrustedBy() {
           }
         `}</style>
 
-        {/* HEADING */}
-        <h2 className="text-center text-6xl font-bold text-white mb-6">
-          Testimonials
-        </h2>
-
-        <div className="mx-auto mb-14 h-[3px] w-[25%] bg-gradient-to-r from-transparent via-white to-transparent"></div>
+        <div className="w-full text-center mb-10">
+          <h2 className="heading-3d">Testimonials </h2>
+        </div>
 
         {/* MARQUEES */}
         <div className="marquee py-10">
           <div className="marquee-track">
             {[...testimonials, ...testimonials].map((item, index) => (
-      <div className="marquee-card" key={index}>
-        
-        {/* Quote icon */}
-        <FaQuoteRight className="absolute top-4 right-4 text-purple-300 text-xl" />
+              <div className="marquee-card" key={index}>
+                {/* Quote icon */}
+                <FaQuoteRight className="absolute top-4 right-4 text-purple-300 text-xl" />
 
-        {/* Avatar */}
-        <img
-          src={avatar}
-          alt={item.name}
-          className="testimonial-avatar"
-        />
+                {/* Avatar */}
+                <img
+                  src={avatar}
+                  alt={item.name}
+                  className="testimonial-avatar"
+                />
 
-        {/* Name + Rating */}
-        <div>
-          <p className="font-semibold text-white">
-            {item.name}
-          </p>
+                {/* Name + Rating */}
+                <div>
+                  <p className="font-semibold text-white">{item.name}</p>
 
-          <div className="flex gap-1 text-purple-300 mt-1">
-            {Array.from({ length: item.rating }).map((_, i) => (
-              <FaStar key={i} size={14} />
+                  <div className="flex gap-1 text-purple-300 mt-1">
+                    {Array.from({ length: item.rating }).map((_, i) => (
+                      <FaStar key={i} size={14} />
+                    ))}
+                  </div>
+                </div>
+
+                {/* Text */}
+                <p className="marquee-text mb-6">“{item.text}”</p>
+
+                {/* Bottom quote */}
+                <FaQuoteLeft className="absolute bottom-4 left-4 text-purple-300 text-xl" />
+              </div>
             ))}
           </div>
         </div>
 
-        {/* Text */}
-        <p className="marquee-text mb-6">
-          “{item.text}”
-        </p>
+        <div className="marquee py-10">
+          <div className="marquee-track reverse">
+            {[...testimonials, ...testimonials].map((item, index) => (
+              <div className="marquee-card" key={index}>
+                {/* Quote icon */}
+                <FaQuoteRight className="absolute top-4 right-4 text-purple-300 text-xl" />
 
-        {/* Bottom quote */}
-        <FaQuoteLeft className="absolute bottom-4 left-4 text-purple-300 text-xl" />
-      </div>
-    ))}
-          </div>
-        </div>
+                {/* Avatar */}
+                <img
+                  src={avatar}
+                  alt={item.name}
+                  className="testimonial-avatar"
+                />
 
-      <div className="marquee py-10">
-  <div className="marquee-track reverse">
-    {[...testimonials, ...testimonials].map((item, index) => (
-      <div className="marquee-card" key={index}>
-        
-        {/* Quote icon */}
-        <FaQuoteRight className="absolute top-4 right-4 text-purple-300 text-xl" />
+                {/* Name + Rating */}
+                <div>
+                  <p className="font-semibold text-white">{item.name}</p>
 
-        {/* Avatar */}
-        <img
-          src={avatar}
-          alt={item.name}
-          className="testimonial-avatar"
-        />
+                  <div className="flex gap-1 text-purple-300 mt-1">
+                    {Array.from({ length: item.rating }).map((_, i) => (
+                      <FaStar key={i} size={14} />
+                    ))}
+                  </div>
+                </div>
 
-        {/* Name + Rating */}
-        <div>
-          <p className="font-semibold text-white">
-            {item.name}
-          </p>
+                {/* Text */}
+                <p className="marquee-text mb-6">“{item.text}”</p>
 
-          <div className="flex gap-1 text-purple-300 mt-1">
-            {Array.from({ length: item.rating }).map((_, i) => (
-              <FaStar key={i} size={14} />
+                {/* Bottom quote */}
+                <FaQuoteLeft className="absolute bottom-4 left-4 text-purple-300 text-xl" />
+              </div>
             ))}
           </div>
         </div>
-
-        {/* Text */}
-        <p className="marquee-text mb-6">
-          “{item.text}”
-        </p>
-
-        {/* Bottom quote */}
-        <FaQuoteLeft className="absolute bottom-4 left-4 text-purple-300 text-xl" />
-      </div>
-    ))}
-  </div>
-</div>
-
-
       </div>
     </section>
   );

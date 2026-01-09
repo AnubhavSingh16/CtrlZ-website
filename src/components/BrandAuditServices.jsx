@@ -15,7 +15,8 @@ export default function GetStarted({ data }) {
     "/video-editing": "video",
     "/ui-development": "ui",
     "/ai-marketing": "ai",
-    "/logo-design": "graphic",
+    "/graphic-design": "graphic",
+
   };
 
   const modalKey =
