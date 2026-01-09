@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import WhyUs from "../assets/WhyUs.png";
+import WhyUs from "../assets/whyUs.png";
 import web from "../assets/webdev/web.png";
 
 export default function WhyCtrlZs() {
