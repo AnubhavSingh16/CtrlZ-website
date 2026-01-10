@@ -128,7 +128,7 @@ export default function WebDevelopmentPage() {
     //   q: "Why Collaboration That Builds Trust?",
     //   a: "We believe in clear communication, milestone-based delivery, and long-term partnerships — ensuring transparency, accountability, and measurable business impact.",
     // },
-     {
+    {
       q: "What platforms do you use for web development?",
       a: "We work with React, Next.js, Webflow, and WordPress, selecting the best technology for your business goals and scalability needs.",
     },
@@ -153,36 +153,51 @@ export default function WebDevelopmentPage() {
           </div>
 
           <div className="webdev-swiper-container">
-            <Swiper
-              effect={"coverflow"}
-              centeredSlides={true}
-              grabCursor={true}
-              loop={true}
-              slidesPerView={"auto"}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              coverflowEffect={{
-                rotate: 0,
-                stretch: 0,
-                depth: 400,
-                modifier: 5,
-                slideShadows: false,
-              }}
-              modules={[EffectCoverflow, Autoplay]}
-              className="webdev-swiper"
-            >
-              {cards.map((img, i) => (
-                <SwiperSlide key={i} className="swiper-card">
-                  <img src={img} alt="" />
-                </SwiperSlide>
-              ))}
-            </Swiper>
+            <div className="webdev-swiper-container">
+              <Swiper
+                effect={"coverflow"}
+                centeredSlides={true}
+                grabCursor={true}
+                loop={true}
+                slidesPerView={"auto"}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                coverflowEffect={{
+                  rotate: 0,
+                  stretch: 0,
+                  depth: 400,
+                  modifier: 5,
+                  slideShadows: false,
+                }}
+                modules={[EffectCoverflow, Autoplay]}
+                className="webdev-swiper"
+              >
+                {cards.map((img, i) => (
+                  <SwiperSlide key={i} className="swiper-card">
+                    <img src={img} alt="" />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
           </div>
+
           {/* CTA BUTTON */}
           <button
-            className="webdev-btn-start relative z-50 pointer-events-auto px-16 py-4"
+            className="
+    webdev-btn-start
+    relative z-50 pointer-events-auto
+    px-16 py-4 rounded-full
+    border border-transparent
+    text-white font-semibold
+
+    transition-all duration-300 ease-out
+    hover:-translate-y-[5px]
+
+    hover:border-[#9b66ff]
+    hover:shadow-[0_0_25px_rgba(155,102,255,0.75)]
+  "
             onClick={() => setOpenContact(true)}
           >
             Start Your Project
@@ -190,14 +205,15 @@ export default function WebDevelopmentPage() {
 
           <div className="bg-black "></div>
 
-          <FloatingText lines={1} />
-          <div className="heading-3d no-underline">Trusted By Industry Leaders</div>
+          <div className="w-full flex flex-col items-center justify-center text-center px-4">
+            <FloatingText lines={1} />
+           <h2 className="heading-3d no-underline lg:mt-16 md:mt-12 sm:mt-10 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 tracking-wide px-14">
+          Proven Performance, Measurable Results
+        </h2>
 
-          <div>
-            <p className="webdev-subtitle text-xl">
-              Join successful businesses that chose Ctrl Zs for their
-              <br />
-              web development
+            <p className="max-w-2xl text-sm sm:text-base lg:text-2xl text-white ">
+              Key numbers that reflect how we build, deliver, and support our
+              clients.
             </p>
           </div>
         </section>
@@ -221,7 +237,7 @@ export default function WebDevelopmentPage() {
               24+
             </h3>
 
-            <p className="mt-2 text-lg sm:text-xl font-semibold text-purple-900">
+            <p className="mt-2 text-lg sm:text-xl font-bold text-purple-900">
               Happy Clients
             </p>
 
@@ -254,7 +270,7 @@ export default function WebDevelopmentPage() {
               98%
             </h3>
 
-            <p className="mt-2 text-lg sm:text-xl font-semibold text-purple-900">
+            <p className="mt-2 text-lg sm:text-xl font-bold text-purple-900">
               Client Satisfaction
             </p>
 
@@ -287,7 +303,7 @@ export default function WebDevelopmentPage() {
               &lt;3s
             </h3>
 
-            <p className="mt-2 text-lg sm:text-xl font-semibold text-purple-900">
+            <p className="mt-2 text-lg sm:text-xl font-bold text-purple-900">
               Average Load Time
             </p>
             {/* 
@@ -320,7 +336,7 @@ export default function WebDevelopmentPage() {
               24/7
             </h3>
 
-            <p className="mt-2 text-lg sm:text-xl font-semibold text-purple-900">
+            <p className="mt-2 text-lg sm:text-xl font-bold text-purple-900">
               Support Available
             </p>
 

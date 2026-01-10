@@ -141,7 +141,7 @@ export default function BrandAudit() {
           name="name"
           value={formData.name}
           onChange={handleChange}
-          className="w-full bg-[#F1F1F1] border border-black rounded-md px-3 py-2 text-sm mt-1 text-[#656565]"
+          className="w-full bg-[#F1F1F1] border border-[#ADADAD] rounded-sm px-3 py-2 text-sm mt-1 text-[#656565]"
           placeholder="Your Full Name"
         />
         {errors.name && (
@@ -159,7 +159,7 @@ export default function BrandAudit() {
           name="email"
           value={formData.email}
           onChange={handleChange}
-          className="w-full bg-[#F1F1F1] border border-black rounded-md px-3 py-2 text-sm mt-1 text-[#656565]"
+          className="w-full bg-[#F1F1F1] border border-[#ADADAD] rounded-sm px-3 py-2 text-sm mt-1 text-[#656565]"
           placeholder="you@example.com"
         />
         {errors.email && (
@@ -173,7 +173,7 @@ export default function BrandAudit() {
           Contact Number <span className="text-red-500">*</span>
         </label>
         <div className="flex gap-2 mt-1">
-          <select className="bg-[#F1F1F1] text-[#656565] border border-black rounded-md px-3 py-2 text-sm">
+          <select className="bg-[#F1F1F1] text-[#656565] border border-[#ADADAD] rounded-sm px-3 py-2 text-sm">
             <option>+91 IN</option>
           </select>
           <input
@@ -181,7 +181,7 @@ export default function BrandAudit() {
             value={formData.contact}
             onChange={handleChange}
             maxLength={10}
-            className="flex-1 bg-[#F1F1F1] text-[#656565] border border-black rounded-md px-3 py-2 text-sm"
+            className="flex-1 bg-[#F1F1F1] text-[#656565] border border-[#ADADAD] rounded-sm px-3 py-2 text-sm"
             placeholder="Mobile Number*"
           />
         </div>
@@ -199,7 +199,7 @@ export default function BrandAudit() {
           name="website"
           value={formData.website}
           onChange={handleChange}
-          className="w-full bg-[#F1F1F1] border border-black rounded-md px-3 py-2 text-sm mt-1 text-[#474747]"
+          className="w-full bg-[#F1F1F1] border border-[#ADADAD] rounded-sm px-3 py-2 text-sm mt-1 text-[#474747]"
           placeholder="www.yourwebsite.com"
         />
       </div>
@@ -213,7 +213,7 @@ export default function BrandAudit() {
           name="company"
           value={formData.company}
           onChange={handleChange}
-          className="w-full bg-[#F1F1F1] border border-black rounded-md px-3 py-2 text-sm mt-1 text-[#656565]"
+          className="w-full bg-[#F1F1F1] border border-[#ADADAD] rounded-sm px-3 py-2 text-sm mt-1 text-[#656565]"
           placeholder="Your company name"
         />
       </div>

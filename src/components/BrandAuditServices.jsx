@@ -114,7 +114,7 @@ export default function GetStarted({ data }) {
 
   return (
     <>
-      <section className="w-full bg-gradient-to-br from-black via-[#0d021b] to-black py-14 sm:py-20 px-4 sm:px-6">
+      <section className="w-full bg-gradient-to-br from-black via-[#0d021b] to-black py-10 md:py-12 sm:py-10 lg:py-16 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-2xl grid grid-cols-1 lg:grid-cols-2 overflow-hidden">
           {/* LEFT CONTENT (UNCHANGED) */}
           <div className="p-6 sm:p-8 md:p-12 text-center lg:text-left">

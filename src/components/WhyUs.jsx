@@ -69,7 +69,7 @@ export default function WhyCtrlZs() {
   };
 
   return (
-    <section className="w-full py-16 text-white">
+    <section className="w-full pb-16 pt-8 text-white">
       {/* TITLE */}
       <div className="text-center mb-8 sm:mb-10 px-4 sm:px-5">
         <h2 className="heading-3d no-underline">

@@ -24,8 +24,8 @@ export default function OfferCard({ index, total, item }) {
         }}
         className="
           relative
-          w-[92%] md:w-[80%] lg:w-[70%]
-          h-[450px]
+          w-[92%] md:w-[80%] lg:w-[60%]
+          h-[500px]
           grid grid-cols-1 md:grid-cols-2
           rounded-3xl
           overflow-hidden

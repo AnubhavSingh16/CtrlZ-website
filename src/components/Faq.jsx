@@ -4,7 +4,7 @@ import faq from "../assets/faq.png"; // <-- replace with your actual image
 import quesMark from "../assets/quesMark.png";
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(-1);
 
   const faqs = [
     {

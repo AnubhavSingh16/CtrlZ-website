@@ -18,19 +18,22 @@ const testimonials = [
 export default function TrustedBy() {
   return (
     <section
-      className="min-h-screen w-full relative overflow-hidden"
+      className="w-full relative overflow-hidden"
       style={{
         backgroundImage: `url(${testimonialBackg})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "center",
+        
       }}
     >
       <div className="w-full mx-auto py-16">
 
         {/* ================= STYLES ================= */}
         <style>{`
-         .marquee {
+
+        /* ================= LEFT MASK ONLY ================= */
+.marquee-left-mask {
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -38,19 +41,45 @@ export default function TrustedBy() {
   mask-image: linear-gradient(
     to right,
     transparent 0%,
-    black 18%,
-    black 82%,
-    transparent 100%
+    transparent 10%,
+    black 30%,
+    black 100%
   );
 
   -webkit-mask-image: linear-gradient(
     to right,
     transparent 0%,
-    black 18%,
-    black 82%,
+    transparent 10%,
+    black 30%,
+    black 100%
+  );
+}
+
+/* ================= RIGHT MASK ONLY ================= */
+.marquee-right-mask {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+
+  mask-image: linear-gradient(
+    to right,
+    black 0%,
+    black 70%,
+    transparent 90%,
+    transparent 100%
+  );
+
+  -webkit-mask-image: linear-gradient(
+    to right,
+    black 0%,
+    black 70%,
+    transparent 90%,
     transparent 100%
   );
 }
+
+
+   
 
 
           .marquee-track {
@@ -75,20 +104,19 @@ export default function TrustedBy() {
           }
 
           .marquee-card {
-            min-width: 340px;
-            padding: 32px 28px;
+            min-width: 450px;
+            padding: 48px 58px;
             background: linear-gradient(
-  260deg,
+  160deg,
   #05000a 10%,
-  #1a0830 25%,
-  #3a136f 55%,
-  #1a0830 75%,
+  #3a136f 30%,
+  #1a0830 70%,
   #05000a 100%
 );
 
             backdrop-filter: blur(10px);
-            border-radius: 18px;
-            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 22px;
+            border: 1px solid white;
             color: white;
             position: relative;
 
@@ -97,7 +125,7 @@ export default function TrustedBy() {
           }
 
           .marquee-card:hover {
-            transform: translateY(-4px);
+            transform: translateY(-5px);
             box-shadow: 0 0 28px rgba(155,77,255,0.45);
             z-index: 5;
           }
@@ -105,7 +133,7 @@ export default function TrustedBy() {
           .marquee-text {
             font-size: 14px;
             line-height: 1.6;
-            opacity: 0.9;
+          
             margin-top: 6px;
           }
 
@@ -127,14 +155,14 @@ export default function TrustedBy() {
         </div>
 
         {/* ================= FIRST MARQUEE ================= */}
-        <div className="marquee py-10">
+        <div className="marquee-left-mask  py-10">
           <div className="marquee-track">
             {[...testimonials, ...testimonials].map((item, index) => (
               <div className="marquee-card" key={index}>
-                <img src={testimonialExclam} alt="" className="absolute -top-2 -right-4 w-14 h-14 opacity-80" />
+                <img src={testimonialExclam} alt="" className="absolute -top-6 -right-6 w-20 h-20" />
 
-                <p className="font-semibold">{item.name}</p>
-                <div className="flex gap-1 text-purple-300 mt-1">
+                <p className="font-semibold text-xl">{item.name}</p>
+                <div className="flex gap-1 text-purple-300 mt-1 mb-1">
                   {Array.from({ length: item.rating }).map((_, i) => (
                     <FaStar key={i} size={14} />
                   ))}
@@ -142,21 +170,21 @@ export default function TrustedBy() {
 
                 <p className="marquee-text mt-4">{item.text}</p>
 
-                <img src={testimonialExclam2} alt="" className="absolute -bottom-2 -left-2 w-8 h-8 opacity-80" />
+                <img src={testimonialExclam2} alt="" className="absolute -bottom-2 -left-2 w-12 h-12 " />
               </div>
             ))}
           </div>
         </div>
 
         {/* ================= SECOND MARQUEE ================= */}
-        <div className="marquee py-10">
+        <div className="marquee-right-mask pt-5">
           <div className="marquee-track reverse">
             {[...testimonials, ...testimonials].map((item, index) => (
-              <div className="marquee-card" key={index}>
-                <img src={testimonialExclam} alt="" className="absolute -top-2 -right-4 w-14 h-14 opacity-80" />
+              <div className="marquee-card text-xl" key={index}>
+                <img src={testimonialExclam} alt="" className="absolute -top-6 -right-6 w-20 h-20 " />
 
                 <p className="font-semibold">{item.name}</p>
-                <div className="flex gap-1 text-purple-300 mt-1">
+                <div className="flex gap-1 text-purple-300 mt-1 mb-1">
                   {Array.from({ length: item.rating }).map((_, i) => (
                     <FaStar key={i} size={14} />
                   ))}
@@ -164,7 +192,7 @@ export default function TrustedBy() {
 
                 <p className="marquee-text mt-4">{item.text}</p>
 
-                <img src={testimonialExclam2} alt="" className="absolute -bottom-2 -left-2 w-8 h-8 opacity-80" />
+                <img src={testimonialExclam2} alt="" className="absolute -bottom-2 -left-2 w-12 h-12" />
               </div>
             ))}
           </div>

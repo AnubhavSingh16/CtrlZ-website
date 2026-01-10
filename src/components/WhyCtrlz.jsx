@@ -4,7 +4,7 @@ export default function WhyCtrlZ({ data }) {
   if (!data || !data.cards) return null;
 
   return (
-    <section className="relative w-full md:py-18 py-8 px-4">
+    <section className="relative w-full md:py-10 py-8 px-4">
       {/* Heading */}
 
        <div className="w-full text-center mb-10">

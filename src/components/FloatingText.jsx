@@ -61,7 +61,7 @@ const containerStyle = {
   flexDirection: "column",
   alignItems: "center",
   margin: "1rem 0",
-  padding: "2rem 0",
+  padding: "1.5rem 0",
 };
 
 const rowStyle = { width: "100%", overflow: "hidden", whiteSpace: "nowrap", textAlign: "center", };

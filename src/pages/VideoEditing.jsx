@@ -187,9 +187,9 @@ export default function VideoEditing() {
         </div>
       </div>
 
-      <div className="w-full flex flex-col items-center justify-center text-center px-4 ">
+      <div className="w-full flex flex-col items-center justify-center text-center px-4">
         <FloatingText lines={1} />
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 tracking-wide px-14">
+        <h2 className="heading-3d no-underline lg:mt-12 md:mt-12 sm:mt-10 text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 tracking-wide px-14">
           Proven Performance, Measurable Results
         </h2>
 
@@ -198,6 +198,7 @@ export default function VideoEditing() {
           clients.
         </p>
       </div>
+
 
       <div className="w-full py-12 mt-10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">

@@ -195,7 +195,7 @@ body {
 /* ================= DROPDOWN ================= */
 .dropdown-menu {
   position: absolute;
-  left: -40px;
+  left: -50px;
   top: 100%;
   margin-top: 20px;
   width: 190px;
@@ -205,10 +205,8 @@ body {
   pointer-events: none;
 
   /* STRONG GLASS BASE */
-  background: rgba(18, 2, 34, 0.8); /* darker + solid */
-  backdrop-filter: blur(70px) saturate(180%);
-  -webkit-backdrop-filter: blur(70px) saturate(380%);
-
+  background: rgba(18, 2, 34, 1); /* darker + solid */
+  
   /* BORDER + SHINE */
   border: 1px solid rgba(228, 217, 217, 0.25);
   border-radius: 14px;
@@ -220,7 +218,7 @@ body {
 
   padding: 12px 0;
 
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition: opacity 0.15s ease, transform 0.25s ease;
   z-index: 999;
 }
 

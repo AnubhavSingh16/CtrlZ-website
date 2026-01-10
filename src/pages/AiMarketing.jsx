@@ -4,7 +4,7 @@
 //   )
 // }
 
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "../styles/pages/uiPage.css";
 import editedVideo from "../assets/editedVideo.mp4";
 import { FaUsers, FaStar, FaClock } from "react-icons/fa";
@@ -54,7 +54,6 @@ import { getStartedData } from "../data/GetStartedData";
 
 import testimonialBackg from "../assets/testimonialBackg.svg";
 
-
 const webSlides = [
   {
     image: sample1,
@@ -81,7 +80,6 @@ const webSlides = [
       "A complete visibility system for search, voice, and local discovery. We optimize technical SEO, content, backlinks, structured data, and regional targeting to improve rankings, credibility, and long-term search performance.",
   },
 ];
-
 
 const faqsLeft = [
   {
@@ -129,12 +127,10 @@ Contact us to customize a plan that fits your needs.`,
   },
 ];
 
-
 export default function AiMarketing() {
   const location = useLocation();
 
-   const [openContact, setOpenContact] = useState(false);
-  
+  const [openContact, setOpenContact] = useState(false);
 
   const color = location.state?.color || "purple";
 
@@ -144,50 +140,70 @@ export default function AiMarketing() {
         <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* LEFT CONTENT */}
           <div className="text-white">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+            <h1 className="text-5xl sm:text-5xl lg:text-6xl font-bold leading-tight">
               AI-POWERED <br />
               <span className="text-[#b58cff]">DIGITAL</span> <br />
               MARKETING
             </h1>
 
-            <p className="mt-6 text-gray-300 max-w-xl text-sm sm:text-base leading-relaxed">
+            <p className="mt-2 text-gray-100 max-w-xl text-lg  leading-relaxed">
               From AI-driven SEO to predictive ads and full-scale social media
               systems, Ctrl Zs builds marketing engines that rank, convert, and
               scale globally.
             </p>
 
-            <p className="mt-8 font-semibold text-sm text-gray-200">
+            <p className="mt-8 font-bold text-xl text-gray-100">
               Key numbers that reflect how we build, deliver, and support our
               clients.
             </p>
 
             {/* STATS */}
             <div className="mt-6 space-y-3 text-sm">
-              <div className="flex items-center gap-3">
-                <span className="w-2 h-2 bg-purple-400 rounded-full"></span>
-                <span>
-                  <b>50+</b> Campaigns Delivered
-                </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="w-2 h-2 bg-purple-400 rounded-full"></span>
-                <span>
-                  <b>98%</b> Client Satisfaction
-                </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="w-2 h-2 bg-purple-400 rounded-full"></span>
-                <span>
-                  <b>15+</b> Growth Clients
-                </span>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="w-2 h-2 bg-purple-400 rounded-full"></span>
-                <span>
-                  <b>100%</b> On-Time Reporting
-                </span>
-              </div>
-            </div>
+  <div className="flex items-center gap-3">
+    <img
+      src={mask1}
+      alt=""
+      className="w-7 h-7 object-contain"
+    />
+    <span>
+     <b className="text-xl font-bold">50+</b> Campaigns Delivered
+    </span>
+  </div>
+
+  <div className="flex items-center gap-3">
+    <img
+      src={mask2}
+      alt=""
+      className="w-7 h-7 object-contain"
+    />
+    <span>
+      <b className="text-xl font-bold">98%</b> Client Satisfaction
+    </span>
+  </div>
+
+  <div className="flex items-center gap-3">
+    <img
+      src={mask3}
+      alt=""
+      className="w-7 h-7 object-contain"
+    />
+    <span>
+      <b className="text-xl font-bold">15+</b> Growth Clients
+    </span>
+  </div>
+
+  <div className="flex items-center gap-3">
+    <img
+      src={mask4}
+      alt=""
+      className="w-7 h-7 object-contain"
+    />
+    <span>
+     <b className="text-xl font-bold">100%</b> On-Time Reporting
+    </span>
+  </div>
+</div>
+
           </div>
 
           {/* RIGHT CARD */}
@@ -267,11 +283,15 @@ flex flex-col items-center justify-center"
 
             {/* CTA */}
             <button
-
-            onClick={() => {setOpenContact(true)}}
+              onClick={() => {
+                setOpenContact(true);
+              }}
               className="mt-20 w-[50%] bg-white text-[#160032]
     font-bold py-4 rounded-lg shadow
-    hover:scale-[1.03] transition"
+    transition-all duration-300 ease-out
+    hover:-translate-y-[5px]
+  hover:shadow-[0_0_25px_rgba(155,102,255,0.75)]
+    "
             >
               Start Your Project
             </button>
@@ -304,7 +324,6 @@ flex flex-col items-center justify-center"
               <p className="text-lg lg:text-2xl font-semibold mt-3 text-white">
                 Project Delivered
               </p>
-             
             </div>
 
             {/* Card 2 */}
@@ -316,7 +335,6 @@ flex flex-col items-center justify-center"
               <p className="text-lg lg:text-2xl font-semibold mt-3 text-white">
                 Client Satisfaction
               </p>
-             
             </div>
 
             {/* Card 3 */}
@@ -328,7 +346,6 @@ flex flex-col items-center justify-center"
               <p className="text-lg lg:text-2xl font-semibold mt-3 text-white">
                 Happy Clients
               </p>
-             
             </div>
 
             {/* Card 4 */}
@@ -340,7 +357,6 @@ flex flex-col items-center justify-center"
               <p className="text-lg lg:text-2xl font-semibold mt-3 text-white">
                 On-Time Delivery
               </p>
-             
             </div>
           </div>
         </div>
@@ -348,8 +364,7 @@ flex flex-col items-center justify-center"
 
       <TrustedBy />
 
-      <WhatWeOffer data={webSlides}/>
-
+      <WhatWeOffer data={webSlides} />
 
       <div className="relative min-h-screen w-full overflow-hidden">
         {/* BLURRED BACKGROUND IMAGE */}
@@ -369,12 +384,12 @@ flex flex-col items-center justify-center"
 
         {/* CONTENT GOES HERE */}
         <div className="relative z-10">
-      <OurProcess processData={processData.ai} />
+          <OurProcess processData={processData.ai} />
         </div>
       </div>
 
       <WhyCtrlZ data={whyCtrlzData.ai} />
-{/* 
+      {/* 
       <WhyCtrlZsDiff data={differencesData.ai} /> */}
 
       <Pricing data={pricingData.ai} />

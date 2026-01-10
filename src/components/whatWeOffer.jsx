@@ -71,10 +71,10 @@
 //                     className="
 //                      text-center
 //                       w-[50%]
-                     
+
 //                        py-8
 //                       flex flex-col
-                     
+
 //                     "
 //                   >
 //                     <h3 className="text-base font-semibold text-white mb-4 break-words">
@@ -115,27 +115,17 @@ const offers = [
   },
 ];
 
-export default function WhatWeOffer({data}) {
-
-  
+export default function WhatWeOffer({ data }) {
   return (
     <section className="relative min-h-[300vh] px-6">
       {/* TITLE */}
 
-
       <div className="z-30 w-full text-center">
-        <h1 className="heading-3d no-underline ">
-          WHAT WE OFFER
-        </h1>
+        <h1 className="heading-3d no-underline ">WHAT WE OFFER</h1>
       </div>
 
       {data.map((item, index) => (
-        <OfferCard
-          key={index}
-          index={index}
-          total={data.length}
-          item={item}
-        />
+        <OfferCard key={index} index={index} total={data.length} item={item} />
       ))}
     </section>
   );

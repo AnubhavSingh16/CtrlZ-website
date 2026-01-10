@@ -93,9 +93,9 @@ const testimonials = [
 
 export default function TrustedBy() {
   return (
-    <section className="py-24 overflow-hidden">
+    <section className="py-24 pt-16 overflow-hidden">
       <div className="w-full text-center mb-10">
-        <h2 className="heading-3d no-underline">What Our Clients Say</h2>
+        <h2 className="heading-3d no-underline">WHAT OUR CLIENTS SAY</h2>
       </div>
 
       {/* MARQUEE */}

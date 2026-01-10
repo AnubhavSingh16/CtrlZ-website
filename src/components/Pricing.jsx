@@ -12,7 +12,7 @@ export default function Pricing({ data }) {
   const { title, subheading, plans } = data;
 
   return (
-    <section className="w-full py-24 px-6 relative overflow-hidden">
+    <section className="w-full py-12 px-6 relative overflow-hidden">
       {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b  via-[#0d0215] to-black opacity-90" />
 
