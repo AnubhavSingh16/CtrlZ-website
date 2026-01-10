@@ -77,7 +77,7 @@ export default function Hero() {
           <div className="home-hero-arc home-hero-arc-3"></div>
           {/* <div className="home-hero-arc home-hero-arc-4"></div> */}
           {/* === ARC STATS === */}
-          <div className="home-hero-arc-stats home-hero-stat-left revolving-glow">
+          <div className="home-hero-arc-stats home-hero-stat-left revolving-glow ">
             {" "}
             <span className="home-hero-stat-value">+120%</span>{" "}
             <span className="home-hero-stat-label">Conversions</span>{" "}

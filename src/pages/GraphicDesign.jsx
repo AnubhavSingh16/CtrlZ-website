@@ -154,22 +154,22 @@ export default function GraphicDesign() {
 
   return (
     <>
-      <div className="relative w-full min-h-screen bg-gradient-to-br from-[#0b0710] via-[#1a0b2e] to-[#3b1d5f] text-white overflow-hidden py-16">
+      <div className="relative w-full   text-white overflow-hidden py-16">
         {/* TOP CONTENT */}
         <div className="max-w-7xl mx-auto px-6 pt-24 text-center">
           <h1 className="text-4xl md:text-6xl font-bold tracking-wide">
             GRAPHIC <span className="text-purple-400">DESIGNING</span>
           </h1>
 
-          <p className="mt-6 text-white text-lg sm:text-xl md:text-xl max-w-4xl mx-auto">
+          <p className="mt-6 text-white/80 text-lg sm:text-xl md:text-xl max-w-4xl mx-auto">
             Strategic Graphic Design Services Engineered to Improve Conversions,
             <br className="hidden md:block" />
             Not Just Aesthetics
           </p>
 
-          <p className="mt-4 font-semibold text-xl">
+          {/* <p className="mt-4 font-semibold text-xl">
             Proven Performance, Measurable Results
-          </p>
+          </p> */}
         </div>
 
         {/* MAIN CONTENT */}
@@ -185,59 +185,77 @@ export default function GraphicDesign() {
             </div>
 
             {/* RIGHT SIDE POINTERS */}
-            <div className="flex flex-col gap-6">
-              <div className="flex items-center gap-3">
-                <span className="h-2 w-2 bg-purple-400 rounded-full" />
-                <p>
-                  <strong>50+</strong>{" "}
-                  <span className="text-white/70">Campaigns Delivered</span>
-                </p>
-              </div>
+          <div className="flex flex-col gap-6">
 
-              <div className="flex items-center gap-3">
-                <span className="h-2 w-2 bg-purple-400 rounded-full" />
-                <p>
-                  <strong>98%</strong>{" "}
-                  <span className="text-white/70">Client Satisfaction</span>
-                </p>
-              </div>
+  <div className="flex items-center gap-3">
+    <img
+      src={mask1}
+      alt="mask icon"
+      className="h-7 w-7 object-contain"
+    />
+    <p>
+      <strong className="text-xl font-bold">50+</strong>{" "}
+      <span className="text-white">Campaigns Delivered</span>
+    </p>
+  </div>
 
-              <div className="flex items-center gap-3">
-                <span className="h-2 w-2 bg-purple-400 rounded-full" />
-                <p>
-                  <strong>15+</strong>{" "}
-                  <span className="text-white/70">Growth Clients</span>
-                </p>
-              </div>
+  <div className="flex items-center gap-3">
+    <img
+      src={mask2}
+      alt="mask icon"
+      className="h-7 w-7 object-contain"
+    />
+    <p>
+      <strong className="text-xl font-bold">98%</strong>{" "}
+      <span className="text-white">Client Satisfaction</span>
+    </p>
+  </div>
 
-              <div className="flex items-center gap-3">
-                <span className="h-2 w-2 bg-purple-400 rounded-full" />
-                <p>
-                  <strong>100%</strong>{" "}
-                  <span className="text-white/70">On-Time Reporting</span>
-                </p>
-              </div>
+  <div className="flex items-center gap-3">
+    <img
+      src={mask3}
+      alt="mask icon"
+      className="h-7 w-7 object-contain"
+    />
+    <p>
+      <strong className="text-xl font-bold">15+</strong>{" "}
+      <span className="text-white">Growth Clients</span>
+    </p>
+  </div>
 
-              {/* BUTTON */}
-              <button
-              onClick={() => {
-                setOpenContact(true);
-              }}
-                className="
-                mt-4
-                bg-white text-black
-                px-15 py-4
-                rounded-xl
-                font-semibold
-                w-fit
-                hover:scale-105
-                transition-all
-                shadow-xl
-              "
-              >
-                Start Your Project
-              </button>
-            </div>
+  <div className="flex items-center gap-3">
+    <img
+      src={mask4}
+      alt="mask icon"
+      className="h-7 w-7 object-contain"
+    />
+    <p>
+      <strong className="text-xl font-bold">100%</strong>{" "}
+      <span className="text-white">On-Time Reporting</span>
+    </p>
+  </div>
+
+  {/* BUTTON */}
+  <button
+    onClick={() => setOpenContact(true)}
+    className="
+      mt-4
+      bg-white text-black
+      px-18 py-4
+      rounded-lg
+      font-bold
+      w-fit
+      hover:scale-105
+      transition-all
+      shadow-xl mr-10
+    
+    "
+  >
+    Start Your Project
+  </button>
+
+</div>
+
           </div>
         </div>
       </div>
@@ -245,7 +263,7 @@ export default function GraphicDesign() {
       <FloatingText lines={1} />
 
       <div className="w-full flex flex-col items-center justify-center text-center px-4 pt-16">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4 tracking-wide px-14">
+        <h2 className="heading-3d no-underline">
           Proven Performance, Measurable Results
         </h2>
 

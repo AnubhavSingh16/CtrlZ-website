@@ -181,24 +181,24 @@ export default function Uipage() {
             </div>
 
             {/* Center Icon */}
-            <div className="w-28 h-28 rounded-xl  flex items-center justify-center mb-6">
+            <div className="w-30 h-30 rounded-xl  flex items-center justify-center mb-6">
               {/* <span className="text-3xl font-bold text-purple-600">↟</span> */}
               <img src={logoUi} alt="logo" />
             </div>
 
             {/* Heading */}
-            <h1 className="text-3xl sm:text-4xl lg:text-7xl font-extrabold text-gray-900">
+            <h1 className="text-3xl sm:text-4xl lg:text-7xl font-bold text-gray-900">
               UI / UX <span className="text-purple-600">DESIGN</span>
             </h1>
 
             {/* Subtitle */}
-            <p className="mt-4 max-w-2xl md:text-2xl sm:text-base text-black">
+            <p className="mt-4 md:text-3xl sm:text-base text-[#303030]">
               UI/UX design services that convert,<br></br> engage, and delight
               users
             </p>
 
             {/* Trusted */}
-            <div className="flex items-center gap-3 mt-6">
+            {/* <div className="flex items-center gap-3 mt-6">
               <div className="flex -space-x-3">
                 {[1, 2, 3, 4].map((i) => (
                   <img
@@ -209,17 +209,15 @@ export default function Uipage() {
                   />
                 ))}
               </div>
-              {/* <span className="text-lg text-black">
-                Trusted by many industry leaders
-              </span> */}
-            </div>
+            
+            </div> */}
 
             {/* CTA */}
             <button
               onClick={() => {
                 setOpenContact(true);
               }}
-              className="mt-8 px-16 py-4 bg-gradient-to-r from-purple-600 via-purple-400 to-purple-600 text-white font-semibold rounded-lg shadow-lg hover:scale-105 transition-transform"
+              className="mt-8 px-18 py-4 bg-gradient-to-r from-purple-600 via-purple-400 to-purple-600 text-white font-semibold rounded-sm shadow-lg hover:scale-105 transition-transform shadow-purple-500"
             >
               Start Your Project
             </button>
@@ -231,7 +229,7 @@ export default function Uipage() {
                   <img
                     src={icon}
                     alt="social-icon"
-                    className="object-contain"
+                    className="object-contain hover:animate-spin"
                   />
                 </div>
               ))}

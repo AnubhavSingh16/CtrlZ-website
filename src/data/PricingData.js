@@ -240,7 +240,7 @@ export const pricingData = {
   },
 
   graphic: {
-    title: "Ready to Start?",
+    title: "READY TO START?",
     subheading:
       "Choose the package that fits your needs. All packages include clean code, responsive design, and our commitment to excellence",
     plans: [

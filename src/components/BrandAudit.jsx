@@ -59,8 +59,8 @@ export default function BrandAudit() {
   };
 
   return (
-    <section className="w-full py-12 md:py-16 bg-gradient-to-b  via-[#0d0215] to-black">
-      <div className="max-w-7xl mx-auto px-4 lg:px-6">
+    <section className="w-full py-12 md:py-16 bg-gradient-to-b  via-[#0d0215] to-black group">
+      <div className="max-w-7xl mx-auto px-4 lg:px-6 ">
         {/* GRID */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-0 items-start">
           {/* LEFT SIDE */}
@@ -225,7 +225,7 @@ export default function BrandAudit() {
       onClick={handleSubmit}
       className="mt-6 w-full rounded-md py-3 text-white font-semibold 
                  bg-gradient-to-r from-[#9b66ff] to-[#8a4cf0] 
-                 hover:scale-[1.02] transition-transform"
+                 hover:scale-[1.02] transition-transform group-hover:animate-bounce"
     >
       Get My Free Audit
     </button>

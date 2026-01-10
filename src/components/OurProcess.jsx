@@ -25,6 +25,7 @@ function ProcessSteps({ steps }) {
           <div
             key={index}
             className={`
+        
               relative flex items-center
               px-4 py-3 pr-10
               text-[11px] sm:text-sm
@@ -32,6 +33,8 @@ function ProcessSteps({ steps }) {
               min-w-[140px] sm:min-w-[160px]
               max-w-[180px] sm:max-w-[220px]
               text-center leading-tight
+              hover:animate-bounce
+              cursor-pointer
               ${
                 index % 2 === 0
                   ? "bg-[#a970ff] text-white"
@@ -45,7 +48,7 @@ function ProcessSteps({ steps }) {
     mr-1 ml-4 w-6 aspect-square p-1
     rounded-full
     flex items-center justify-center
-    text-xs font-bold leading-none
+    text-xs font-bold leading-none 
     ${index % 2 === 0 ? "bg-white text-[#7b3fe4]" : "bg-[#a970ff] text-white"}
   `}
             >
@@ -94,7 +97,7 @@ export default function Process({ processData }) {
 
 function Card({ img, title, text, active }) {
   return (
-    <div className="relative bg-black/40 backdrop-blur-2xl border border-[#BF8EFF] rounded-lg px-5 pt-20 pb-8 text-center shadow-2xl group hover:cursor-pointer">
+    <div className="relative bg-black/40 backdrop-blur-2xl border border-[#BF8EFF] rounded-lg px-5 pt-20 pb-8 text-center shadow-2xl group hover:cursor-pointer group">
       {/* IMAGE BADGE */}
       <div
         className={`
@@ -108,10 +111,11 @@ function Card({ img, title, text, active }) {
           shadow-[0_0_22px_rgba(169,112,255,0.65)]
           group-hover:shadow-[0_0_25px_rgba(169,112,255,1)]
           group-hover:scale-104
+          group-hover:animate-spin
 
         `}
       >
-        <img src={img} alt={title} className="w-14 h-14 object-contain" />
+        <img src={img} alt={title} loading="lazy" className="w-14 h-14 object-contain" />
       </div>
 
       {/* CONTENT */}
