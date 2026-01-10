@@ -65,14 +65,13 @@ export default function Services() {
   return (
     <section className="home-services-section">
       {/* HEADING */}
- <h2
-  className="
+      <h2
+        className="
    heading-3d
   "
->
-  Services
-</h2>
-
+      >
+        Services
+      </h2>
 
       {/* <div className="mx-auto mb-14 h-[3px] w-[15%] bg-gradient-to-r from-transparent via-white to-transparent"></div> */}
 
@@ -98,10 +97,11 @@ export default function Services() {
               tabIndex={0}
             >
               {/* IMAGE */}
-              <img src={service.img} 
-              alt={service.title} 
-              loading="lazy"
-              decoding="async"
+              <img
+                src={service.img}
+                alt={service.title}
+                loading="lazy"
+                decoding="async"
               />
 
               {/* TEXT OVERLAY */}
