@@ -173,16 +173,14 @@ export default function BrandAudit() {
           Contact Number <span className="text-red-500">*</span>
         </label>
         <div className="flex gap-2 mt-1">
-          <select className="bg-[#F1F1F1] text-[#656565] border border-[#ADADAD] rounded-sm px-3 py-2 text-sm">
-            <option>+91 IN</option>
-          </select>
+          
           <input
             name="contact"
             value={formData.contact}
             onChange={handleChange}
             maxLength={10}
             className="flex-1 bg-[#F1F1F1] text-[#656565] border border-[#ADADAD] rounded-sm px-3 py-2 text-sm"
-            placeholder="Mobile Number*"
+            placeholder="Your mobile number"
           />
         </div>
         {errors.contact && (

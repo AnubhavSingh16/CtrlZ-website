@@ -458,7 +458,7 @@ body {
   offset-path: inset(-1px round 999px);
   offset-distance: 0%;
 
-  animation: revolveBorder 3s linear infinite;
+  animation: revolveBorder 4s linear infinite;
 
   pointer-events: none;
   z-index: 3;
@@ -586,7 +586,7 @@ body {
   top: 320px;           /* ⬅️ was 320px */
   left: 300px;
   border: 1px solid white;
-  box-shadow: 0 -0px 100px rgba(240, 238, 238, 0.25) inset;
+  box-shadow: 0 10px 120px rgba(235, 208, 242, 0.25) inset;
 }
 
 .home-hero-arc-4 {
@@ -986,6 +986,15 @@ width: clamp(260px, 30vw, 340px);
 
   background-size: 48px 48px;
   z-index: 0;
+}
+
+.portfolio-backg {
+  position: relative; /* IMPORTANT */
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+
+  background-size: 48px 48px;
 }
 
 /* TEXT OVERLAY */

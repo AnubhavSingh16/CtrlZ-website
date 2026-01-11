@@ -13,6 +13,16 @@ import {
 } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 
+import {
+  MdBrush,
+  MdArticle,
+  MdVideocam,
+  MdCampaign,
+  MdCode,
+  MdSmartToy,
+} from "react-icons/md";
+
+import logo from "../assets/logoHome.png";
 
 /* ================= ANIMATION ================= */
 
@@ -26,22 +36,22 @@ const fadeUp = {
 const VALUES = [
   {
     title: "Innovation First",
-    desc: "We embrace AI, automation, and emerging technologies.",
+    desc: "We actively embrace AI, automation, and emerging technologies to stay ahead of the curve — so your brand never falls behind it.",
     icon: MdLightbulbOutline,
   },
   {
     title: "Results Driven",
-    desc: "No vanity metrics — only measurable business growth.",
+    desc: "Every strategy we design is focused on measurable outcomes. No vanity metrics — just real growth, real performance, and real impact on your business.",
     icon: MdBarChart,
   },
   {
     title: "Transparency",
-    desc: "Clear communication, honest timelines, no surprises.",
+    desc: "Clear communication, honest timelines, and straightforward reporting. No hidden surprises. No unnecessary complexity. Ever.",
     icon: MdVisibility,
   },
   {
     title: "Partnership Mindset",
-    desc: "We grow with our clients, not just for them.",
+    desc: "We don't work for brands — we work with them. Your goals become our goals, and your growth is treated like our own.",
     icon: MdGroups,
   },
 ];
@@ -73,11 +83,49 @@ const PROCESS = [
   },
 ];
 
+const SERVICES = [
+  {
+    title: "Branding & Design",
+    desc: "Visual identities that stand out and connect with your audience.",
+    icon: MdBrush,
+    link: "/ui-development",
+  },
+  {
+    title: "Content Strategy",
+    desc: "Compelling content that drives engagement and conversions.",
+    icon: MdArticle,
+    link: "/graphic-design",
+  },
+  {
+    title: "Video Production",
+    desc: "High-impact video content for all platforms and purposes.",
+    icon: MdVideocam,
+    link: "/video-editing",
+  },
+  {
+    title: "Digital Marketing",
+    desc: "Data-driven campaigns that deliver measurable results.",
+    icon: MdCampaign,
+    link: "/ai-marketing",
+  },
+  {
+    title: "Web Development",
+    desc: "Fast, scalable websites built for performance.",
+    icon: MdCode,
+    link: "/web-development",
+  },
+  {
+    title: "AI Integration",
+    desc: "Smart automation systems that scale your operations.",
+    icon: MdSmartToy,
+    link: "/ai-marketing",
+  },
+];
+
 /* ================= COMPONENT ================= */
 
 export default function AboutUs() {
-    const navigate = useNavigate();
-  
+  const navigate = useNavigate();
 
   return (
     <section className="relative w-full overflow-hidden  text-white cursor-default">
@@ -93,7 +141,7 @@ export default function AboutUs() {
           className="min-h-screen flex items-center justify-center px-6 text-center"
         >
           <div className="max-w-5xl">
-            <span className="inline-block rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs">
+            <span className="inline-block rounded-full border font-semibold border-white/80 bg-white/10 px-4 py-2 text-sm">
               Digital Growth Agency
             </span>
 
@@ -107,10 +155,16 @@ export default function AboutUs() {
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-              <button onClick={() => navigate("/contact-us")} className="rounded-xl bg-gradient-to-r from-[#a970ff] to-[#d946ef] px-8 py-4 font-semibold hover:scale-105 transition">
+              <button
+                onClick={() => navigate("/contact-us")}
+                className="rounded-xl bg-gradient-to-r from-[#a970ff] to-[#d946ef] px-8 py-4 font-semibold hover:scale-105 transition"
+              >
                 Start a Conversation →
               </button>
-              <button  onClick={() => navigate("/")} className="rounded-xl border border-white/20 px-8 py-4 font-semibold hover:border-[#bfa2ff] hover:text-[#bfa2ff] transition">
+              <button
+                onClick={() => navigate("/")}
+                className="rounded-xl border border-white/20 px-8 py-4 font-semibold hover:border-[#bfa2ff] hover:text-[#bfa2ff] transition"
+              >
                 View Our Portfolio
               </button>
             </div>
@@ -121,7 +175,7 @@ export default function AboutUs() {
         <section className="py-12 px-6 relative">
           <div className="max-w-7xl mx-auto">
             {/* LABEL */}
-            <p className="text-xs uppercase tracking-widest text-[#bfa2ff] mb-6">
+            <p className="text-lg ml-2 font-semibold uppercase tracking-widest text-[#d2bffa] mb-6">
               Our Story
             </p>
 
@@ -161,24 +215,35 @@ export default function AboutUs() {
               <div className="relative">
                 <div
                   className="
-          rounded-2xl
-          border border-white
-          bg-gradient-to-br from-white/5 to-white/[0.02]
-          backdrop-blur-xl
-          p-10
-          shadow-[0_0_60px_rgba(169,112,255,0.18)]
-        "
+      rounded-2xl
+      border border-white
+      bg-gradient-to-br from-white/5 to-white/[0.02]
+      backdrop-blur-xl
+      p-10
+      shadow-[0_0_60px_rgba(169,112,255,0.18)]
+    "
                 >
-                  <h3 className="text-xl font-bold mb-4">
+                  <h3 className="text-xl font-bold mb-2 text-center">
                     The name itself reflects what we stand for.
                   </h3>
 
-                  <p className="text-white/75 leading-relaxed">
-                    <span className="text-[#bfa2ff] font-semibold">Ctrl Z</span>{" "}
+                  {/* LOGO */}
+                  <div className="my-12 flex justify-center ">
+                    <img
+                      src={logo}
+                      alt="Ctrl Zs Logo"
+                      className=" h-32 md:h-32 w-auto object-contain drop-shadow-[0_0_20px_rgba(169,112,255,0.35)]"
+                    />
+                  </div>
+
+                  <p className="text-white leading-relaxed text-center">
+                    <span className="text-[#bfa2ff] text-xl font-bold">
+                      Ctrl Z
+                    </span>{" "}
                     means undo.
                     <br />
                     <br />
-                    <span className="text-[#bfa2ff] font-semibold">
+                    <span className="text-[#bfa2ff]  text-xl font-bold">
                       Zs
                     </span>{" "}
                     stands for Solutions — because fixing a brand isn’t about
@@ -192,11 +257,15 @@ export default function AboutUs() {
             </div>
 
             {/* BOTTOM HIGHLIGHT STRIP */}
-            <div className="mt-20 rounded-2xl border border-white/10 bg-black/50 p-14">
-              <p className="text-white/70 text-lg leading-relaxed">
-                We built Ctrl Zs as a solutions-first digital agency — where
-                creativity meets performance, and every decision is backed by
-                intent.
+            <div className="mt-20 rounded-2xl border border-white/10 bg-black/50 p-14 shadow-[0_0_40px_rgba(168,85,247,0.5)]
+">
+              <p className="text-white/90 text-lg leading-relaxed">
+                We built{" "}
+                <span className="text-xl text-purple-300 font-bold">
+                  Ctrl Zs{" "}
+                </span>
+                as a solutions-first digital agency — where creativity meets
+                performance, and every decision is backed by intent.
               </p>
 
               <p className="mt-4 text-white font-semibold text-lg">
@@ -209,7 +278,7 @@ export default function AboutUs() {
         {/* ================= OUR VALUES ================= */}
         <section className="py-16 px-6">
           <div className="max-w-7xl mx-auto text-center">
-            <p className="text-xs uppercase tracking-widest text-[#bfa2ff] mb-4">
+            <p className="text-sm uppercase tracking-widest text-[#ae8bf9] font-semibold mb-4">
               Our Values
             </p>
 
@@ -221,16 +290,16 @@ export default function AboutUs() {
               {VALUES.map((v, i) => (
                 <div
                   key={i}
-className="
+                  className="
   group
   relative
   rounded-2xl
   border border-white/60
-  bg-white/5
+ bg-black/50
   backdrop-blur-xl
   p-10
   text-left
-
+shadow-[0_25px_80px_rgba(0,0,0,0.65)]
   transition-all duration-500 ease-out
   hover:-translate-y-3
   hover:shadow-[0_25px_80px_rgba(0,0,0,0.65)]
@@ -243,7 +312,7 @@ className="
 
                   <h3 className="text-xl font-semibold mb-3">{v.title}</h3>
 
-                  <p className="text-white/70">{v.desc}</p>
+                  <p className="text-white">{v.desc}</p>
 
                   <div className="absolute inset-0 rounded-2xl bg-[#bfa2ff]/5 opacity-0 group-hover:opacity-100 blur-xl transition -z-10" />
                 </div>
@@ -252,10 +321,132 @@ className="
           </div>
         </section>
 
-        {/* ================= HOW WE WORK ================= */}
-        <section className="py-16 px-6">
+        {/* ================= WHAT WE DO ================= */}
+        <section className="py-20 px-6 relative bg-gradient-to-b  via-[#2d0847] to-black">
           <div className="max-w-7xl mx-auto text-center">
-            <span className="inline-block mb-6 rounded-full border border-white/10 bg-white/5 px-5 py-2 text-xs text-[#bfa2ff]">
+            {/* LABEL */}
+            <p className="text-sm uppercase tracking-widest text-[#ae8bf9] font-semibold mb-4">
+              What We Do
+            </p>
+
+            {/* TITLE */}
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
+              Everything Under <span className="text-[#bfa2ff]">One Roof</span>
+            </h2>
+
+            {/* SUBTEXT */}
+            <p className="text-white/70 max-w-2xl mx-auto mb-16 text-lg">
+              Everything you need to build, market, and scale your digital
+              presence.
+            </p>
+
+            {/* CARDS */}
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {SERVICES.map((s, i) => (
+                <motion.div
+                  key={i}
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: i * 0.08 }}
+                  onClick={() => navigate(s.link)}
+                  className="
+    group
+    relative
+    cursor-pointer
+    rounded-2xl
+    border border-white/60
+
+    bg-white/5
+    backdrop-blur-xl
+
+    p-8
+    text-left
+
+    shadow-[0_25px_80px_rgba(0,0,0,0.65)]
+    transition-all duration-500 ease-out
+
+    hover:-translate-y-3
+    hover:border-[#bfa2ff]
+    hover:bg-white/90
+  "
+                >
+                  {/* ICON */}
+                  <div
+                    className="
+      mb-6 h-12 w-12 rounded-xl
+      bg-gradient-to-br from-[#a970ff]/30 to-[#6a00ff]/20
+      flex items-center justify-center
+      text-[#bfa2ff]
+      transition-all duration-500
+      group-hover:bg-[#bfa2ff]/20
+      group-hover:text-[#6a00ff]
+    "
+                  >
+                    <s.icon size={26} />
+                  </div>
+
+                  {/* CONTENT */}
+                  <h3
+                    className="
+      text-xl font-semibold mb-3
+      text-white
+      transition-colors duration-500
+      group-hover:text-black
+    "
+                  >
+                    {s.title}
+                  </h3>
+
+                  <p
+                    className="
+      leading-relaxed mb-10
+      text-white/80
+      transition-colors duration-500
+      group-hover:text-black/70
+    "
+                  >
+                    {s.desc}
+                  </p>
+
+                  {/* HOVER ARROW */}
+                  <div
+                    className="
+      absolute bottom-6 right-6
+      flex items-center gap-2
+      text-[#6a00ff]
+      opacity-0 translate-x-2
+      group-hover:opacity-100 group-hover:translate-x-0
+      transition-all duration-300
+      pointer-events-none
+    "
+                  >
+                    <span className="text-md font-semibold">Explore</span>
+                    <MdArrowForward size={25} />
+                  </div>
+
+                  {/* SOFT PURPLE GLOW */}
+                  <div
+                    className="
+      absolute inset-0 rounded-2xl
+      bg-[#bfa2ff]/20
+      opacity-0 group-hover:opacity-100
+      blur-2xl
+      transition
+      -z-10
+    "
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ================= HOW WE WORK ================= */}
+        <section className="py-16 px-6 bg-gradient-to-b from-[black]  via-[#2f0d49] to-black">
+          <div className="max-w-7xl mx-auto text-center">
+            <span className="inline-block mb-6 rounded-full border border-white/80 bg-white/5 px-6 py-2 text-sm font-semibold text-[#bfa2ff]">
               Our Process
             </span>
 
@@ -263,21 +454,21 @@ className="
               How We <span className="text-[#bfa2ff]">Work</span>
             </h2>
 
-            <p className="text-white/70 max-w-2xl mx-auto mb-20 text-lg">
+            <p className="text-white max-w-2xl mx-auto mb-20 text-lg">
               A transparent, collaborative approach at every stage.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative ">
               {PROCESS.map((p, i) => (
                 <div key={p.step} className="relative">
                   <div className="group rounded-2xl border border-white/60 bg-white/5 backdrop-blur-xl p-8 text-left hover:border-[#bfa2ff]/40 transition hover:animate-bounce">
                     <div className="flex items-center gap-4 mb-6">
-                      <span className="text-3xl font-extrabold text-[#bfa2ff]/30">
+                      <span className="text-3xl font-extrabold text-[#bfa2ff]">
                         {p.step}
                       </span>
 
                       <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-[#a970ff]/30 to-[#6a00ff]/20 flex items-center justify-center text-[#bfa2ff]">
-                        <p.icon size={22} />
+                        <p.icon size={24} />
                       </div>
                     </div>
 
@@ -289,8 +480,8 @@ className="
                   {/* ARROW BETWEEN STEPS (DESKTOP ONLY) */}
                   {i < PROCESS.length - 1 && (
                     <MdArrowForward
-                      size={22}
-                      className="hidden lg:block absolute top-1/2 -right-6 text-[#bfa2ff]/30"
+                      size={24}
+                      className="hidden lg:block absolute top-1/2 -right-7 text-[#bfa2ff]"
                     />
                   )}
                 </div>
@@ -300,7 +491,7 @@ className="
         </section>
 
         {/* ================= FINAL CTA ================= */}
-        <section className="py-20 px-6 text-center">
+        <section className="py-20 px-6 text-center bg-gradient-to-b from-[black]   to-black group">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
             Ready to <span className="text-[#bfa2ff]">Get Started?</span>
           </h2>
@@ -309,7 +500,10 @@ className="
             Let’s transform your digital presence and drive real growth.
           </p>
 
-          <button onClick={() => navigate("/contact-us")} className="rounded-xl bg-gradient-to-r from-[#a970ff] to-[#d946ef] px-10 py-4 text-lg font-semibold hover:scale-105 transition shadow-[0_0_40px_rgba(169,112,255,0.35)]">
+          <button
+            onClick={() => navigate("/contact-us")}
+            className="rounded-xl bg-gradient-to-r from-[#a970ff] to-[#d946ef] px-10 py-4 text-lg font-semibold hover:scale-105 transition shadow-[0_0_40px_rgba(169,112,255,0.35)] group-hover:animate-bounce"
+          >
             Contact Us Today →
           </button>
         </section>

@@ -19,11 +19,11 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ContactUs from "./pages/ContactUsPage";
 import ScrollToTop from "./helper/ScrollToTop"; 
 import GraphicDesign from "./pages/GraphicDesign";
+import Portfolio from "./pages/Portfolio";
 
 function App() {
   
   const [openContact, setOpenContact] = useState(false);
-  console.log("consoleee check env dev",import.meta.env.FIREBASE_API_KEY);
 
   return (
     <Router>
@@ -42,6 +42,7 @@ function App() {
         <Route path="/logo-design" element={<LogoDesign />} />
         <Route path="/ai-marketing" element={<AiMarketing />} />
         <Route path="/graphic-design" element={<GraphicDesign />} />
+        <Route path="/portfolio" element={<Portfolio />} />
 
         <Route path="/about" element={<AboutUs />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />

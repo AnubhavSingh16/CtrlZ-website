@@ -13,7 +13,6 @@ import { useLocation } from "react-router-dom";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../firebase";
 
-
 export default function ContactModal({ open, onClose }) {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
@@ -84,40 +83,42 @@ export default function ContactModal({ open, onClose }) {
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    console.log("im called");
+    e.preventDefault();
 
-  if (!validateForm()) return;
+    if (!validateForm()) return;
 
-  const submissionData = {
-    name: formData.name.trim(),
-    email: formData.email.trim(),
-    phone: formData.phone.trim(),
-    service: formData.service || "Not specified",
-    sourcePage: location.pathname,
-    submittedAt: serverTimestamp(),
+    const submissionData = {
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      phone: formData.phone.trim(),
+      service: formData.service || "Not specified",
+      sourcePage: location.pathname,
+      submittedAt: serverTimestamp(),
+    };
+
+    try {
+     
+      await addDoc(collection(db, "contactSubmissions"), submissionData);
+      console.log("im called 33");
+
+      alert("Thanks! Your details have been submitted successfully ✅");
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+      });
+      setErrors({});
+
+      onClose();
+    } catch (error) {
+      console.error("Error submitting contact form:", error);
+      alert("Something went wrong. Please try again.");
+    }
   };
-
-  try {
-    await addDoc(collection(db, "contactSubmissions"), submissionData);
-
-    alert("Thanks! Your details have been submitted successfully ✅");
-
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      service: "",
-    });
-    setErrors({});
-
-    onClose();
-  } catch (error) {
-    console.error("Error submitting contact form:", error);
-    alert("Something went wrong. Please try again.");
-  }
-};
-
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "auto";
@@ -204,7 +205,6 @@ export default function ContactModal({ open, onClose }) {
                   { icon: FaInstagram, label: "Instagram" },
                   { icon: FaLinkedin, label: "Linked In" },
                   { icon: FaFacebook, label: "Facebook" },
-                  
                 ].map(({ icon: Icon, label }, i) => (
                   <button
                     key={i}
@@ -307,7 +307,7 @@ export default function ContactModal({ open, onClose }) {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+91 Mobile Number"
+                    placeholder="Mobile Number"
                     inputMode="numeric"
                     className={`
         w-full mt-1 px-4 py-2.5 rounded-lg
@@ -325,17 +325,17 @@ export default function ContactModal({ open, onClose }) {
                 </div>
 
                 {/* Services Interested In — DROPDOWN */}
-              
-                  <div>
-                    <label className="text-lg text-white">
-                      Services Interested In
-                    </label>
 
-                    <select
-                      name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                      className={`
+                <div>
+                  <label className="text-lg text-white">
+                    Services Interested In
+                  </label>
+
+                  <select
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    className={`
         w-full mt-1 px-4 py-2.5 rounded-lg
         bg-white/10 text-white outline-none appearance-none
         ${
@@ -344,35 +344,34 @@ export default function ContactModal({ open, onClose }) {
             : "border border-white focus:ring-[#AB6BFF]"
         }
       `}
-                    >
-                      <option value="" disabled className="text-black">
-                        Select a service
-                      </option>
-                      <option value="Web Development" className="text-black">
-                        Web Development
-                      </option>
-                      <option value="UI/UX Design" className="text-black">
-                        UI / UX Design
-                      </option>
-                      <option value="Video Editing" className="text-black">
-                        Video Editing
-                      </option>
-                      <option value="Ai Marketing" className="text-black">
-                        Ai Marketing
-                      </option>
-                      
-                      <option value="Custom" className="text-black">
-                        Custom
-                      </option>
-                    </select>
+                  >
+                    <option value="" disabled className="text-black">
+                      Select a service
+                    </option>
+                    <option value="Web Development" className="text-black">
+                      Web Development
+                    </option>
+                    <option value="UI/UX Design" className="text-black">
+                      UI / UX Design
+                    </option>
+                    <option value="Video Editing" className="text-black">
+                      Video Editing
+                    </option>
+                    <option value="Ai Marketing" className="text-black">
+                      Ai Marketing
+                    </option>
 
-                    {errors.service && (
-                      <p className="text-red-400 text-sm mt-1">
-                        {errors.service}
-                      </p>
-                    )}
-                  </div>
-      
+                    <option value="Custom" className="text-black">
+                      Custom
+                    </option>
+                  </select>
+
+                  {errors.service && (
+                    <p className="text-red-400 text-sm mt-1">
+                      {errors.service}
+                    </p>
+                  )}
+                </div>
 
                 {/* Submit */}
                 <button
